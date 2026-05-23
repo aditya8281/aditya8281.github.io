@@ -15,13 +15,13 @@ export default function ProjectsSection() {
   const [active, setActive] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="border-t border-white/5 bg-gradient-to-b from-slate-950/40 to-slate-950/20 px-6 py-20 sm:px-8">
+    <section id="projects" className="border-t border-white/5 bg-gradient-to-b from-slate-950/40 to-slate-950/20 py-20">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
           <SectionHeading title="Projects" subtitle="Selected work" />
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={listVariants} className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={listVariants} className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} onOpen={() => setActive(project)} />
           ))}

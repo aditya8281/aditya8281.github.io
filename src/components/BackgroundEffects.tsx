@@ -24,7 +24,7 @@ export default function BackgroundEffects() {
       transition: { 
         duration: 32, 
         repeat: Infinity, 
-        ease: 'easeInOut',
+        ease: [0.42, 0, 0.58, 1] as any,
         times: [0, 0.25, 0.5, 0.75, 1],
       },
     },
@@ -38,7 +38,7 @@ export default function BackgroundEffects() {
       transition: { 
         duration: 36, 
         repeat: Infinity, 
-        ease: 'easeInOut',
+        ease: [0.42, 0, 0.58, 1] as any,
         times: [0, 0.25, 0.5, 0.75, 1],
       },
     },
@@ -52,7 +52,7 @@ export default function BackgroundEffects() {
       transition: {
         duration: 8,
         repeat: Infinity,
-        ease: 'easeInOut',
+        ease: [0.42, 0, 0.58, 1] as any,
       },
     },
   }
@@ -64,6 +64,7 @@ export default function BackgroundEffects() {
 
       {/* Grid layer: subtle futuristic engineering grid */}
       <div className="bg-grid absolute inset-0" aria-hidden="true" />
+      <div className="background-radial absolute inset-0 opacity-90" aria-hidden="true" />
 
       {/* Lighting layer: large blurred radial gradients with cinematic depth */}
       <motion.div 
@@ -88,6 +89,34 @@ export default function BackgroundEffects() {
           />
         ))}
       </motion.div>
+
+      <div className="background-particles absolute inset-0" aria-hidden="true">
+        <span className="particle-1" />
+        <span className="particle-2" />
+        <span className="particle-3" />
+        <span className="particle-4" />
+        <span className="particle-5" />
+        <span className="particle-6" />
+        <span className="particle-7" />
+        <span className="particle-8" />
+      </div>
+
+      <motion.div
+        className="background-scanline absolute inset-x-0 top-[24%] h-px bg-cyan-300/15"
+        animate={{ x: [0, 42, -42, 0], opacity: [0.08, 0.22, 0.08, 0.12] }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      <div className="background-ui-panels absolute inset-0 pointer-events-none" aria-hidden="true">
+        <span className="hud-panel hud-panel-left" />
+        <span className="hud-panel hud-panel-right" />
+      </div>
+
+      <div className="background-stream-bars absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <span key={index} className={`stream-bar stream-bar-${index + 1}`} />
+        ))}
+      </div>
 
       {/* Noise + premium vignette for texture and depth */}
       <div className="absolute inset-0 pointer-events-none">

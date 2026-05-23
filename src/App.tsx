@@ -11,10 +11,10 @@ import SkillsSection from './sections/SkillsSection'
 
 function App() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-100">
       <BackgroundEffects />
       <Navbar />
-      <main className="mx-auto max-w-7xl px-0">
+      <main className="relative z-10 mx-auto max-w-screen-2xl px-0">
         <HeroSection />
         <AboutSection />
         <SkillsSection />

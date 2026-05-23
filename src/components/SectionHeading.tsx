@@ -5,7 +5,7 @@ type SectionHeadingProps = {
 
 export default function SectionHeading({ title, subtitle }: SectionHeadingProps) {
   return (
-    <div className="mb-10 max-w-2xl">
+    <div className="mb-10 w-full max-w-5xl">
       <div className="flex items-center gap-4">
         <span className="block h-px w-20 rounded-full bg-gradient-to-r from-cyan-400/30 via-blue-400/20 to-indigo-400/10" aria-hidden="true" />
         <p className="text-xs uppercase tracking-[0.48em] text-cyan-300/80">{subtitle}</p>

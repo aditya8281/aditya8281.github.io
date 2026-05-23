@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function AnimatedOrbs() {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full overflow-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 0.6, 0.3] }}

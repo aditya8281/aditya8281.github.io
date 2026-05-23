@@ -24,18 +24,18 @@ export default function SkillsSection() {
   const design = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'UI/UX Design', 'Git', 'GitHub', 'Jupyter', 'MATLAB']
 
   return (
-    <section id="skills" className="border-t border-white/5 bg-slate-950/40 px-6 py-20 sm:px-8">
+    <section id="skills" className="border-t border-white/5 bg-slate-950/40 py-20">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="Skills" subtitle="Expertise" />
         </motion.div>
 
-        <div className="mt-8 relative" onMouseMove={onMove}>
-          <div className="absolute inset-0 pointer-events-none">
+        <div className="mt-8 relative overflow-hidden" onMouseMove={onMove}>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <AnimatedOrbs />
           </div>
 
-          <div className="relative z-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="relative z-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             <SkillCategory title="Languages" items={languages} />
             <SkillCategory title="AI / Machine Learning" items={ml} />
             <SkillCategory title="Systems & Embedded" items={systems} />

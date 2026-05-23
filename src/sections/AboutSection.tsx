@@ -19,7 +19,7 @@ export default function AboutSection() {
   }, [])
 
   return (
-    <section id="about" className="border-t border-white/5 bg-slate-950/50 px-6 py-20 sm:px-8">
+    <section id="about" className="border-t border-white/5 bg-slate-950/50 py-20">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="About" subtitle="Profile" />
@@ -32,7 +32,7 @@ export default function AboutSection() {
               <h3 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">Aditya Rathod</h3>
               <p className="mt-1 text-sm text-slate-300">{headline} — IIT Jodhpur</p>
 
-              <p className="mt-6 max-w-2xl text-slate-300 leading-7 sm:text-lg">
+              <p className="mt-6 text-slate-300 leading-7 sm:text-lg">
                 I build intelligent real-world systems across reinforcement learning, computer vision, embedded AI, robotics, and systems programming. I focus on dependable edge deployments and practical research-to-product workflows.
               </p>
             </motion.div>
