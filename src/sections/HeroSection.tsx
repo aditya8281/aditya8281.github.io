@@ -1,9 +1,7 @@
-import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { hero } from '../data/portfolio'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 import { useTypewriter } from '../hooks/useTypewriter'
-import { useMousePosition } from '../hooks/useMousePosition'
 import ProfileImage from '../components/ProfileImage'
 import TerminalIntro from '../components/TerminalIntro'
 
@@ -13,17 +11,12 @@ const fadeIn = {
 }
 
 export default function HeroSection() {
-  const sectionRef = useRef<HTMLElement | null>(null)
-  const mouse = useMousePosition()
   const typedRole = useTypewriter(hero.roles, 120, 1800)
   const handleScroll = useScrollToSection()
 
-  const offsetX = sectionRef.current ? mouse.x - sectionRef.current.getBoundingClientRect().left : 0
-  const offsetY = sectionRef.current ? mouse.y - sectionRef.current.getBoundingClientRect().top : 0
-
   return (
-    <section id="home" ref={sectionRef} className="relative min-h-screen overflow-hidden pt-24 pb-16">
-      <div className="absolute inset-0">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-transparent pt-24 pb-16">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 hero-gradient-bg opacity-95" />
         <div className="absolute inset-0 hero-grid-overlay opacity-30" />
         <div className="absolute left-[-90px] top-16 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
@@ -39,7 +32,7 @@ export default function HeroSection() {
       <div
         className="pointer-events-none absolute h-64 w-64 rounded-full bg-cyan-400/15 blur-3xl transition-all duration-500"
         style={{ left: offsetX - 190, top: offsetY - 190 }}
-      />
+      /> */}
 
       <div className="app-container relative z-10 grid gap-10 items-center md:grid-cols-[1.15fr_0.95fr] lg:gap-12 xl:gap-16">
         <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ duration: 0.95, ease: 'easeOut' }} className="text-center md:text-left">

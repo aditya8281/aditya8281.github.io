@@ -3,7 +3,7 @@ import { contactMethods } from '../data/portfolio'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="border-t border-white/5 bg-slate-950/40 py-20">
+    <section id="contact" className="py-20">
       <div className="app-container">
         <SectionHeading title="Contact" subtitle="Get in touch" />
         <div className="grid gap-8 lg:grid-cols-[1.3fr_0.9fr] xl:gap-12">

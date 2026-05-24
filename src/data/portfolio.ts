@@ -13,7 +13,6 @@ export type Project = {
   title: string
   description: string
   tools: string[]
-  link?: string
   repo?: string
   longDescription?: string
 }
@@ -44,6 +43,7 @@ export const navLinks: NavLink[] = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
+  { id: 'exploring', label: 'Exploring' },
   { id: 'experience', label: 'Experience' },
   { id: 'leadership', label: 'Leadership' },
   { id: 'contact', label: 'Contact' },
@@ -60,80 +60,97 @@ export const hero = {
 }
 
 export const aboutText: string[] = [
-  'I am an Electrical Engineering student at IIT Jodhpur with a focus on AI/ML, systems programming, and embedded intelligence.',
-  'I build intelligent real-world systems for edge AI, computer vision, robotics, networking, and autonomous platforms.',
+  'I am an Electrical Engineering student at IIT Jodhpur focused on AI/ML, embedded systems, and scalable systems engineering.',
+  'I design practical intelligence for edge devices, vision systems, and autonomous workflows with a strong focus on robustness, performance, and real-world impact.',
 ]
 
 export const aboutHighlights: string[] = [
-  'IIT Jodhpur Electrical Engineering student.',
-  'AI/ML, embedded AI, robotics and reinforcement learning.',
-  'Passionate about building dependable systems that solve real-world problems.',
-  'Focused on edge AI, computer vision, networking, and autonomous systems.',
+  'IIT Jodhpur Electrical Engineering student with a systems-first mindset.',
+  'Specialized in AI/ML, embedded edge systems, and computer vision.',
+  'Building dependable production-ready systems with clean engineering patterns.',
+  'Experienced with autonomous robotics, networking, and performance optimization.',
 ]
 
 export const skills: Skill[] = [
-  { name: 'Python', category: 'Languages', level: 'Core' },
-  { name: 'C++', category: 'Languages', level: 'Core' },
-  { name: 'PyTorch', category: 'AI/ML', level: 'Advanced' },
-  { name: 'TensorFlow', category: 'AI/ML', level: 'Advanced' },
-  { name: 'Stable-Baselines3', category: 'AI/ML', level: 'Advanced' },
-  { name: 'Gymnasium', category: 'AI/ML', level: 'Advanced' },
-  { name: 'CUDA', category: 'AI/ML', level: 'Advanced' },
-  { name: 'YOLO', category: 'Computer Vision', level: 'Advanced' },
-  { name: 'OpenCV', category: 'Computer Vision', level: 'Advanced' },
-  { name: 'Linux', category: 'Systems', level: 'Advanced' },
-  { name: 'Networking', category: 'Systems', level: 'Advanced' },
-  { name: 'Git', category: 'Tools', level: 'Core' },
-  { name: 'ESP32', category: 'Embedded', level: 'Advanced' },
-  { name: 'Jetson Orin NX', category: 'Embedded', level: 'Advanced' },
-  { name: 'Arduino', category: 'Embedded', level: 'Advanced' },
-  { name: 'TinyML', category: 'Embedded', level: 'Advanced' },
+  { name: 'C', category: 'Programming', level: 'Advanced' },
+  { name: 'C++', category: 'Programming', level: 'Advanced' },
+  { name: 'Python', category: 'Programming', level: 'Advanced' },
+  { name: 'JavaScript', category: 'Programming', level: 'Advanced' },
+  { name: 'TypeScript', category: 'Programming', level: 'Advanced' },
+  { name: 'PyTorch', category: 'AI / ML', level: 'Advanced' },
+  { name: 'TensorFlow', category: 'AI / ML', level: 'Advanced' },
+  { name: 'Scikit-learn', category: 'AI / ML', level: 'Proficient' },
+  { name: 'NumPy', category: 'AI / ML', level: 'Proficient' },
+  { name: 'OpenCV', category: 'AI / ML', level: 'Proficient' },
+  { name: 'CNNs', category: 'Deep Learning', level: 'Advanced' },
+  { name: 'RNNs', category: 'Deep Learning', level: 'Proficient' },
+  { name: 'Transformers', category: 'Deep Learning', level: 'Proficient' },
+  { name: 'Operating Systems', category: 'Systems', level: 'Proficient' },
+  { name: 'Networking', category: 'Systems', level: 'Proficient' },
+  { name: 'System Design', category: 'Systems', level: 'Proficient' },
+  { name: 'Git', category: 'Tools', level: 'Advanced' },
+  { name: 'Linux', category: 'Tools', level: 'Advanced' },
+  { name: 'Docker', category: 'Tools', level: 'Proficient' },
+  { name: 'Unity', category: 'Creative / Design', level: 'Proficient' },
+  { name: 'Blender', category: 'Creative / Design', level: 'Proficient' },
+  { name: 'Unreal Engine', category: 'Creative / Design', level: 'Proficient' },
+  { name: 'Photoshop', category: 'Creative / Design', level: 'Proficient' },
+  { name: 'Illustrator', category: 'Creative / Design', level: 'Proficient' },
+  { name: 'Figma', category: 'Creative / Design', level: 'Proficient' },
 ]
 
 export const projects: Project[] = [
   {
-    title: 'Adaptive Traffic Signal Control using Reinforcement Learning',
+    title: 'Adaptive Traffic Signal Control',
     description:
-      'Built an adaptive traffic optimization system using PPO reinforcement learning and Gymnasium environments to reduce congestion and improve throughput.',
+      'Optimized city signal timing using PPO reinforcement learning for peak-hour congestion reduction.',
     longDescription:
-      'Built an adaptive traffic optimization system using PPO reinforcement learning and Gymnasium environments to reduce congestion and improve throughput. Trained policies with Stable-Baselines3, monitored experiments with TensorBoard, and evaluated traffic throughput and wait-time metrics in simulation.',
+      'Delivered an adaptive traffic control system that learns from simulated intersection data and dynamically adjusts signal timing for smoother throughput. Evaluated latency, vehicle wait time, and congestion metrics across peak scenarios.',
     tools: ['Python', 'PPO', 'Stable-Baselines3', 'Gymnasium', 'TensorBoard'],
     repo: 'https://github.com/aditya8281/traffic_rl',
   },
   {
     title: 'Quadcopter Drone with Onboard Vision',
     description:
-      'Developed a quadcopter platform with Jetson Orin NX onboard compute running YOLO-based real-time object detection.',
+      'Built a Jetson Orin NX drone with YOLO-based object detection and ROS pipelines for real-time autonomous flight.',
     longDescription:
-      'Developed a quadcopter platform with Jetson Orin NX onboard compute running YOLO-based real-time object detection. Integrated ROS/edge pipelines, optimized detection for real-time inference with TensorRT, and used OpenCV for post-processing.',
-    tools: ['Jetson Orin NX', 'YOLO', 'OpenCV', 'Edge AI', 'Computer Vision'],
+      'Integrated Jetson Orin NX, YOLO detection, and ROS edge pipelines to enable real-time vision on a quadcopter. Focused on inference efficiency, sensor fusion, and mission-level reliability for onboard autonomy.',
+    tools: ['Jetson Orin NX', 'YOLO', 'OpenCV', 'ROS', 'Edge AI'],
     repo: 'https://github.com/aditya8281/jetson-autonomous-drone',
   },
   {
     title: 'Edge AI Face Recognition System',
     description:
-      'Created a low-cost TinyML face recognition system using ESP32-CAM and Edge Impulse for on-device inference.',
+      'Deployed a TinyML face recognition model on ESP32-CAM for fast on-device authentication and low-power inference.',
     longDescription:
-      'Created a low-cost TinyML face recognition system using ESP32-CAM and Edge Impulse for on-device inference. Collected dataset, trained compact models, and deployed quantized models to run inference on the ESP32-CAM for fast on-device recognition.',
-    tools: ['ESP32-CAM', 'TinyML', 'Edge Impulse', 'Embedded AI'],
+      'Designed and deployed a lightweight face recognition pipeline using ESP32-CAM and Edge Impulse. Optimized model size for on-device inferencing while retaining accuracy and responsiveness for embedded authentication.',
+    tools: ['ESP32-CAM', 'TinyML', 'Edge Impulse', 'Python', 'Embedded AI'],
   },
   {
     title: 'Autonomous Maze-Solving Robot',
     description:
-      'Engineered a PID-controlled autonomous robot using ultrasonic sensors and Arduino for wall-following and navigation.',
+      'Engineered a sensor-driven autonomous robot with PID control and reliable navigation for indoor maze missions.',
     longDescription:
-      'Engineered a PID-controlled autonomous robot using ultrasonic sensors and Arduino for wall-following and navigation. Tuned control loops, implemented sensor fusion for reliable obstacle detection, and validated navigation in indoor mazes.',
+      'Built an autonomous maze robot using ultrasonic sensing, PID control, and embedded navigation logic. Tuned control loops, fused sensor inputs, and validated robust path planning in varied maze layouts.',
     tools: ['Arduino', 'PID Control', 'Embedded Systems', 'Robotics'],
   },
   {
     title: 'plink — Peer-to-Peer File Transfer',
     description:
-      'Contributed to a secure peer-to-peer file transfer tool with AES-256 encryption and NAT traversal support.',
+      'Enhanced a secure P2P transfer tool with AES-256 encryption and NAT-traversal reliability.',
     longDescription:
-      'Contributed to a secure peer-to-peer file transfer tool with AES-256 encryption and NAT traversal support. Improved reliability for hole-punching and integrated encryption layers for end-to-end confidentiality.',
+      'Contributed to a peer-to-peer file transfer system with encrypted channels, hole-punching, and robust cross-network delivery. Improved connection reliability and streamlined encrypted file exchange for distributed systems.',
     tools: ['Python', 'Networking', 'AES-256', 'P2P Systems'],
     repo: 'https://github.com/shikavan/plink',
   },
+]
+
+export const exploringTopics: string[] = [
+  'CUDA Optimization',
+  'Distributed Systems',
+  'Transformer Architectures',
+  'OS Internals',
+  'Autonomous Systems',
 ]
 
 export const experience: Experience[] = [
@@ -206,7 +223,8 @@ export const leadership: Leadership[] = [
 ]
 
 export const contactMethods: ContactMethod[] = [
-  { label: 'Email', value: 'hello@adisite.com', href: 'mailto:hello@adisite.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/adi', href: 'https://linkedin.com' },
+  { label: 'GitHub', value: 'github.com/aditya8281', href: 'https://github.com/aditya8281' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/aditya-rathod', href: 'https://www.linkedin.com/in/aditya-rathod/' },
+  { label: 'Email', value: 'aditya.rathod2912@gmail.com', href: 'mailto:aditya.rathod2912@gmail.com' },
   { label: 'Resume', value: 'Download resume', href: '#', },
 ]

@@ -24,7 +24,7 @@ export default function SkillsSection() {
   const design = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'UI/UX Design', 'Git', 'GitHub', 'Jupyter', 'MATLAB']
 
   return (
-    <section id="skills" className="border-t border-white/5 bg-slate-950/40 py-20">
+    <section id="skills" className="py-20">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="Skills" subtitle="Expertise" />

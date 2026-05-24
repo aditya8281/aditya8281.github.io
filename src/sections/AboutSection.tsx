@@ -19,7 +19,7 @@ export default function AboutSection() {
   }, [])
 
   return (
-    <section id="about" className="border-t border-white/5 bg-slate-950/50 py-20">
+    <section id="about" className="py-20">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="About" subtitle="Profile" />
