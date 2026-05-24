@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import profileImage from '../assets/profile.jpg'
+import profileImageWebp from '../assets/profile.webp'
+import profileImageJpg from '../assets/profile.jpg'
 
 interface ProfileImageProps {
   src?: string
@@ -7,9 +8,12 @@ interface ProfileImageProps {
 }
 
 export default function ProfileImage({
-  src = profileImage,
+  src,
   alt = 'Aditya Rathod - AI Engineer',
 }: ProfileImageProps) {
+  const defaultWebp = profileImageWebp
+  const defaultJpg = profileImageJpg
+
   return (
     <motion.div
       className="relative mx-auto w-full max-w-[20rem] overflow-hidden rounded-full border border-cyan-400/15 bg-slate-950/10 shadow-[0_30px_90px_rgba(8,15,31,0.45)] sm:max-w-[22rem] md:max-w-[24rem] lg:max-w-[26rem]"
@@ -32,14 +36,17 @@ export default function ProfileImage({
           whileHover={{ boxShadow: '0 40px 120px rgba(34,211,238,0.18)' }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.img
-            src={src}
-            alt={alt}
-            className="aspect-square w-full object-cover rounded-full"
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.3, 0.8, 0.46, 0.99] }}
-          />
+          <picture>
+            {!src && <source srcSet={defaultWebp} type="image/webp" />}
+            <motion.img
+              src={src ?? defaultJpg}
+              alt={alt}
+              className="aspect-square w-full object-cover rounded-full"
+              initial={{ opacity: 0, scale: 1.02 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, ease: [0.3, 0.8, 0.46, 0.99] }}
+            />
+          </picture>
           <div className="absolute inset-0 rounded-full bg-gradient-to-t from-slate-950/30 via-transparent to-cyan-400/10 pointer-events-none" />
         </motion.div>
       </div>
