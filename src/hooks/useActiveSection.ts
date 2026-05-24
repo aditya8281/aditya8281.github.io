@@ -1,35 +1,53 @@
 import { useEffect, useState } from 'react'
 
+const trackedSections = ['home', 'about', 'skills', 'projects', 'contact']
+
 export function useActiveSection(defaultId = 'home') {
   const [activeSection, setActiveSection] = useState(defaultId)
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'))
+    const sections = trackedSections
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section))
+
     if (!sections.length) {
       return undefined
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => (a.boundingClientRect.top > b.boundingClientRect.top ? 1 : -1))
+    let frame = 0
 
-        if (visibleSections.length > 0) {
-          setActiveSection(visibleSections[0].target.id)
+    const updateActiveSection = () => {
+      const threshold = window.innerHeight * 0.35
+      let currentSection = defaultId
+
+      sections.forEach((section) => {
+        const top = section.getBoundingClientRect().top
+        if (top <= threshold) {
+          currentSection = section.id
         }
-      },
-      {
-        root: null,
-        rootMargin: '-30% 0px -60% 0px',
-        threshold: 0.15,
-      },
-    )
+      })
 
-    sections.forEach((section) => observer.observe(section))
+      setActiveSection((previous) => (previous === currentSection ? previous : currentSection))
+      frame = 0
+    }
 
-    return () => observer.disconnect()
-  }, [])
+    const onScroll = () => {
+      if (frame) return
+      frame = window.requestAnimationFrame(updateActiveSection)
+    }
+
+    updateActiveSection()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame)
+      }
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [defaultId])
 
   return activeSection
 }
