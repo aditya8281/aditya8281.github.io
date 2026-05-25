@@ -176,7 +176,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed inset-x-4 top-[5.5rem] z-40 rounded-[2rem] border border-white/10 bg-slate-950/95 backdrop-blur-3xl shadow-2xl p-5 lg:hidden"
+            className="fixed inset-x-3 sm:inset-x-4 top-[5.5rem] z-40 rounded-[2rem] border border-white/10 bg-slate-950/95 backdrop-blur-3xl shadow-2xl p-4 sm:p-5 lg:hidden"
           >
             <div className="flex items-center justify-between gap-4">
               <div>

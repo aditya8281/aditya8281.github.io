@@ -16,7 +16,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         <div className="relative mt-12 grid gap-10 lg:grid-cols-[auto_1fr] lg:items-start">
-          <div className="absolute left-5 top-8 h-[calc(100%-3rem)] w-[2px] bg-cyan-400/15 lg:left-8" />
+          <div className="absolute left-5 top-8 bottom-8 w-[2px] bg-cyan-400/15 lg:left-8" />
 
           <div className="space-y-10">
             {experience.map((item, index) => (

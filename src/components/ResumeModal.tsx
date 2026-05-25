@@ -54,7 +54,7 @@ export default function ResumeModal({ open, onClose }: Props) {
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.98, y: 8 }}
             transition={{ duration: 0.18 }}
-            className="relative z-10 max-w-5xl w-[94%] h-[84vh] rounded-2xl overflow-hidden border border-white/10 bg-slate-950/95 shadow-2xl"
+            className="relative z-10 w-[94%] max-w-[900px] sm:max-w-[1100px] md:max-w-5xl h-[78vh] sm:h-[80vh] md:h-[76vh] lg:h-[70vh] rounded-2xl overflow-hidden border border-white/10 bg-slate-950/95 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-2 p-3 border-b border-white/6 bg-slate-900/60">

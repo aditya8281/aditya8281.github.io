@@ -51,7 +51,7 @@ export default function AboutSection() {
             </motion.div>
           </div>
 
-          <motion.div initial={{ opacity: 0, x: 18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative h-72 sm:h-80 lg:h-full">
+          <motion.div initial={{ opacity: 0, x: 18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
             <div className="absolute inset-0 rounded-xl overflow-hidden">
               <AnimatedOrbs />
             </div>
