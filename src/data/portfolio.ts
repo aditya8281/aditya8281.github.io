@@ -53,12 +53,12 @@ export const navLinks: NavLink[] = [
 ]
 
 export const hero = {
-  name: 'Aditya',
-  title: 'Edge AI • Computer Vision • RL Systems',
+  name: 'Aditya Rathod',
+  title: 'AI/ML • Computer Vision • Embedded Systems',
   college: 'IIT Jodhpur',
-  roles: ['Edge AI', 'Computer Vision', 'Reinforcement Learning'],
+  roles: ['MLOps', 'Computer Vision', 'Reinforcement Learning', 'Edge AI', 'Robotics', 'Systems'],
   description:
-    'Working on real-time vision, embedded intelligence, and RL experiments with a focus on clean systems, fast iteration, and practical results.',
+    'Working on real-time vision, embedded intelligence, and Robotics experiments with a focus on clean systems, fast iteration, and practical results.',
   cta: 'Explore projects',
 }
 
@@ -69,7 +69,7 @@ export const aboutText: string[] = [
 
 export const aboutHighlights: string[] = [
   'Electrical Engineering student at IIT Jodhpur with hands-on work in ML, vision, and embedded systems.',
-  'Shipped projects across Jetson Orin NX, ESP32-CAM, Arduino, PPO, and peer-to-peer networking.',
+  'Shipped projects across Jetson Orin NX, ESP32-CAM, Arduino, Real time vision, and peer-to-peer networking.',
   'Comfortable moving between model training, hardware integration, debugging, and UI thinking.',
   'Focused on crisp engineering: measurable results, clean systems, and useful prototypes.',
 ]

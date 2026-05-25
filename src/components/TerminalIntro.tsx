@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const terminalLines = [
-  'Booting up the latest vision prototype...',
-  'Debugging models, one quirky image at a time...',
-  'Turning experiments into something people can use...',
+  'Probably listening songs and typing code...',
+  'Maybe crashing out on bugs and coffee...',
+  'Most likely just procrastinating...',
 ]
 
 export default function TerminalIntro() {

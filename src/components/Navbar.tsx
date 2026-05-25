@@ -224,8 +224,8 @@ export default function Navbar() {
               AR
             </span>
             <span className="hidden sm:block">
-              <span className="block text-sm font-bold uppercase tracking-[0.22em] text-white group-hover:text-cyan-100">Aditya</span>
-              <span className="block text-[0.68rem] font-medium uppercase tracking-[0.24em] text-slate-500">ML & Vision</span>
+              <span className="block text-sm font-bold uppercase tracking-[0.22em] text-white group-hover:text-cyan-100">Aditya Rathod</span>
+              <span className="block text-[0.68rem] font-medium uppercase tracking-[0.24em] text-slate-500">IIT Jodhpur • 2024-28</span>
             </span>
           </button>
 

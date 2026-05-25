@@ -35,12 +35,12 @@ export default function AboutSection() {
               <p className="mt-1 text-sm text-slate-300">{headline} | Electrical Engineering, IIT Jodhpur</p>
 
               <p className="mt-6 text-slate-300 leading-7 sm:text-lg">
-                I’m a third-year Electrical Engineering student at IIT Jodhpur working across computer vision, reinforcement learning, embedded AI, and systems. I like crisp projects with real constraints: live inference, sensors, networking, debugging, and measurable performance.
+                I’m a third-year Electrical Engineering student at IIT Jodhpur working across computer vision, reinforcement learning, embedded AI, and systems. I like exploring new technologies and thinking through complex problems. I do also like to listen to good music, explore new places, meet new people, and experiment with new coffee recipes, but that’s for another section.
               </p>
             </motion.div>
 
             <motion.div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.08 }}>
-              <StatCard label="Projects" value={stats.projects} hint="resume-backed" onClick={() => scrollToSection('projects')} />
+              <StatCard label="Projects" value={stats.projects} hint="+others in progress" onClick={() => scrollToSection('projects')} />
               <StatCard label="Technologies" value={stats.technologies} hint="core stack" onClick={() => scrollToSection('skills')} />
               <StatCard label="Domains" value={stats.domains} hint="focus areas" onClick={() => scrollToSection('research')} />
             </motion.div>

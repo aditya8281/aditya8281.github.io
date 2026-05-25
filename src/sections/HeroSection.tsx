@@ -21,7 +21,7 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerStagger} transition={{ duration: 0.9 }} className="text-center md:text-left">
           <div className="mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-cyan-400/20 bg-slate-950/50 px-4 py-2 text-[0.65rem] uppercase tracking-[0.2em] text-cyan-200/80 shadow-[0_0_30px_rgba(34,211,238,0.08)] sm:gap-3 sm:tracking-[0.32em] md:mx-0">
             <span className="h-2.5 w-2.5 rounded-full bg-cyan-400/90 shadow-[0_0_18px_rgba(34,211,238,0.45)]" />
-            AI Research · {hero.college}
+            Undergraduate student | Researcher · {hero.college}
           </div>
 
           <div className="mt-6 mx-auto max-w-xl md:mx-0">
@@ -97,8 +97,10 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
             transition={{ duration: 0.9, delay: 0.08, ease: 'easeOut' }}
             className="mt-8 flex flex-wrap gap-3 text-sm text-slate-400"
           >
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Reinforcement Learning</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Vision Transformer</span>
             <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Computer Vision</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Reinforcement Learning</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Deep Learning</span>
             <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Embedded Systems</span>
             <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">P2P Networking</span>
           </motion.div>
@@ -119,9 +121,9 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
               </div>
               <div>
                 <p className="text-[0.65rem] uppercase tracking-[0.36em] text-cyan-300/70">Aditya Rathod</p>
-                <h2 className="mt-4 text-lg font-semibold text-white">Engineer. Researcher. Systems Thinker.</h2>
+                <h2 className="mt-4 text-lg font-semibold text-white">Engineer. Explorer. Creator.</h2>
                 <p className="mt-3 text-sm leading-7 text-slate-400">
-                  I work on fast, practical AI systems across vision, embedded hardware, RL, and reliable software workflows.
+                  I just like to observe things and think about how they work.
                 </p>
               </div>
             </div>
@@ -130,11 +132,11 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl border border-white/10 bg-slate-900/80 p-5">
               <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Computer Vision</p>
-              <p className="mt-3 text-white">YOLO inference on live camera feeds</p>
+              <p className="mt-3 text-white">Researching on Vision Transformer-based models to improve accuracy on a small image dataset captured in uncontrolled environments.</p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-slate-900/80 p-5">
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Edge AI</p>
-              <p className="mt-3 text-white">TinyML and onboard compute prototypes</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Algorithms</p>
+              <p className="mt-3 text-white">Practicing datastructures and algorithms to program better.</p>
             </div>
           </div>
         </motion.div>
