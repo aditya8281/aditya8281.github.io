@@ -9,13 +9,13 @@ const floatingVariant = {
 
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="px-6 section-vert sm:px-8">
+    <section id="leadership" className="section-vert">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }}>
           <SectionHeading title="Campus Leadership" subtitle="Student organisations" />
         </motion.div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {leadership.map((item, index) => (
             <motion.article
               key={`${item.role}-${item.organization}`}
@@ -32,8 +32,9 @@ export default function LeadershipSection() {
                   <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/70">{item.organization}</p>
                   <h3 className="mt-3 text-2xl font-semibold text-white">{item.role}</h3>
                 </div>
-                <span className="inline-flex flex-shrink-0 min-w-[4.75rem] h-14 w-14 items-center justify-center rounded-[1.25rem] bg-cyan-400/10 text-cyan-200 ring-1 ring-cyan-300/10 px-2 text-center text-[0.75rem] leading-tight sm:min-w-[5.5rem] sm:h-16 sm:w-16">
-                  {item.period}
+                <span className="motion-sheen inline-flex flex-shrink-0 items-center gap-2 rounded-2xl border border-cyan-300/15 bg-slate-950/70 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-cyan-100 shadow-[0_18px_45px_rgba(34,211,238,0.08)] sm:px-4">
+                  <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(34,211,238,0.7)]" />
+                  <span className="max-w-[8rem] text-left leading-snug">{item.period}</span>
                 </span>
               </div>
               <div className="space-y-3 text-slate-300">

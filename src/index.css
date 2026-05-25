@@ -133,23 +133,23 @@ section[id] {
   /* Responsive vertical spacing for sections. Uses clamp() and viewport units to adapt
      spacing by screen size and orientation for balanced visual rhythm. */
   .section-vert {
-    padding-top: clamp(1.25rem, 4vh, 3.75rem);
-    padding-bottom: clamp(1.25rem, 4vh, 3.75rem);
+    padding-top: clamp(2rem, 5vh, 4.5rem);
+    padding-bottom: clamp(2rem, 5vh, 4.5rem);
   }
 
   /* Slightly reduced vertical spacing on landscape devices (wider, less vertical space) */
   @media (orientation: landscape) {
     .section-vert {
-      padding-top: clamp(0.9rem, 3vh, 2.5rem);
-      padding-bottom: clamp(0.9rem, 3vh, 2.5rem);
+      padding-top: clamp(1.5rem, 4vh, 3rem);
+      padding-bottom: clamp(1.5rem, 4vh, 3rem);
     }
   }
 
   /* Larger screens get a bit more breathing room */
   @media (min-width: 1024px) {
     .section-vert {
-      padding-top: clamp(1.75rem, 6vh, 5rem);
-      padding-bottom: clamp(1.75rem, 6vh, 5rem);
+      padding-top: clamp(2.75rem, 7vh, 6rem);
+      padding-bottom: clamp(2.75rem, 7vh, 6rem);
     }
   }
 
@@ -184,22 +184,38 @@ section[id] {
     opacity: 0.9;
   }
 
+  .motion-sheen::after {
+    content: '';
+    position: absolute;
+    inset: -40% -80%;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.08) 48%, rgba(34,211,238,0.16) 52%, transparent 65%);
+    transform: translateX(-45%) rotate(8deg);
+    opacity: 0;
+    transition: transform 650ms cubic-bezier(.22,1,.36,1), opacity 220ms ease;
+    z-index: 0;
+  }
+
+  .motion-sheen:hover::after {
+    transform: translateX(45%) rotate(8deg);
+    opacity: 1;
+  }
+
   /* Replace hard dividers with soft blending bridges */
   .section-divider {
-    height: 64px;
-    margin: 1.5rem 0;
-    background: linear-gradient(180deg, rgba(8,12,20,0) 0%, rgba(8,12,20,0.22) 30%, rgba(8,12,20,0.5) 70%, rgba(8,12,20,0.85) 100%);
+    height: 1px;
+    margin: 1.25rem 0 0;
+    max-width: 18rem;
+    background: linear-gradient(90deg, rgba(34,211,238,0.4), rgba(96,165,250,0.16), transparent);
     pointer-events: none;
-    border-radius: 0.5rem;
-    opacity: 0.85;
-    mix-blend-mode: screen;
+    border-radius: 9999px;
+    opacity: 0.9;
   }
 
   @media (max-width: 640px) {
     .section-divider {
-      height: 40px;
-      margin: 0.75rem 0;
-      opacity: 0.9;
+      margin-top: 1rem;
+      max-width: 12rem;
     }
   }
 

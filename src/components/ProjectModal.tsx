@@ -38,6 +38,18 @@ export default function ProjectModal({ project, onClose }: Props) {
         >
           <div className="flex items-start justify-between">
             <div>
+              <div className="mb-3 flex flex-wrap gap-2">
+                {project.tag && (
+                  <span className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-100">
+                    {project.tag}
+                  </span>
+                )}
+                {project.metric && (
+                  <span className="rounded-full border border-violet-300/20 bg-violet-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-violet-100">
+                    {project.metric}
+                  </span>
+                )}
+              </div>
               <h3 className="text-xl font-semibold text-white">{project.title}</h3>
               <p className="mt-2 text-sm text-slate-300">{project.description}</p>
             </div>

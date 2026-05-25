@@ -15,12 +15,18 @@ export default function SkillsSection() {
 
   const visionAI = [
     'PyTorch',
+    'Stable-Baselines3',
+    'Gymnasium',
     'TensorFlow',
     'Scikit-learn',
     'NumPy',
+    'Pandas',
     'OpenCV',
     'Computer Vision',
     'Deep Learning',
+    'Reinforcement Learning',
+    'PPO',
+    'Actor-Critic Methods',
     'YOLO',
     'Edge AI',
     'TinyML',
@@ -32,8 +38,11 @@ export default function SkillsSection() {
     'Embedded Systems',
     'ESP32-CAM',
     'Arduino',
+    'Raspberry Pi',
     'Jetson Orin NX',
     'PID Control',
+    'MAVLink',
+    'Peer-to-Peer Networking',
     'AES-256 Encryption',
   ]
 
@@ -44,7 +53,8 @@ export default function SkillsSection() {
     'MATLAB',
     'TensorBoard',
     'Gymnasium',
-    'Stable-Baselines3',
+    'Arduino IDE',
+    'Edge Impulse',
   ]
 
   const design = [

@@ -15,6 +15,8 @@ export type Project = {
   tools: string[]
   repo?: string
   longDescription?: string
+  metric?: string
+  tag?: string
 }
 
 export type Experience = {
@@ -42,31 +44,34 @@ export type ContactMethod = {
 export const navLinks: NavLink[] = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'research', label: 'Research' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'leadership', label: 'Leadership' },
   { id: 'contact', label: 'Contact' },
 ]
 
 export const hero = {
   name: 'Aditya',
-  title: 'ML Builder • Computer Vision Researcher • Problem Solver',
+  title: 'Edge AI • Computer Vision • RL Systems',
   college: 'IIT Jodhpur',
-  roles: ['ML/DL', 'Computer Vision', 'Problem Solving'],
- description:
-  'Researching computer vision, building ML systems, and exploring thoughtful engineering through code and experimentation.',
+  roles: ['Edge AI', 'Computer Vision', 'Reinforcement Learning'],
+  description:
+    'Working on real-time vision, embedded intelligence, and RL experiments with a focus on clean systems, fast iteration, and practical results.',
   cta: 'Explore projects',
 }
 
 export const aboutText: string[] = [
-  'I’m a 3rd-year Electrical Engineering student at IIT Jodhpur, currently exploring computer vision through undergraduate research.',
-  'Most of my time goes into training models, solving problems, and building ideas into experiments that are as practical as they are interesting.',
+  'I’m a third-year Electrical Engineering student at IIT Jodhpur working across computer vision, edge AI, reinforcement learning, and systems projects.',
+  'I like projects that feel technical but real: live inference, embedded hardware, reliable networking, clean debugging loops, and interfaces people can actually use.',
 ]
 
 export const aboutHighlights: string[] = [
-  '3rd-year Electrical Engineering student and undergraduate researcher at IIT Jodhpur.',
-  'Currently exploring computer vision and deep learning through research, experiments, and constant iteration.',
-  'Breaking down algorithmic challenges into clean, efficient solutions.',
-  'Building practical systems that do more than just look good on paper.',
+  'Electrical Engineering student at IIT Jodhpur with hands-on work in ML, vision, and embedded systems.',
+  'Shipped projects across Jetson Orin NX, ESP32-CAM, Arduino, PPO, and peer-to-peer networking.',
+  'Comfortable moving between model training, hardware integration, debugging, and UI thinking.',
+  'Focused on crisp engineering: measurable results, clean systems, and useful prototypes.',
 ]
 
 export const skills: Skill[] = [
@@ -83,15 +88,22 @@ export const skills: Skill[] = [
   { name: 'TensorFlow', category: 'ML / DL', level: 'Proficient' },
   { name: 'Scikit-learn', category: 'ML / DL', level: 'Proficient' },
   { name: 'NumPy', category: 'ML / DL', level: 'Proficient' },
+  { name: 'Pandas', category: 'ML / DL', level: 'Proficient' },
+  { name: 'Stable-Baselines3', category: 'ML / DL', level: 'Proficient' },
+  { name: 'Gymnasium', category: 'ML / DL', level: 'Proficient' },
   { name: 'OpenCV', category: 'Computer Vision', level: 'Proficient' },
 
   { name: 'Computer Vision', category: 'Research', level: 'Proficient' },
   { name: 'Deep Learning', category: 'Research', level: 'Proficient' },
+  { name: 'Reinforcement Learning', category: 'Research', level: 'Proficient' },
+  { name: 'YOLO', category: 'Research', level: 'Proficient' },
 
   { name: 'Git', category: 'Tools', level: 'Advanced' },
+  { name: 'GitHub', category: 'Tools', level: 'Advanced' },
   { name: 'Linux', category: 'Tools', level: 'Proficient' },
   { name: 'Jupyter', category: 'Tools', level: 'Advanced' },
-  { name: 'Docker', category: 'Tools', level: 'Familiar' },
+  { name: 'Arduino IDE', category: 'Tools', level: 'Proficient' },
+  { name: 'Edge Impulse', category: 'Tools', level: 'Proficient' },
 
   { name: 'Figma', category: 'Design', level: 'Proficient' },
   { name: 'UI/UX Design', category: 'Design', level: 'Proficient' },
@@ -102,68 +114,78 @@ export const projects: Project[] = [
   {
     title: 'Quadcopter Drone with Onboard Vision',
     description:
-      'Built an aerial object detection pipeline with onboard edge inference, balancing model performance with real-time constraints.',
+      'Flight-tested quadcopter platform with Jetson Orin NX onboard vision and live YOLO inference.',
     longDescription:
-      'Integrated NVIDIA Jetson Orin NX with a live-camera YOLO pipeline for onboard object detection. Focused on deployment trade-offs across inference speed, power constraints, and detection reliability while supporting autonomy-oriented vision workflows.',
-    tools: ['Jetson Orin NX', 'YOLO', 'PyTorch', 'OpenCV', 'Edge AI'],
+      'Integrated NVIDIA Jetson Orin NX onboard compute and deployed a YOLO object-detection pipeline on live camera feeds. The platform sustained about 20 minutes of flight time on a 3S battery and reached 10-14 FPS real-time inference while balancing accuracy, compute limits, and power constraints.',
+    tools: ['Jetson Orin NX', 'YOLO', 'Computer Vision', 'Edge AI', 'Real-Time Inference'],
     repo: 'https://github.com/aditya8281/jetson-autonomous-drone',
+    metric: '10-14 FPS',
+    tag: 'Edge Vision',
   },
 
   {
     title: 'Edge AI Face Recognition System',
     description:
-      'Built a lightweight face recognition system for real-time embedded inference on resource-constrained hardware.',
+      'Portable ESP32-CAM face-recognition prototype with on-device ML and low-power inference.',
     longDescription:
-      'Developed a low-cost vision system using ESP32-CAM and Edge Impulse for fully on-device face recognition. Designed dataset pipelines, trained lightweight models, and optimized deployment for low-power real-time inference.',
-    tools: ['ESP32-CAM', 'Edge Impulse', 'TinyML', 'Computer Vision', 'Arduino'],
+      'Developed a low-cost Edge AI face-recognition system using ESP32-CAM, Edge Impulse, and LCD output for portable real-time vision. Handled dataset collection, labeling, Arduino IDE deployment, and on-device inference without cloud dependence, reaching about 90% internal-test accuracy.',
+    tools: ['ESP32-CAM', 'FTDI232', 'Edge Impulse', 'TinyML', 'Arduino IDE'],
+    metric: '~90% accuracy',
+    tag: 'TinyML',
   },
 
   {
     title: 'Adaptive Traffic Signal Control',
     description:
-      'Explored adaptive decision-making through simulation-driven traffic optimization.',
+      'PPO-based traffic-signal optimizer trained in a custom Gymnasium simulation environment.',
     longDescription:
-      'Built a reinforcement learning traffic-control prototype in a custom simulation environment, focusing on reward design, congestion-aware optimization, and systematic evaluation of learned policies.',
-    tools: ['Python', 'PyTorch', 'PPO', 'Gymnasium', 'TensorBoard'],
+      'Developed an adaptive traffic signal optimization system using PPO, actor-critic methods, and a custom Gymnasium environment. Designed vehicle-density and waiting-time state features, stochastic arrivals, and reward engineering strategies; trained for 500,000+ simulation timesteps with 16 vectorized environments and TensorBoard diagnostics.',
+    tools: ['Python', 'PyTorch', 'PPO', 'Stable-Baselines3', 'Gymnasium', 'TensorBoard'],
     repo: 'https://github.com/aditya8281/traffic_rl',
+    metric: '500k+ steps',
+    tag: 'RL Systems',
   },
 
   {
     title: 'Autonomous Maze-Solving Robot',
     description:
-      'Engineered a navigation system using PID control and sensor-based feedback for autonomous maze traversal.',
+      'PID-based wall-following robot tuned for constrained-path navigation and sensor feedback.',
     longDescription:
-      'Implemented wall-following and obstacle-avoidance logic using ultrasonic sensing and embedded control. Focused on tuning feedback loops for stable navigation across constrained layouts.',
-    tools: ['Arduino', 'Embedded C/C++', 'PID Control', 'Ultrasonic Sensors'],
+      'Engineered a wall-following robot using Arduino Uno, HC-SR04 ultrasonic sensors, L298N motor driver, differential-drive control, and Embedded C/C++. Implemented obstacle avoidance, turn decisions, anti-windup PID feedback, and serial-monitor debugging for sensor readings, PID error, motor speeds, and wall-side selection.',
+    tools: ['Arduino Uno', 'PID Control', 'Ultrasonic Sensors', 'L298N', 'Embedded C/C++'],
+    metric: 'PID tuned',
+    tag: 'Robotics',
   },
 
   {
     title: 'plink — Peer-to-Peer File Transfer',
     description:
-      'Contributed networking and reliability improvements to an open-source peer-to-peer transfer tool.',
+      'Secure peer-to-peer file transfer with direct connections, encryption, and reliable chunking.',
     longDescription:
-      'Worked on secure transfer workflows, modular networking improvements, and connection reliability enhancements for practical cross-platform file sharing.',
-    tools: ['Python', 'Networking', 'Systems Development'],
+      'Contributed to a direct device-to-device file transfer tool without centralized servers. Worked on modular networking for direct connection, UPnP, NAT hole punching, and role reversal; fortified transfers with AES-256 encryption, secure key exchange, file verification, smart chunking, and cross-platform CLI workflows.',
+    tools: ['Python', 'P2P Networking', 'AES-256', 'UPnP', 'Systems Development'],
     repo: 'https://github.com/shikavan/plink',
+    metric: 'AES-256',
+    tag: 'Systems',
   },
 ]
 
 export const exploringTopics = [
   {
     title: 'Computer Vision',
-    description: 'Exploring detection, real-time inference, and vision systems that work under practical deployment constraints.',
+    description: 'Detection, live-camera inference, and deployment-aware vision systems that hold up outside a notebook.',
   },
   {
     title: 'Edge AI Systems',
-    description: 'Building lightweight ML pipelines for embedded hardware where latency, power, and reliability all matter.',
+    description: 'TinyML and onboard compute pipelines where latency, power, and reliability matter from day one.',
   },
   {
-    title: 'Algorithms & Systems',
-    description: 'Strengthening problem-solving through algorithmic thinking, optimization, and efficient implementation.',
+    title: 'RL & Optimization',
+    description: 'Simulation-driven control, PPO experiments, reward design, and policy evaluation with clean diagnostics.',
   },
   {
-    title: 'Interface Design',
-    description: 'Designing clean interfaces that make technical systems easier to interact with and understand.',
+    title: 'Systems & Networking',
+    description: 'Reliable file transfer, hardware-software integration, debugging workflows, and sharp implementation details.',
   },
 ]
 
@@ -175,9 +197,9 @@ export const experience: Experience[] = [
     description:
       'Working on computer vision and machine learning systems through experiment-driven development, model evaluation, and practical implementation.',
     highlights: [
-      'Computer vision model experimentation',
-      'Dataset analysis and iterative debugging',
-      'Research-focused prototyping and evaluation',
+      'Computer vision experiments and evaluation loops',
+      'Dataset analysis, debugging, and model iteration',
+      'Research prototypes shaped toward practical use',
     ],
   },
 
@@ -186,25 +208,25 @@ export const experience: Experience[] = [
     company: 'DevLup Labs — plink Summer of Code',
     period: 'May 2025 – Nov. 2025',
     description:
-      'Contributed to plink, a peer-to-peer file transfer platform, working across the networking stack, secure file transfer pipeline, and the product revamp from CLI to a live web-based system.',
+      'Contributed to plink, a peer-to-peer file transfer platform, across networking, secure transfer flows, reliability, and product polish.',
     highlights: [
-      'Built direct file-transfer and networking workflows',
-      'Worked on transfer reliability and pipeline optimization',
-      'Contributed across backend systems and frontend revamp',
-      'Helped transition the project from CLI to live web deployment',
+      'Direct file-transfer workflows without centralized servers',
+      'UPnP, NAT hole punching, role reversal, and connection reliability',
+      'AES-256 encryption, secure key exchange, and file verification',
+      'Smart chunking for large-file transfer across platforms',
     ],
     link: 'https://plink-revamp-frontend.onrender.com',
   },
 
   {
-    role: 'Technical Project Builder',
+    role: 'Edge AI & Systems Projects',
     company: 'Personal Projects',
     period: 'Ongoing',
     description:
-      'Building embedded systems, edge AI, and computer vision projects that connect experimentation with deployable implementations.',
+      'Creating embedded, edge AI, and computer vision projects that connect experiments with deployable implementations.',
     highlights: [
-      'Edge AI and embedded vision systems',
-      'Rapid prototyping and iterative testing',
+      'Jetson, ESP32-CAM, Arduino, and Raspberry Pi workflows',
+      'Live inference, sensor feedback, and system integration',
       'Hardware-software system integration',
     ],
   },
@@ -287,6 +309,6 @@ export const leadership: Leadership[] = [
 
 export const contactMethods: ContactMethod[] = [
   { label: 'GitHub', value: 'github.com/aditya8281', href: 'https://github.com/aditya8281' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/aditya-rathod', href: 'https://www.linkedin.com/in/aditya-rathod/' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/adityarathod2912', href: 'https://www.linkedin.com/in/adityarathod2912/' },
   { label: 'Email', value: 'aditya.rathod2912@gmail.com', href: 'mailto:aditya.rathod2912@gmail.com' },
 ]

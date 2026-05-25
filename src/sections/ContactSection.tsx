@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="grid gap-8 lg:grid-cols-[1.3fr_0.9fr] xl:gap-12">
           <div className="space-y-6 rounded-[2rem] border border-cyan-400/10 bg-slate-950/85 p-8 shadow-glow">
             <p className="text-slate-300 leading-8">
-              I’m always up for a project that blends thoughtful engineering with a little spark. If you want to build something practical, playful, or a bit unexpected, say hi.
+              Open to projects around computer vision, edge AI, robotics, RL, and systems work. If the idea has real constraints and room to experiment, I’d be happy to talk.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               {contactMethods.map((method) => (
@@ -31,9 +31,8 @@ export default function ContactSection() {
                 Availability
               </p>
               <p className="mt-4 leading-7">
-                Open to collaborations in computer vision, embedded AI, and practical
-                systems. I’m most interested in building things that are useful, not just
-                impressive.
+                Interested in internships, research collaborations, and practical AI systems
+                that move from prototype to something usable.
               </p>
             </div>
         </div>

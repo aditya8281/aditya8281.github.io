@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const trackedSections = ['home', 'about', 'skills', 'projects', 'contact']
+const trackedSections = ['home', 'about', 'research', 'skills', 'projects', 'experience', 'leadership', 'contact']
 
 export function useActiveSection(defaultId = 'home') {
   const [activeSection, setActiveSection] = useState(defaultId)
@@ -17,15 +17,20 @@ export function useActiveSection(defaultId = 'home') {
     let frame = 0
 
     const updateActiveSection = () => {
-      const threshold = window.innerHeight * 0.35
+      const activationOffset = 140
+      const scrollPosition = window.scrollY + activationOffset
+      const pageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 8
       let currentSection = defaultId
 
-      sections.forEach((section) => {
-        const top = section.getBoundingClientRect().top
-        if (top <= threshold) {
-          currentSection = section.id
-        }
-      })
+      if (pageBottom) {
+        currentSection = sections[sections.length - 1]?.id ?? defaultId
+      } else {
+        sections.forEach((section) => {
+          if (section.offsetTop <= scrollPosition) {
+            currentSection = section.id
+          }
+        })
+      }
 
       setActiveSection((previous) => (previous === currentSection ? previous : currentSection))
       frame = 0

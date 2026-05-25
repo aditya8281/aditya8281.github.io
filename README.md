@@ -118,7 +118,7 @@ Feel free to reach out or create an issue for suggestions and improvements!
 
 ---
 
-**Built with ❤️ by Adi**
+**Crafted by Aditya Rathod**
 // eslint.config.js
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
