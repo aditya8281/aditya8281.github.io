@@ -1,5 +1,5 @@
 import type React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { cn } from '../utils/cn'
 
 interface MousePosition {
@@ -68,6 +68,17 @@ function hexToRgb(hex: string): number[] {
   return [red, green, blue]
 }
 
+function remapValue(
+  value: number,
+  start1: number,
+  end1: number,
+  start2: number,
+  end2: number,
+): number {
+  const remapped = ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
+  return remapped > 0 ? remapped : 0
+}
+
 export default function ParticlesBackground({
   className,
   children,
@@ -88,34 +99,12 @@ export default function ParticlesBackground({
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const animationRef = useRef<number | null>(null)
-  const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1
+  const animateStepRef = useRef<() => void>(() => undefined)
+  const rgb = useMemo(() => hexToRgb(color), [color])
 
-  useEffect(() => {
-    if (canvasRef.current) {
-      context.current = canvasRef.current.getContext('2d')
-    }
-    initCanvas()
-    animate()
-    window.addEventListener('resize', initCanvas)
-
-    return () => {
-      window.removeEventListener('resize', initCanvas)
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
-      }
-    }
-  }, [color])
-
-  useEffect(() => {
-    onMouseMove()
-  }, [mousePosition.x, mousePosition.y])
-
-  useEffect(() => {
-    initCanvas()
-  }, [refresh])
-
-  const resizeCanvas = () => {
+  const resizeCanvas = useCallback(() => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
+      const dpr = window.devicePixelRatio || 1
       canvasSize.current.w = canvasContainerRef.current.offsetWidth
       canvasSize.current.h = canvasContainerRef.current.offsetHeight
       canvasRef.current.width = canvasSize.current.w * dpr
@@ -125,9 +114,9 @@ export default function ParticlesBackground({
       context.current.setTransform(1, 0, 0, 1, 0, 0)
       context.current.scale(dpr, dpr)
     }
-  }
+  }, [])
 
-  const circleParams = (): Circle => {
+  const circleParams = useCallback((): Circle => {
     const x = Math.floor(Math.random() * canvasSize.current.w)
     const y = Math.floor(Math.random() * canvasSize.current.h)
     const pSize = Math.floor(Math.random() * 2) + size
@@ -148,11 +137,9 @@ export default function ParticlesBackground({
       dy,
       magnetism,
     }
-  }
+  }, [size])
 
-  const rgb = hexToRgb(color)
-
-  const drawCircle = (circle: Circle, update = false) => {
+  const drawCircle = useCallback((circle: Circle, update = false) => {
     if (context.current) {
       const { x, y, translateX, translateY, size: circleSize, alpha } = circle
       context.current.save()
@@ -167,21 +154,15 @@ export default function ParticlesBackground({
         circles.current.push(circle)
       }
     }
-  }
+  }, [rgb])
 
-  const clearContext = () => {
+  const clearContext = useCallback(() => {
     if (context.current) {
       context.current.clearRect(0, 0, canvasSize.current.w, canvasSize.current.h)
     }
-  }
+  }, [])
 
-  const initCanvas = () => {
-    resizeCanvas()
-    circles.current.length = 0
-    drawParticles()
-  }
-
-  const onMouseMove = () => {
+  const onMouseMove = useCallback(() => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect()
       const { w, h } = canvasSize.current
@@ -193,28 +174,23 @@ export default function ParticlesBackground({
         mouse.current.y = y
       }
     }
-  }
+  }, [mousePosition.x, mousePosition.y])
 
-  const remapValue = (
-    value: number,
-    start1: number,
-    end1: number,
-    start2: number,
-    end2: number,
-  ): number => {
-    const remapped = ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
-    return remapped > 0 ? remapped : 0
-  }
-
-  const drawParticles = () => {
+  const drawParticles = useCallback(() => {
     const particleCount = quantity
     for (let i = 0; i < particleCount; i++) {
       const circle = circleParams()
       drawCircle(circle)
     }
-  }
+  }, [circleParams, drawCircle, quantity])
 
-  const animate = () => {
+  const initCanvas = useCallback(() => {
+    resizeCanvas()
+    circles.current.length = 0
+    drawParticles()
+  }, [drawParticles, resizeCanvas])
+
+  const animate = useCallback(() => {
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
       const edge = [
@@ -255,8 +231,36 @@ export default function ParticlesBackground({
       }
     })
 
-    animationRef.current = window.requestAnimationFrame(animate)
-  }
+    animationRef.current = window.requestAnimationFrame(() => animateStepRef.current())
+  }, [circleParams, clearContext, drawCircle, ease, staticity, vx, vy])
+
+  useEffect(() => {
+    animateStepRef.current = animate
+  }, [animate])
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      context.current = canvasRef.current.getContext('2d')
+    }
+    initCanvas()
+    animate()
+    window.addEventListener('resize', initCanvas)
+
+    return () => {
+      window.removeEventListener('resize', initCanvas)
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [animate, initCanvas])
+
+  useEffect(() => {
+    onMouseMove()
+  }, [onMouseMove])
+
+  useEffect(() => {
+    initCanvas()
+  }, [initCanvas, refresh])
 
   return (
     <div

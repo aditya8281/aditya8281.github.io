@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useMousePosition } from '../hooks/useMousePosition'
 
 export default function BackgroundEffects() {
+  const easeInOut = 'easeInOut' as const
   const mouse = useMousePosition()
 
   const mouseX = mouse.x
@@ -24,7 +25,7 @@ export default function BackgroundEffects() {
       transition: { 
         duration: 32, 
         repeat: Infinity, 
-        ease: [0.42, 0, 0.58, 1] as any,
+        ease: easeInOut,
         times: [0, 0.25, 0.5, 0.75, 1],
       },
     },
@@ -38,7 +39,7 @@ export default function BackgroundEffects() {
       transition: { 
         duration: 36, 
         repeat: Infinity, 
-        ease: [0.42, 0, 0.58, 1] as any,
+        ease: easeInOut,
         times: [0, 0.25, 0.5, 0.75, 1],
       },
     },
@@ -52,7 +53,7 @@ export default function BackgroundEffects() {
       transition: {
         duration: 8,
         repeat: Infinity,
-        ease: [0.42, 0, 0.58, 1] as any,
+        ease: easeInOut,
       },
     },
   }

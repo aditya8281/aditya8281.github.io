@@ -13,7 +13,7 @@ export const subtleHover = {
   transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] },
 }
 
-export const softSpring: any = { type: 'spring', stiffness: 260, damping: 28 }
+export const softSpring: Transition = { type: 'spring', stiffness: 260, damping: 28 }
 
 export const cardReveal = {
   hidden: { opacity: 0, y: 22, filter: 'blur(8px)' },
@@ -24,3 +24,4 @@ export const floatHover = {
   rest: { y: 0, rotateX: 0, rotateY: 0 },
   hover: { y: -8, rotateX: 1.5, rotateY: -1.5 },
 }
+import type { Transition } from 'framer-motion'

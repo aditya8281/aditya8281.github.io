@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
-
-const trackedSections = ['home', 'about', 'research', 'skills', 'projects', 'experience', 'leadership', 'contact']
+import { getScrollOffset, trackedSectionIds } from '../utils/sections'
 
 export function useActiveSection(defaultId = 'home') {
   const [activeSection, setActiveSection] = useState(defaultId)
 
   useEffect(() => {
-    const sections = trackedSections
+    const sections = trackedSectionIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section))
 
@@ -17,7 +16,7 @@ export function useActiveSection(defaultId = 'home') {
     let frame = 0
 
     const updateActiveSection = () => {
-      const activationOffset = 140
+      const activationOffset = getScrollOffset()
       const scrollPosition = window.scrollY + activationOffset
       const pageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 8
       let currentSection = defaultId

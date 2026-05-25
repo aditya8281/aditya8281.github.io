@@ -49,7 +49,7 @@ export default function ResumeModal({ open, onClose }: Props) {
               </button>
             </div>
 
-            <iframe src={pdfUrl} title="Resume PDF" className="w-full h-full" />
+            <iframe src={pdfUrl} title="Resume PDF" className="w-full h-full" sandbox="allow-same-origin allow-scripts" />
           </motion.div>
         </motion.div>
       )}

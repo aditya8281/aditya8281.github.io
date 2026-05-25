@@ -1,146 +1,95 @@
-# Adi Portfolio
+# Aditya Rathod Portfolio
 
-A modern, interactive personal portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, terminal-style intro, particle effects, and a responsive design.
+Personal portfolio for Aditya Rathod, an Electrical Engineering student at IIT Jodhpur working across edge AI, computer vision, reinforcement learning, embedded systems, and peer-to-peer networking.
 
-## 🌟 Features
+The site is built to feel like a technical profile rather than a static resume: fast, dark, responsive, animated, and focused on real project details.
 
-- **Interactive Hero Section** - Terminal-style typewriter introduction with smooth animations
-- **Particle Effects** - Dynamic background particles and animated orbs
-- **Smooth Animations** - Framer Motion-powered animations and transitions
-- **Responsive Design** - Fully responsive layout using Tailwind CSS
-- **Dark Theme** - Modern dark-themed UI with great contrast
-- **Multiple Sections**:
-  - About Section
-  - Skills with categorized badges
-  - Projects with modal previews
-  - Experience timeline
-  - Leadership highlights
-  - Contact information
-  - Exploring section
+## About Me
 
-## 🚀 Quick Start
+I work on practical AI and systems projects with real constraints: live inference, embedded hardware, sensor feedback, networking reliability, debugging loops, and measurable performance.
 
-### Prerequisites
+Current focus areas:
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Edge AI and onboard vision systems
+- Computer vision and real-time YOLO inference
+- Reinforcement learning with PPO and simulation diagnostics
+- Embedded systems with Jetson, ESP32-CAM, Arduino, and Raspberry Pi workflows
+- Peer-to-peer networking, secure transfer flows, and systems development
 
-### Installation
+## Featured Work
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd adi-portfolio
+- **Quadcopter Drone with Onboard Vision**  
+  Jetson Orin NX, YOLO, edge AI, real-time inference. Reached 10-14 FPS on live camera feeds and sustained about 20 minutes of flight time.
+
+- **Adaptive Traffic Signal Control**  
+  PPO-based traffic signal optimizer using PyTorch, Stable-Baselines3, Gymnasium, and TensorBoard. Trained for 500,000+ simulation steps.
+
+- **Edge AI Face Recognition System**  
+  ESP32-CAM and Edge Impulse TinyML prototype with on-device inference and about 90% internal-test accuracy.
+
+- **Autonomous Maze-Solving Robot**  
+  Arduino Uno, ultrasonic sensors, L298N motor driver, differential drive, and PID control for wall-following navigation.
+
+- **plink - Peer-to-Peer File Transfer**  
+  Python systems project with direct device-to-device sharing, AES-256 encryption, UPnP, NAT hole punching, file verification, and smart chunking.
+
+## Site Highlights
+
+- Responsive portfolio layout for desktop and mobile
+- Animated hero with terminal-style intro
+- Smooth section navigation with active-state tracking
+- Mobile navigation drawer with scroll locking and blur backdrop
+- Project cards with metrics, tags, hover motion, and detail modals
+- Resume PDF modal with background scroll lock
+- Skills, research interests, experience timeline, leadership cards, and contact links
+- Custom AR favicon and consistent dark cyan/violet visual system
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+
+## Project Structure
+
+```text
+src/
+  assets/       Profile images and resume PDF
+  components/   Reusable UI components
+  data/         Portfolio content and links
+  hooks/        Scroll, active-section, modal, and interaction hooks
+  sections/     Page sections
+  utils/        Animation and utility helpers
+public/         Static assets such as favicon
 ```
 
-2. Install dependencies:
+## Run Locally
+
 ```bash
 npm install
-```
-
-3. Start development server:
-```bash
 npm run dev
 ```
 
-The website will be available at `http://localhost:5173`
-
-## 📦 Build
-
-To create an optimized production build:
+Build for production:
 
 ```bash
 npm run build
 ```
 
-The build output will be in the `dist/` directory.
+Preview the production build:
 
-## 🛠️ Available Scripts
-
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production
-- `npm run lint` - Run ESLint to check code quality
-- `npm run preview` - Preview production build locally
-
-## 📁 Project Structure
-
-```
-├── src/
-│   ├── components/          # Reusable React components
-│   ├── sections/            # Page sections
-│   ├── hooks/               # Custom React hooks
-│   ├── utils/               # Utility functions
-│   ├── data/                # Portfolio data
-│   ├── assets/              # Images and static assets
-│   ├── App.tsx              # Main App component
-│   ├── main.tsx             # Entry point
-│   └── index.css            # Global styles
-├── public/                  # Static files
-├── index.html               # HTML entry point
-├── vite.config.ts           # Vite configuration
-├── tsconfig.json            # TypeScript configuration
-├── tailwind.config.ts       # Tailwind CSS configuration
-└── eslint.config.js         # ESLint configuration
+```bash
+npm run preview
 ```
 
-## 🎨 Technologies
+## Links
 
-- **React** - UI library
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **Vite** - Fast build tool and dev server
-- **React Icons** - Icon library
-
-## 🎯 Customization
-
-### Update Portfolio Data
-
-Edit `src/data/portfolio.ts` to customize:
-- Personal information
-- Skills and categories
-- Projects and experience
-- Links and contact information
-
-### Modify Styling
-
-- **Colors & Theme**: Update `tailwind.config.ts`
-- **Global Styles**: Edit `src/index.css`
-- **Component Styles**: Modify individual component CSS files
-
-## 📝 License
-
-This project is open source and available under the MIT License.
-
-## 💬 Questions?
-
-Feel free to reach out or create an issue for suggestions and improvements!
+- GitHub: [github.com/aditya8281](https://github.com/aditya8281)
+- LinkedIn: [linkedin.com/in/adityarathod2912](https://www.linkedin.com/in/adityarathod2912/)
+- Email: [aditya.rathod2912@gmail.com](mailto:aditya.rathod2912@gmail.com)
 
 ---
 
-**Crafted by Aditya Rathod**
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Crafted by Aditya Rathod.

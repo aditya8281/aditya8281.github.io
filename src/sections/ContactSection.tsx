@@ -18,7 +18,7 @@ export default function ContactSection() {
                   href={method.href}
                   className="rounded-3xl border border-cyan-400/10 bg-slate-950/75 px-5 py-4 text-sm text-slate-100 transition hover:border-cyan-300/30 hover:bg-slate-900/90 hover:text-white focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                   target={method.href.startsWith('http') ? '_blank' : undefined}
-                  rel={method.href.startsWith('http') ? 'noreferrer' : undefined}
+                  rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 >
                   <p className="text-xs uppercase tracking-[0.24em] text-cyan-300/80">{method.label}</p>
                   <p className="mt-2 font-medium text-white break-words">{method.value}</p>

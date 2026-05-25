@@ -59,7 +59,7 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
               <a
                 href="https://github.com/aditya8281"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="group inline-flex h-10 w-10 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-200 hover:border-cyan-300/40 hover:bg-cyan-400/20 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 aria-label="GitHub"
               >
@@ -70,7 +70,7 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
               <a
                 href="https://www.linkedin.com/in/adityarathod2912/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="group inline-flex h-10 w-10 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-200 hover:border-cyan-300/40 hover:bg-cyan-400/20 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 aria-label="LinkedIn"
               >

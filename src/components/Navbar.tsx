@@ -47,7 +47,6 @@ function NavLink({
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [portalReady, setPortalReady] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [indicator, setIndicator] = useState({ left: 0, width: 0 })
   const navRef = useRef<HTMLDivElement | null>(null)
@@ -57,10 +56,6 @@ export default function Navbar() {
   const navItems = navLinks
 
   useBodyScrollLock(isOpen)
-
-  useEffect(() => {
-    setPortalReady(true)
-  }, [])
 
   useEffect(() => {
     const onScroll = () => {
@@ -120,8 +115,15 @@ export default function Navbar() {
   }, [activeSection])
 
   const handleNavClick = (id: string) => {
+    if (!isOpen) {
+      handleScroll(id)
+      return
+    }
+
     setIsOpen(false)
-    handleScroll(id)
+    window.setTimeout(() => {
+      window.requestAnimationFrame(() => handleScroll(id))
+    }, 0)
   }
 
   const mobileMenu = (
@@ -210,6 +212,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
+        data-site-navbar
         className={cn(
           'fixed inset-x-0 top-0 z-[100] border-b border-transparent bg-slate-950/20 backdrop-blur-xl transition-all duration-400 ease-out',
           scrolled ? 'border-white/10 bg-slate-950/86 shadow-[0_22px_70px_rgba(8,15,31,0.38)]' : 'shadow-none'
@@ -263,7 +266,7 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {portalReady ? createPortal(mobileMenu, document.body) : null}
+      {createPortal(mobileMenu, document.body)}
     </>
   )
 }
