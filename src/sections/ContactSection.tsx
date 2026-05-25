@@ -26,12 +26,16 @@ export default function ContactSection() {
               ))}
             </div>
           </div>
-          <div className="rounded-[2rem] border border-cyan-400/10 bg-slate-950/85 p-8 text-slate-300 shadow-2xl">
-            <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/80">Availability</p>
-            <p className="mt-4 leading-7">
-              Open to collaborations in ML, embedded AI, and product-focused experiments. I’m happiest when the goal is useful, not just flashy.
-            </p>
-          </div>
+            <div className="rounded-[2rem] border border-cyan-400/10 bg-slate-950/85 p-8 text-slate-300 shadow-2xl">
+              <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/80">
+                Availability
+              </p>
+              <p className="mt-4 leading-7">
+                Open to collaborations in computer vision, embedded AI, and practical
+                systems. I’m most interested in building things that are useful, not just
+                impressive.
+              </p>
+            </div>
         </div>
       </div>
     </section>

@@ -23,6 +23,7 @@ export type Experience = {
   period: string
   description: string
   highlights?: string[]
+  link?: string
 }
 
 export type Leadership = {
@@ -192,6 +193,7 @@ export const experience: Experience[] = [
       'Contributed across backend systems and frontend revamp',
       'Helped transition the project from CLI to live web deployment',
     ],
+    link: 'https://plink-revamp-frontend.onrender.com',
   },
 
   {
@@ -224,39 +226,62 @@ export const experience: Experience[] = [
 export const leadership: Leadership[] = [
   {
     role: 'Secretary',
-    organization: 'Designerds - the designing club of IIT Jodhpur',
+    organization: 'Designerds — Design Club, IIT Jodhpur',
     period: 'Aug. 2025 – Apr. 2026',
-    highlights: ['Organized multiple workshops teaching design principles and different design softwares. organized different design competitions and events throughout the year.'],
+    highlights: [
+      'Organized workshops on design principles and industry-standard design tools.',
+      'Coordinated design competitions and club events throughout the academic year.',
+    ],
   },
+
   {
     role: 'Student Guide',
-    organization: 'SWC',
+    organization: 'Student Wellbeing Committee (SWC)',
     period: 'Aug. 2025 – Apr. 2026',
-    highlights: ['Guided new students through their academic and personal growth journey. mentored 12 mentees.'],
+    highlights: [
+      'Mentored 12 first-year students through academic and personal transition challenges.',
+      'Provided consistent guidance to support student adaptation and growth.',
+    ],
   },
+
   {
     role: 'Core Member',
-    organization: 'Game-dev Society',
+    organization: 'Inside — Game Development Society',
     period: 'Aug. 2025 – Apr. 2026',
-    highlights: ['Mentored new members and organized technical workshops. mentored one game development project.'],
+    highlights: [
+      'Mentored junior members through technical workshops and collaborative sessions.',
+      'Guided a student game-development project from ideation through implementation.',
+    ],
   },
+
   {
     role: 'Assistant Head',
-    organization: 'Ignus \'26',
+    organization: "Ignus '26",
     period: 'Jan. 2026 – Feb. 2026',
-    highlights: ['Organized design competitions and led a team of volunteers for a campus cultural fest.'],
+    highlights: [
+      'Led volunteers for design-focused event execution during IIT Jodhpur’s cultural fest.',
+      'Organized and coordinated campus-wide design competitions.',
+    ],
   },
+
   {
     role: 'Assistant Head',
-    organization: 'Prometeo \'26',
+    organization: "Prometeo '26",
     period: 'Oct. 2025 – Jan. 2026',
-    highlights: ['Lead 15 volunteers and contributed to event design for a campus tech fest.'],
+    highlights: [
+      'Led a team of 15 volunteers for event coordination and execution.',
+      'Contributed to event design and operational planning for the annual tech fest.',
+    ],
   },
+
   {
     role: 'Assistant Head',
-    organization: 'Varchas \'25',
+    organization: "Varchas '25",
     period: 'Sep. 2025 – Nov. 2025',
-    highlights: ['Lead 20 volunteers and contributed to event design for a campus sports fest.'],
+    highlights: [
+      'Led 20 volunteers during event operations and coordination.',
+      'Supported design and execution workflows for the annual sports fest.',
+    ],
   },
 ]
 

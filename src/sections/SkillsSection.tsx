@@ -6,27 +6,63 @@ import AnimatedOrbs from '../components/AnimatedOrbs'
 
 export default function SkillsSection() {
   const onMove = (e: React.MouseEvent) => {
-    /* placeholder for mouse-follow microinteractions; intentionally minimal */
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
     void (e.clientX - rect.left)
     void (e.clientY - rect.top)
   }
 
   const languages = ['C', 'C++', 'Python', 'JavaScript', 'TypeScript']
-  const ml = [
-    'PyTorch', 'TensorFlow', 'Scikit-learn', 'NumPy', 'Pandas', 'OpenCV', 'Stable-Baselines3', 'Gymnasium',
-    'Reinforcement Learning', 'Deep Learning', 'CNNs', 'RNNs', 'Transformers', 'Computer Vision', 'YOLO', 'Edge AI', 'TinyML',
+
+  const visionAI = [
+    'PyTorch',
+    'TensorFlow',
+    'Scikit-learn',
+    'NumPy',
+    'OpenCV',
+    'Computer Vision',
+    'Deep Learning',
+    'YOLO',
+    'Edge AI',
+    'TinyML',
   ]
+
   const systems = [
-    'Linux', 'Networking', 'AES-256 Encryption', 'Multithreading', 'Embedded Systems', 'ESP32', 'Arduino', 'Raspberry Pi', 'Jetson Orin NX', 'PID Control',
+    'Linux',
+    'Networking',
+    'Embedded Systems',
+    'ESP32-CAM',
+    'Arduino',
+    'Jetson Orin NX',
+    'PID Control',
+    'AES-256 Encryption',
   ]
-  const creative = ['Unity', 'Unreal Engine', 'Blender', 'Game Development', '3D Design']
-  const design = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'UI/UX Design', 'Git', 'GitHub', 'Jupyter', 'MATLAB']
+
+  const tools = [
+    'Git',
+    'GitHub',
+    'Jupyter',
+    'MATLAB',
+    'TensorBoard',
+    'Gymnasium',
+    'Stable-Baselines3',
+  ]
+
+  const design = [
+    'Figma',
+    'UI/UX Design',
+    'Adobe Photoshop',
+    'Adobe Illustrator',
+    'Interface Design',
+  ]
 
   return (
     <section id="skills" className="section-vert">
       <div className="app-container">
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           <SectionHeading title="Skills" subtitle="Expertise" />
         </motion.div>
 
@@ -37,10 +73,10 @@ export default function SkillsSection() {
 
           <div className="relative z-10 grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             <SkillCategory title="Languages" items={languages} />
-            <SkillCategory title="AI / Machine Learning" items={ml} />
+            <SkillCategory title="Vision & AI" items={visionAI} />
             <SkillCategory title="Systems & Embedded" items={systems} />
-            <SkillCategory title="Creative & Game Dev" items={creative} />
-            <SkillCategory title="Design & Productivity" items={design} />
+            <SkillCategory title="Tools & Frameworks" items={tools} />
+            <SkillCategory title="Design" items={design} />
           </div>
         </div>
       </div>

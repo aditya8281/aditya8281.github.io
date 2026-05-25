@@ -38,9 +38,26 @@ export default function ExperienceSection() {
                       <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/80">{item.company}</p>
                       <h3 className="mt-3 text-2xl font-semibold text-white break-words max-w-full">{item.role}</h3>
                     </div>
-                    <span className="inline-flex rounded-full border border-cyan-400/20 bg-slate-950/80 px-4 py-2 text-xs uppercase tracking-[0.26em] text-cyan-200">
-                      {item.period}
-                    </span>
+                    <div className="inline-flex items-center gap-2">
+                      <span className="inline-flex rounded-full border border-cyan-400/20 bg-slate-950/80 px-4 py-2 text-xs uppercase tracking-[0.26em] text-cyan-200">
+                        {item.period}
+                      </span>
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Open related link"
+                          className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-white/6 bg-slate-900/70 text-cyan-200 transition transform hover:scale-105 hover:bg-slate-900/90"
+                        >
+                          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 3h6v6" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 14L21 3" />
+                          </svg>
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
 
                   <p className="mt-5 text-slate-300 leading-7 break-words">{item.description}</p>
