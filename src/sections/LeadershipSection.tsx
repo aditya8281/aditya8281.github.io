@@ -9,7 +9,7 @@ const floatingVariant = {
 
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="px-6 py-20 sm:px-8">
+    <section id="leadership" className="px-6 section-vert sm:px-8">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }}>
           <SectionHeading title="Campus Leadership" subtitle="Student organisations" />
@@ -27,13 +27,13 @@ export default function LeadershipSection() {
               whileHover={{ y: -6 }}
               className="group rounded-[2rem] border border-cyan-400/10 bg-slate-950/85 p-6 shadow-lg shadow-cyan-500/5 transition duration-300 hover:border-cyan-300/30 hover:bg-slate-900/90 hover:shadow-[0_30px_90px_rgba(34,211,238,0.18)]"
             >
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <div>
+              <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
                   <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/70">{item.organization}</p>
                   <h3 className="mt-3 text-2xl font-semibold text-white">{item.role}</h3>
                 </div>
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-400/10 text-cyan-200 ring-1 ring-cyan-300/10">
-                  {item.period.split(' – ')[0]}
+                <span className="inline-flex flex-shrink-0 min-w-[4.75rem] h-14 w-14 items-center justify-center rounded-[1.25rem] bg-cyan-400/10 text-cyan-200 ring-1 ring-cyan-300/10 px-2 text-center text-[0.75rem] leading-tight sm:min-w-[5.5rem] sm:h-16 sm:w-16">
+                  {item.period}
                 </span>
               </div>
               <div className="space-y-3 text-slate-300">

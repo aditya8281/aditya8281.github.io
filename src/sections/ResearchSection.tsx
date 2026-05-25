@@ -6,7 +6,7 @@ export default function ResearchSection() {
   const researcher = experience.find((e) => e.role.toLowerCase().includes('researcher'))
 
   return (
-    <section id="research" className="py-20">
+    <section id="research" className="section-vert">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="Research & Interests" subtitle="Areas I'm exploring" />
@@ -15,7 +15,7 @@ export default function ResearchSection() {
         <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="mt-6 grid gap-6 md:grid-cols-2">
           <div className="glass-card p-6">
             <h3 className="text-lg font-semibold text-white break-words max-w-full">Focus</h3>
-            <p className="mt-3 text-slate-300 break-words">Computer vision research, model evaluation, and applied deep learning problems that bridge experimental results with usable prototypes.</p>
+            <p className="mt-3 text-slate-300 break-words">I spend time tuning vision systems, chasing down model quirks, and making research feel more like a tool than a demo.</p>
             {researcher && (
               <ul className="mt-4 list-disc pl-5 text-slate-300 space-y-2">
                 {researcher.highlights?.map((h) => (
@@ -28,10 +28,10 @@ export default function ResearchSection() {
           <div className="glass-card p-6">
             <h3 className="text-lg font-semibold text-white break-words max-w-full">Interests</h3>
             <ul className="mt-3 space-y-2 text-slate-300">
-              <li>Improving model robustness and evaluation workflows</li>
-              <li>Efficient architectures for vision tasks</li>
-              <li>Bridging prototypes to practical tools</li>
-              <li>Algorithmic problem solving and performance</li>
+              <li>Making models less brittle and more predictable</li>
+              <li>Designing vision systems that can really run on devices</li>
+              <li>Turning prototypes into tools people can use</li>
+              <li>Solving problems with code that feels crisp and clear</li>
             </ul>
           </div>
         </motion.div>

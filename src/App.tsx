@@ -9,14 +9,18 @@ import ParticlesBackground from './components/ParticlesBackground'
 import ProjectsSection from './sections/ProjectsSection'
 import SkillsSection from './sections/SkillsSection'
 import ResearchSection from './sections/ResearchSection'
+import ResumeModal from './components/ResumeModal'
+import { useState } from 'react'
 
 function App() {
+  const [showResume, setShowResume] = useState(false)
+
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-100">
       <ParticlesBackground />
       <Navbar />
       <main className="relative z-10 w-full px-0">
-        <HeroSection />
+        <HeroSection onOpenResume={() => setShowResume(true)} />
         <AboutSection />
         <ResearchSection />
         <SkillsSection />
@@ -26,6 +30,7 @@ function App() {
         <ContactSection />
       </main>
       <Footer />
+      <ResumeModal open={showResume} onClose={() => setShowResume(false)} />
     </div>
   )
 }

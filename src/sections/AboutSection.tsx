@@ -7,8 +7,8 @@ import { aboutHighlights, projects, skills, exploringTopics } from '../data/port
 import { useTypewriter } from '../hooks/useTypewriter'
 
 export default function AboutSection() {
-  const headline = 'ML & Computer Vision Student'
-  const typeText = useTypewriter(['researching CV models', 'building prototypes', 'practicing DSA'], 90, 1200)
+  const headline = 'ML & Vision Maker'
+  const typeText = useTypewriter(['tuning vision models', 'building useful prototypes', 'solving algorithm puzzles'], 90, 1200)
 
   const stats = useMemo(() => {
     return {
@@ -19,7 +19,7 @@ export default function AboutSection() {
   }, [])
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="section-vert">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="About" subtitle="Profile" />
@@ -33,7 +33,7 @@ export default function AboutSection() {
               <p className="mt-1 text-sm text-slate-300">{headline} — Electrical Engineering, IIT Jodhpur</p>
 
               <p className="mt-6 text-slate-300 leading-7 sm:text-lg">
-                3rd-year undergraduate and researcher at IIT Jodhpur focused on machine learning, deep learning, and computer vision. I enjoy practicing algorithms, building practical projects, and exploring product-minded design.
+                I’m a 3rd-year Electrical Engineering student at IIT Jodhpur who likes to make models behave outside the lab. I build practical projects while exploring how design, code, and data come together.
               </p>
             </motion.div>
 

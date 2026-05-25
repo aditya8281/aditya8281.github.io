@@ -24,7 +24,7 @@ export default function SkillsSection() {
   const design = ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'UI/UX Design', 'Git', 'GitHub', 'Jupyter', 'MATLAB']
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="section-vert">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <SectionHeading title="Skills" subtitle="Expertise" />
@@ -35,7 +35,7 @@ export default function SkillsSection() {
             <AnimatedOrbs />
           </div>
 
-          <div className="relative z-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="relative z-10 grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             <SkillCategory title="Languages" items={languages} />
             <SkillCategory title="AI / Machine Learning" items={ml} />
             <SkillCategory title="Systems & Embedded" items={systems} />

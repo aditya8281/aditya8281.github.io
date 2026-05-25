@@ -11,7 +11,7 @@ const fadeIn = {
   visible: { opacity: 1, y: 0 },
 }
 
-export default function HeroSection() {
+export default function HeroSection({ onOpenResume }: { onOpenResume?: () => void }) {
   const typedRole = useTypewriter(hero.roles, 120, 1800)
   const handleScroll = useScrollToSection()
 
@@ -75,7 +75,7 @@ export default function HeroSection() {
 
             <div className="flex w-full items-center gap-2 rounded-lg border border-white/8 bg-white/4 px-3 py-2 sm:w-auto">
               <a
-                href="https://github.com"
+                href="https://github.com/aditya8281"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex h-8 w-8 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-200 hover:border-cyan-300/40 hover:bg-cyan-400/20 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
@@ -86,7 +86,7 @@ export default function HeroSection() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/adityarathod2912"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex h-8 w-8 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-200 hover:border-cyan-300/40 hover:bg-cyan-400/20 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
@@ -96,15 +96,16 @@ export default function HeroSection() {
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.006 1.419-.103.249-.129.597-.129.946v5.44h-3.554s.05-8.814 0-9.737h3.554v1.378c.43-.664 1.199-1.61 2.920-1.61 2.134 0 3.735 1.39 3.735 4.374v5.595zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.955.771-1.71 1.958-1.71 1.187 0 1.914.755 1.939 1.71 0 .951-.752 1.71-1.982 1.71zm1.581 11.597H3.635V9.172h3.283v11.28zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
                 </svg>
               </a>
-              <a
-                href="#"
+              <button
+                type="button"
+                onClick={() => onOpenResume ? onOpenResume() : null}
                 className="group inline-flex h-8 w-8 items-center justify-center rounded-md border border-cyan-400/20 bg-cyan-400/10 text-cyan-300 transition-all duration-200 hover:border-cyan-300/40 hover:bg-cyan-400/20 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                 aria-label="Download CV"
               >
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -135,9 +136,9 @@ export default function HeroSection() {
                 <ProfileImage alt="Aditya Rathod profile photo" />
               </div>
               <div>
-                <p className="text-[0.65rem] uppercase tracking-[0.36em] text-cyan-300/70">AI Engineer Profile</p>
-                <h2 className="mt-4 text-lg font-semibold text-white">Cinematic systems thinking</h2>
-                <p className="mt-3 text-sm leading-7 text-slate-400">A premium creative edge AI aesthetic with immersive lighting and modern depth.</p>
+                <p className="text-[0.65rem] uppercase tracking-[0.36em] text-cyan-300/70">Aditya Rathod</p>
+                <h2 className="mt-4 text-lg font-semibold text-white">Curious, practical, and product-minded</h2>
+                <p className="mt-3 text-sm leading-7 text-slate-400">I like making vision systems that are smarter, simpler, and actually useful beyond the research page.</p>
               </div>
             </div>
           </div>

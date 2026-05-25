@@ -124,7 +124,30 @@ section[id] {
   }
 
   .section-container {
-    @apply mx-auto w-full px-6 py-20 sm:px-8 md:px-12 lg:px-20 xl:px-28;
+    @apply mx-auto w-full px-6 sm:px-8 md:px-12 lg:px-20 xl:px-28;
+  }
+
+  /* Responsive vertical spacing for sections. Uses clamp() and viewport units to adapt
+     spacing by screen size and orientation for balanced visual rhythm. */
+  .section-vert {
+    padding-top: clamp(1.25rem, 4vh, 3.75rem);
+    padding-bottom: clamp(1.25rem, 4vh, 3.75rem);
+  }
+
+  /* Slightly reduced vertical spacing on landscape devices (wider, less vertical space) */
+  @media (orientation: landscape) {
+    .section-vert {
+      padding-top: clamp(0.9rem, 3vh, 2.5rem);
+      padding-bottom: clamp(0.9rem, 3vh, 2.5rem);
+    }
+  }
+
+  /* Larger screens get a bit more breathing room */
+  @media (min-width: 1024px) {
+    .section-vert {
+      padding-top: clamp(1.75rem, 6vh, 5rem);
+      padding-bottom: clamp(1.75rem, 6vh, 5rem);
+    }
   }
 
   .glass-panel {

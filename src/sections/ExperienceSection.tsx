@@ -9,7 +9,7 @@ const timelineVariants = {
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="px-6 py-20 sm:px-8">
+    <section id="experience" className="px-6 section-vert sm:px-8">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }}>
           <SectionHeading title="Experience" subtitle="Timeline" />

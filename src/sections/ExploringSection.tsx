@@ -9,7 +9,7 @@ const cardVariant = {
 
 export default function ExploringSection() {
   return (
-    <section id="exploring" className="py-20">
+    <section id="exploring" className="section-vert">
       <div className="app-container">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={cardVariant} transition={{ duration: 0.7 }}>
           <SectionHeading title="Currently Exploring" subtitle="Focus areas" />

@@ -32,48 +32,52 @@ export default function ProjectCard({ project, onOpen }: Props) {
       ref={el}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      whileHover={{ scale: 1.008 }}
+      whileHover={{ scale: 1.01 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.54, ease: 'easeOut' }}
-      className="relative rounded-xl p-5 backdrop-blur-md"
+      className="relative rounded-[2rem] p-6 overflow-hidden"
     >
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/4 via-blue-400/4 to-indigo-400/4 blur-sm opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.12),_transparent_28%)] opacity-90 pointer-events-none" />
+      <div className="absolute top-4 right-4 h-20 w-20 rounded-full bg-cyan-400/10 blur-2xl pointer-events-none" />
 
-      <div className="relative z-10 flex h-full flex-col justify-between glass-card min-h-0">
+      <div className="relative z-10 flex h-full flex-col justify-between glass-card min-h-[22rem] border-white/10 bg-slate-950/85">
         <div>
-          <p className="text-sm uppercase tracking-widest text-cyan-300/80">Project</p>
-          <h3 className="mt-3 text-lg font-semibold text-white leading-snug break-words max-w-full">{project.title}</h3>
-          <p className="mt-3 text-sm text-slate-300 leading-6 break-words max-w-full whitespace-normal">{project.description}</p>
+          <div className="inline-flex items-center gap-2 rounded-full bg-cyan-400/10 px-3 py-1 text-xs uppercase tracking-[0.28em] text-cyan-200 shadow-[0_10px_30px_rgba(34,211,238,0.08)]">
+            <span className="h-2.5 w-2.5 rounded-full bg-cyan-300/70" />
+            Project
+          </div>
+          <h3 className="mt-4 text-2xl font-semibold text-white leading-snug break-words max-w-full">{project.title}</h3>
+          <p className="mt-4 text-sm text-slate-300 leading-7 break-words max-w-full whitespace-normal">{project.description}</p>
 
-          <div className="mt-4 flex flex-wrap gap-2 min-w-0">
+          <div className="mt-6 flex flex-wrap gap-2 min-w-0">
             {project.tools.map((t) => (
-              <span key={t} className="rounded-full bg-slate-900/40 px-3 py-1 text-xs text-slate-200 border border-cyan-400/10 max-w-full break-words">
+              <span key={t} className="rounded-full bg-slate-900/70 px-3 py-1.5 text-xs font-medium text-slate-100 border border-cyan-400/10 shadow-sm hover:border-cyan-300/20">
                 {t}
               </span>
             ))}
           </div>
         </div>
 
-          <div className="mt-5 flex items-center justify-between">
-          <div className="flex gap-3">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex gap-3 flex-wrap">
             {project.repo && (
               <a
                 href={project.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md btn-ghost text-xs font-medium text-cyan-300"
+                className="inline-flex items-center gap-2 rounded-2xl border border-cyan-400/15 bg-slate-950/75 px-4 py-2 text-xs font-semibold text-cyan-200 transition duration-300 hover:border-cyan-300/30 hover:bg-slate-900/90"
                 aria-label="Open repository"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
                   <path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.2-1.8-1.2-1.8-1-.7.1-.7.1-.7 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.3-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.4 1.2a11.6 11.6 0 016.2 0c2.3-1.5 3.4-1.2 3.4-1.2.6 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.4-5.3 5.7.4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0012 .5z" fill="currentColor" />
                 </svg>
-                <span className="hidden sm:inline">GitHub</span>
+                <span className="hidden sm:inline">Open source</span>
               </a>
             )}
           </div>
 
-          <button onClick={onOpen} className="btn-primary">
+          <button onClick={onOpen} className="btn-primary px-5 py-2.5 text-sm">
             Details
           </button>
         </div>

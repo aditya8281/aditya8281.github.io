@@ -15,7 +15,7 @@ export default function ProjectsSection() {
   const [active, setActive] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="section-vert">
       <div className="app-container">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}>
           <SectionHeading title="Projects" subtitle="Selected work" />
