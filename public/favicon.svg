@@ -1,5 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0f172a"/>
-  <path d="M20 44 L32 18 L44 44" fill="none" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 32 L40 32" fill="none" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Aditya Rathod logo">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111f"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="17" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9"/>
+      <stop offset="0.52" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <path d="M10 20c0-5.5 4.5-10 10-10h24c5.5 0 10 4.5 10 10v24c0 5.5-4.5 10-10 10H20c-5.5 0-10-4.5-10-10V20Z" fill="#0f172a" opacity="0.78"/>
+  <path d="M18 46 29.7 18h4.9L47 46h-7.1l-2.2-5.6H26.9L24.8 46H18Zm11.1-11.8h6.4l-3.2-8.7-3.2 8.7Z" fill="url(#mark)" filter="url(#glow)"/>
+  <path d="M41 45V20h9.8c3.4 0 6 1 7.7 2.8 1.4 1.5 2.1 3.5 2.1 5.9 0 3.5-1.7 6-4.6 7.3l5.2 9h-7.5l-4.3-7.8h-1.9V45H41Zm6.5-13.3h2.8c2.3 0 3.7-1.1 3.7-3 0-1.9-1.3-3-3.7-3h-2.8v6Z" fill="#e0faff" opacity="0.92"/>
+  <circle cx="51" cy="14" r="3" fill="#22d3ee"/>
+  <circle cx="14" cy="50" r="2.6" fill="#818cf8"/>
 </svg>

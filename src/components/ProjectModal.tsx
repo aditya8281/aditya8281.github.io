@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import type { Project } from '../data/portfolio'
+import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
 
 type Props = {
   project: Project
@@ -11,26 +12,35 @@ const overlay = { hidden: { opacity: 0 }, visible: { opacity: 1 } }
 const panel = { hidden: { opacity: 0, y: 14, scale: 0.98 }, visible: { opacity: 1, y: 0, scale: 1 } }
 
 export default function ProjectModal({ project, onClose }: Props) {
+  useBodyScrollLock(true)
+
   return (
     <Fragment>
       <motion.div
-        className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+        className="fixed inset-0 z-[880] bg-slate-950/72 backdrop-blur-2xl"
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={overlay}
         onClick={onClose}
       />
+      <motion.div
+        className="pointer-events-none fixed inset-0 z-[881] bg-[radial-gradient(circle_at_18%_12%,rgba(34,211,238,0.18),transparent_30%),radial-gradient(circle_at_78%_82%,rgba(99,102,241,0.16),transparent_34%)]"
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        variants={overlay}
+      />
 
       <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center p-6"
+        className="fixed inset-0 z-[890] flex items-center justify-center p-6"
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={overlay}
       >
         <motion.article
-          className="w-full max-w-5xl rounded-xl p-6 shadow-2xl backdrop-blur-md glass-card max-h-[80vh] overflow-auto"
+          className="w-full max-w-5xl rounded-2xl p-6 shadow-[0_40px_140px_rgba(2,8,23,0.72)] backdrop-blur-2xl glass-card max-h-[80vh] overflow-auto border-cyan-300/15"
           variants={panel}
           transition={{ duration: 0.22 }}
           role="dialog"

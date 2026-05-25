@@ -16,10 +16,10 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
   const handleScroll = useScrollToSection()
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden bg-transparent pt-24 pb-16">
+    <section id="home" className="relative min-h-[100svh] overflow-hidden bg-transparent pt-24 pb-14 sm:pb-16">
       <div className="app-container relative z-10 grid gap-10 items-center md:grid-cols-[1.15fr_0.95fr] lg:gap-12 xl:gap-16">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerStagger} transition={{ duration: 0.9 }} className="text-center md:text-left">
-          <div className="mx-auto inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/20 bg-slate-950/50 px-4 py-2 text-[0.65rem] uppercase tracking-[0.32em] text-cyan-200/80 shadow-[0_0_30px_rgba(34,211,238,0.08)] md:mx-0">
+          <div className="mx-auto inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-cyan-400/20 bg-slate-950/50 px-4 py-2 text-[0.65rem] uppercase tracking-[0.2em] text-cyan-200/80 shadow-[0_0_30px_rgba(34,211,238,0.08)] sm:gap-3 sm:tracking-[0.32em] md:mx-0">
             <span className="h-2.5 w-2.5 rounded-full bg-cyan-400/90 shadow-[0_0_18px_rgba(34,211,238,0.45)]" />
             AI Research · {hero.college}
           </div>
@@ -40,8 +40,8 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
             {hero.description}
           </motion.p>
 
-          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/12 bg-slate-950/50 px-3 py-1.5 text-sm text-cyan-100">
-            <span className="tracking-[0.18em] text-slate-400 text-xs">Currently Exploring:</span>
+          <div className="mt-8 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-cyan-400/12 bg-slate-950/50 px-3 py-1.5 text-sm text-cyan-100 sm:gap-3">
+            <span className="text-xs tracking-[0.12em] text-slate-400 sm:tracking-[0.18em]">Currently Exploring:</span>
             <span className="font-medium text-slate-100 text-sm">{typedRole}</span>
           </div>
 

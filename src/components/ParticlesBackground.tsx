@@ -262,7 +262,7 @@ export default function ParticlesBackground({
     <div
       ref={canvasContainerRef}
       className={cn(
-        'fixed inset-0 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-950/95 to-slate-950',
+        'pointer-events-none fixed inset-0 z-0 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-950/95 to-slate-950',
         className,
       )}
     >
