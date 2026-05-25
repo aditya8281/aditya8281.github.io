@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { containerStagger, fadeUp } from '../utils/animations'
 import { hero } from '../data/portfolio'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 import { useTypewriter } from '../hooks/useTypewriter'
@@ -35,7 +36,7 @@ export default function HeroSection() {
       /> */}
 
       <div className="app-container relative z-10 grid gap-10 items-center md:grid-cols-[1.15fr_0.95fr] lg:gap-12 xl:gap-16">
-        <motion.div initial="hidden" animate="visible" variants={fadeIn} transition={{ duration: 0.95, ease: 'easeOut' }} className="text-center md:text-left">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerStagger} transition={{ duration: 0.9 }} className="text-center md:text-left">
           <div className="mx-auto inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/20 bg-slate-950/50 px-4 py-2 text-[0.65rem] uppercase tracking-[0.32em] text-cyan-200/80 shadow-[0_0_30px_rgba(34,211,238,0.08)] md:mx-0">
             <span className="h-2.5 w-2.5 rounded-full bg-cyan-400/90 shadow-[0_0_18px_rgba(34,211,238,0.45)]" />
             AI Research · {hero.college}
@@ -45,34 +46,34 @@ export default function HeroSection() {
             <TerminalIntro />
           </div>
 
-          <h1 className="mt-8 text-4xl font-semibold leading-[0.95] tracking-[-0.04em] text-white sm:text-5xl md:text-6xl lg:text-[5.2rem]">
+          <motion.h1 variants={fadeUp} className="mt-8 text-3xl font-semibold leading-tight tracking-[-0.03em] text-white sm:text-4xl md:text-5xl lg:text-[5.2rem]">
             {hero.name}
-          </h1>
+          </motion.h1>
 
-          <p className="mt-6 text-2xl font-semibold leading-tight tracking-[-0.02em] text-slate-100 sm:text-3xl md:text-4xl">
+          <motion.p variants={fadeUp} className="mt-6 text-lg font-semibold leading-tight tracking-[-0.01em] text-slate-100 sm:text-xl md:text-2xl">
             {hero.title}
-          </p>
+          </motion.p>
 
-          <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
+          <motion.p variants={fadeUp} className="mt-6 text-sm leading-7 text-slate-300 sm:text-base md:text-lg">
             {hero.description}
-          </p>
+          </motion.p>
 
-          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/20 bg-slate-950/60 px-4 py-2 text-sm text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.1)]">
-            <span className="tracking-[0.24em] text-slate-400">Focus:</span>
-            <span className="font-medium text-slate-100">{typedRole}</span>
+          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/12 bg-slate-950/50 px-3 py-1.5 text-sm text-cyan-100">
+            <span className="tracking-[0.18em] text-slate-400 text-xs">Focus:</span>
+            <span className="font-medium text-slate-100 text-sm">{typedRole}</span>
           </div>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-stretch sm:gap-3">
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-3">
             <motion.button
               type="button"
               whileHover={{ y: -1, scale: 1.01 }}
               onClick={() => handleScroll('projects')}
-              className="w-full min-w-0 rounded-lg bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-cyan-300 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+              className="w-full min-w-0 rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-cyan-300 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
             >
               View Projects
             </motion.button>
 
-            <div className="flex w-full items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-3 sm:w-auto">
+            <div className="flex w-full items-center gap-2 rounded-lg border border-white/8 bg-white/4 px-3 py-2 sm:w-auto">
               <a
                 href="https://github.com"
                 target="_blank"

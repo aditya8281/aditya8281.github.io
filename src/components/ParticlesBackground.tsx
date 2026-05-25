@@ -71,10 +71,10 @@ function hexToRgb(hex: string): number[] {
 export default function ParticlesBackground({
   className,
   children,
-  quantity = 100,
-  staticity = 50,
-  ease = 50,
-  size = 0.4,
+  quantity = 70,
+  staticity = 30,
+  ease = 28,
+  size = 0.6,
   refresh = false,
   color = '#a1e9ff',
   vx = 0,
@@ -133,9 +133,9 @@ export default function ParticlesBackground({
     const pSize = Math.floor(Math.random() * 2) + size
     const alpha = 0
     const targetAlpha = Number.parseFloat((Math.random() * 0.6 + 0.1).toFixed(1))
-    const dx = (Math.random() - 0.5) * 0.1
-    const dy = (Math.random() - 0.5) * 0.1
-    const magnetism = 0.1 + Math.random() * 4
+    const dx = (Math.random() - 0.5) * 0.28
+    const dy = (Math.random() - 0.5) * 0.28
+    const magnetism = 0.6 + Math.random() * 3.6
     return {
       x,
       y,
@@ -234,8 +234,8 @@ export default function ParticlesBackground({
         circle.alpha = circle.targetAlpha * remapClosestEdge
       }
 
-      circle.x += circle.dx + vx
-      circle.y += circle.dy + vy
+      circle.x += circle.dx + vx * 0.8
+      circle.y += circle.dy + vy * 0.8
       circle.translateX +=
         (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease
       circle.translateY +=

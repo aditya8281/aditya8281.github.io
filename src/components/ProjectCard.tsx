@@ -15,14 +15,16 @@ export default function ProjectCard({ project, onOpen }: Props) {
     if (!elRect) return
     const px = (e.clientX - elRect.left) / elRect.width
     const py = (e.clientY - elRect.top) / elRect.height
-    const rx = (py - 0.5) * 6
-    const ry = (px - 0.5) * -10
-    el.current!.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`
+    const rx = (py - 0.5) * 4
+    const ry = (px - 0.5) * -6
+    el.current!.style.transition = 'transform 120ms cubic-bezier(.22,1,.36,1)'
+    el.current!.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.008)`
   }
 
   function handleLeave() {
     if (!el.current) return
-    el.current.style.transform = ''
+    el.current.style.transition = 'transform 420ms cubic-bezier(.22,1,.36,1)'
+    el.current.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)'
   }
 
   return (
@@ -30,23 +32,23 @@ export default function ProjectCard({ project, onOpen }: Props) {
       ref={el}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      whileHover={{ scale: 1.01 }}
+      whileHover={{ scale: 1.008 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.54, ease: 'easeOut' }}
       className="relative rounded-xl p-5 backdrop-blur-md"
     >
-      <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-cyan-400/6 via-blue-400/6 to-indigo-400/6 blur-sm opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/4 via-blue-400/4 to-indigo-400/4 blur-sm opacity-20 pointer-events-none" />
 
-      <div className="relative z-10 flex h-full flex-col justify-between glass-card">
+      <div className="relative z-10 flex h-full flex-col justify-between glass-card min-h-0">
         <div>
           <p className="text-sm uppercase tracking-widest text-cyan-300/80">Project</p>
-          <h3 className="mt-3 text-lg font-semibold text-white leading-snug">{project.title}</h3>
-          <p className="mt-3 text-sm text-slate-300 leading-6">{project.description}</p>
+          <h3 className="mt-3 text-lg font-semibold text-white leading-snug break-words max-w-full">{project.title}</h3>
+          <p className="mt-3 text-sm text-slate-300 leading-6 break-words max-w-full whitespace-normal">{project.description}</p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 min-w-0">
             {project.tools.map((t) => (
-              <span key={t} className="rounded-full bg-slate-900/40 px-3 py-1 text-xs text-slate-200 border border-cyan-400/10">
+              <span key={t} className="rounded-full bg-slate-900/40 px-3 py-1 text-xs text-slate-200 border border-cyan-400/10 max-w-full break-words">
                 {t}
               </span>
             ))}

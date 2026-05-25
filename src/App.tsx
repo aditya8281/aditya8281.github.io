@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import ParticlesBackground from './components/ParticlesBackground'
 import ProjectsSection from './sections/ProjectsSection'
 import SkillsSection from './sections/SkillsSection'
+import ResearchSection from './sections/ResearchSection'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main className="relative z-10 w-full px-0">
         <HeroSection />
         <AboutSection />
+        <ResearchSection />
         <SkillsSection />
         <ProjectsSection />
         <ExperienceSection />

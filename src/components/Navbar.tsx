@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { softSpring } from '../utils/animations'
 import { cn } from '../utils/cn'
 import { navLinks } from '../data/portfolio'
 import { useActiveSection } from '../hooks/useActiveSection'
@@ -134,7 +135,7 @@ export default function Navbar() {
           <motion.span
             className="pointer-events-none absolute bottom-0 h-[2px] rounded-full bg-cyan-300"
             animate={{ left: indicator.left, width: indicator.width }}
-            transition={{ type: 'spring', stiffness: 240, damping: 26 }}
+            transition={softSpring}
           />
         </div>
 

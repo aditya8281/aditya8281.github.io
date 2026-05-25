@@ -13,7 +13,7 @@ export default function SkillCategory({ title, items }: Props) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
-      className="glass-card p-5"
+      className="glass-card p-5 min-w-0"
     >
       <p className="text-xs uppercase tracking-widest text-cyan-300/80">{title}</p>
       <div className="mt-4 flex flex-wrap gap-3">

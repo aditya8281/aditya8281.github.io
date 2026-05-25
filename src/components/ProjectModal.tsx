@@ -30,7 +30,7 @@ export default function ProjectModal({ project, onClose }: Props) {
         variants={overlay}
       >
         <motion.article
-          className="w-full max-w-5xl rounded-xl p-6 shadow-2xl backdrop-blur-md glass-card"
+          className="w-full max-w-5xl rounded-xl p-6 shadow-2xl backdrop-blur-md glass-card max-h-[80vh] overflow-auto"
           variants={panel}
           transition={{ duration: 0.22 }}
           role="dialog"

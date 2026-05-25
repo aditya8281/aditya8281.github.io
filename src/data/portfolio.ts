@@ -47,136 +47,163 @@ export const navLinks: NavLink[] = [
 ]
 
 export const hero = {
-  name: 'Aditya Rathod',
-  title: 'AI/ML Engineer & Systems Developer',
+  name: 'Aditya',
+  title: 'ML Engineer • Computer Vision Researcher • Builder',
   college: 'IIT Jodhpur',
-  roles: ['AI/ML Engineer', 'Systems Developer', 'Embedded AI Specialist'],
+  roles: ['ML / DL', 'Computer Vision', 'Problem Solving'],
   description:
-    'Building intelligent systems using AI, reinforcement learning, computer vision, embedded systems, and edge AI.',
+    'Exploring machine learning, computer vision research, and practical software projects with a product-minded approach.',
   cta: 'View projects',
 }
 
 export const aboutText: string[] = [
-  'I am an Electrical Engineering student at IIT Jodhpur focused on AI/ML, embedded systems, and scalable systems engineering.',
-  'I design practical intelligence for edge devices, vision systems, and autonomous workflows with a strong focus on robustness, performance, and real-world impact.',
+  'I am a 3rd-year Electrical Engineering undergraduate at IIT Jodhpur and an undergraduate researcher working on computer vision and ML problems.',
+  'I regularly practice data structures & algorithms, build practical software projects, and explore product-aware design and UI/UX.',
 ]
 
 export const aboutHighlights: string[] = [
-  'IIT Jodhpur Electrical Engineering student with a systems-first mindset.',
-  'Specialized in AI/ML, embedded edge systems, and computer vision.',
-  'Building dependable production-ready systems with clean engineering patterns.',
-  'Experienced with autonomous robotics, networking, and performance optimization.',
+  '3rd-year Electrical Engineering undergraduate at IIT Jodhpur.',
+  'Undergraduate researcher focusing on computer vision and ML/DL.',
+  'Regular DSA practice and algorithmic problem solving.',
+  'Building practical software projects and exploring product design.',
 ]
 
 export const skills: Skill[] = [
-  { name: 'C', category: 'Programming', level: 'Advanced' },
-  { name: 'C++', category: 'Programming', level: 'Advanced' },
   { name: 'Python', category: 'Programming', level: 'Advanced' },
-  { name: 'JavaScript', category: 'Programming', level: 'Advanced' },
-  { name: 'TypeScript', category: 'Programming', level: 'Advanced' },
-  { name: 'PyTorch', category: 'AI / ML', level: 'Advanced' },
-  { name: 'TensorFlow', category: 'AI / ML', level: 'Advanced' },
-  { name: 'Scikit-learn', category: 'AI / ML', level: 'Proficient' },
-  { name: 'NumPy', category: 'AI / ML', level: 'Proficient' },
-  { name: 'OpenCV', category: 'AI / ML', level: 'Proficient' },
-  { name: 'CNNs', category: 'Deep Learning', level: 'Advanced' },
-  { name: 'RNNs', category: 'Deep Learning', level: 'Proficient' },
-  { name: 'Transformers', category: 'Deep Learning', level: 'Proficient' },
-  { name: 'Operating Systems', category: 'Systems', level: 'Proficient' },
-  { name: 'Networking', category: 'Systems', level: 'Proficient' },
-  { name: 'System Design', category: 'Systems', level: 'Proficient' },
+  { name: 'C++', category: 'Programming', level: 'Advanced' },
+  { name: 'JavaScript', category: 'Programming', level: 'Proficient' },
+  { name: 'TypeScript', category: 'Programming', level: 'Proficient' },
+  { name: 'Algorithms', category: 'Problem Solving', level: 'Advanced' },
+  { name: 'Data Structures', category: 'Problem Solving', level: 'Advanced' },
+  { name: 'PyTorch', category: 'ML / CV', level: 'Advanced' },
+  { name: 'TensorFlow', category: 'ML / CV', level: 'Proficient' },
+  { name: 'OpenCV', category: 'ML / CV', level: 'Proficient' },
+  { name: 'NumPy', category: 'ML / CV', level: 'Proficient' },
+  { name: 'Scikit-learn', category: 'ML / CV', level: 'Proficient' },
+  { name: 'Computer Vision', category: 'ML / CV', level: 'Advanced' },
+  { name: 'Deep Learning', category: 'ML / CV', level: 'Advanced' },
   { name: 'Git', category: 'Tools', level: 'Advanced' },
-  { name: 'Linux', category: 'Tools', level: 'Advanced' },
+  { name: 'Linux', category: 'Tools', level: 'Proficient' },
   { name: 'Docker', category: 'Tools', level: 'Proficient' },
-  { name: 'Unity', category: 'Creative / Design', level: 'Proficient' },
-  { name: 'Blender', category: 'Creative / Design', level: 'Proficient' },
-  { name: 'Unreal Engine', category: 'Creative / Design', level: 'Proficient' },
-  { name: 'Photoshop', category: 'Creative / Design', level: 'Proficient' },
-  { name: 'Illustrator', category: 'Creative / Design', level: 'Proficient' },
-  { name: 'Figma', category: 'Creative / Design', level: 'Proficient' },
+  { name: 'Figma', category: 'Design', level: 'Proficient' },
+  { name: 'UI/UX Design', category: 'Design', level: 'Proficient' },
+  { name: 'Product Thinking', category: 'Design', level: 'Proficient' },
+  { name: 'Jupyter', category: 'Tools', level: 'Proficient' },
 ]
 
 export const projects: Project[] = [
   {
     title: 'Adaptive Traffic Signal Control',
     description:
-      'Optimized city signal timing using PPO reinforcement learning for peak-hour congestion reduction.',
+      'Investigated reinforcement learning approaches for simulated traffic signal timing to study congestion and control strategies.',
     longDescription:
-      'Delivered an adaptive traffic control system that learns from simulated intersection data and dynamically adjusts signal timing for smoother throughput. Evaluated latency, vehicle wait time, and congestion metrics across peak scenarios.',
+      'Implemented an experimental RL prototype to study adaptive traffic control in simulation. Emphasis was on designing rewards, running reproducible experiments, and evaluating queue reduction strategies rather than deployment-ready systems.',
     tools: ['Python', 'PPO', 'Stable-Baselines3', 'Gymnasium', 'TensorBoard'],
     repo: 'https://github.com/aditya8281/traffic_rl',
   },
   {
-    title: 'Quadcopter Drone with Onboard Vision',
+    title: 'Aerial Object Detection Prototype',
     description:
-      'Built a Jetson Orin NX drone with YOLO-based object detection and ROS pipelines for real-time autonomous flight.',
+      'Built a computer vision pipeline for object detection in aerial imagery, exploring model selection and inference-speed tradeoffs.',
     longDescription:
-      'Integrated Jetson Orin NX, YOLO detection, and ROS edge pipelines to enable real-time vision on a quadcopter. Focused on inference efficiency, sensor fusion, and mission-level reliability for onboard autonomy.',
-    tools: ['Jetson Orin NX', 'YOLO', 'OpenCV', 'ROS', 'Edge AI'],
+      'Developed a prototype detection pipeline using PyTorch and OpenCV for aerial images. Focus areas included data preprocessing, model evaluation, and measuring inference performance for practical use-cases.',
+    tools: ['Python', 'YOLO', 'OpenCV', 'PyTorch'],
     repo: 'https://github.com/aditya8281/jetson-autonomous-drone',
   },
   {
-    title: 'Edge AI Face Recognition System',
+    title: 'Face Recognition Research Prototype',
     description:
-      'Deployed a TinyML face recognition model on ESP32-CAM for fast on-device authentication and low-power inference.',
+      'Prototype exploring face recognition model trade-offs for accuracy and latency in controlled settings.',
     longDescription:
-      'Designed and deployed a lightweight face recognition pipeline using ESP32-CAM and Edge Impulse. Optimized model size for on-device inferencing while retaining accuracy and responsiveness for embedded authentication.',
-    tools: ['ESP32-CAM', 'TinyML', 'Edge Impulse', 'Python', 'Embedded AI'],
+      'Implemented preprocessing pipelines and lightweight model inference experiments to measure accuracy and latency trade-offs for face recognition research. The intent was experimentation and evaluation rather than productionization.',
+    tools: ['Python', 'OpenCV', 'PyTorch', 'NumPy'],
   },
   {
-    title: 'Autonomous Maze-Solving Robot',
+    title: 'Maze Navigation Prototype',
     description:
-      'Engineered a sensor-driven autonomous robot with PID control and reliable navigation for indoor maze missions.',
+      'Experimented with algorithmic path planning and navigation logic in simulated mazes.',
     longDescription:
-      'Built an autonomous maze robot using ultrasonic sensing, PID control, and embedded navigation logic. Tuned control loops, fused sensor inputs, and validated robust path planning in varied maze layouts.',
-    tools: ['Arduino', 'PID Control', 'Embedded Systems', 'Robotics'],
+      'Implemented and evaluated path planning heuristics and sensor-feedback loops in simulation to study reliable navigation behaviors. The project prioritized iterative testing and robustness in software simulations.',
+    tools: ['Python', 'Path Planning', 'Search Algorithms'],
   },
   {
     title: 'plink — Peer-to-Peer File Transfer',
     description:
-      'Enhanced a secure P2P transfer tool with AES-256 encryption and NAT-traversal reliability.',
+      'Contributed improvements to a peer-to-peer file transfer tool focusing on reliability and usability.',
     longDescription:
-      'Contributed to a peer-to-peer file transfer system with encrypted channels, hole-punching, and robust cross-network delivery. Improved connection reliability and streamlined encrypted file exchange for distributed systems.',
-    tools: ['Python', 'Networking', 'AES-256', 'P2P Systems'],
+      'Improved connection handling and usability for an open-source P2P transfer tool. Contributions centered on practical software fixes and reliability improvements rather than core protocol design.',
+    tools: ['Python', 'Networking'],
     repo: 'https://github.com/shikavan/plink',
   },
 ]
 
-export const exploringTopics: string[] = [
-  'CUDA Optimization',
-  'Distributed Systems',
-  'Transformer Architectures',
-  'OS Internals',
-  'Autonomous Systems',
+export const exploringTopics = [
+  {
+    title: 'Machine Learning',
+    description: 'Hands-on ML experiments and model evaluation, with a focus on computer vision.',
+  },
+  {
+    title: 'Problem Solving',
+    description: 'Sharpening algorithmic thinking through DSA practice and coding problems.',
+  },
+  {
+    title: 'Development',
+    description: 'Building practical software projects that connect research ideas to usable tools.',
+  },
+  {
+    title: 'Design',
+    description: 'Exploring UI/UX and product choices that make technical work more approachable.',
+  },
 ]
 
 export const experience: Experience[] = [
   {
-    role: 'Contributor',
-    company: 'plink (Peer-to-Peer File Transfer)',
-    period: '2024',
+    role: 'Undergraduate Researcher',
+    company: 'IIT Jodhpur',
+    period: '2024 – Present',
     description:
-      'Contributed to secure peer-to-peer networking, encryption, and cross-platform CLI tooling for the plink transfer platform.',
+      'Researching computer vision and machine learning problems, working with datasets, experiments, and model evaluation.',
     highlights: [
-      'Secure peer-to-peer networking',
-      'AES-256 encryption',
-      'NAT traversal for reliable connections',
-      'Cross-platform CLI tooling',
+      'Computer vision model development',
+      'Dataset analysis and experimental workflows',
+      'Research collaboration and iteration',
     ],
   },
   {
-    role: 'Senior Front-end Engineer',
-    company: 'Nimbus Labs',
-    period: '2024 – Present',
+    role: 'Problem Solving Practice',
+    company: 'Personal',
+    period: 'Ongoing',
     description:
-      'Leading front-end development for product launches, code maintainability, and accessible component libraries.',
+      'Regularly solving algorithmic challenges to improve reasoning and implementation speed.',
+    highlights: [
+      'Data structures and algorithm routines',
+      'Competitive programming practice',
+      'Performance and correctness focus',
+    ],
   },
   {
-    role: 'Product Designer',
-    company: 'Studio Vela',
-    period: '2022 – 2024',
+    role: 'Software Project Builder',
+    company: 'Personal',
+    period: 'Ongoing',
     description:
-      'Designed interfaces and workflows for SaaS, focusing on usability, conversion, and scalable design systems.',
+      'Building practical projects that connect ML research with usable software and workflows.',
+    highlights: [
+      'Project planning and iteration',
+      'Model integration and validation',
+      'User-oriented feature development',
+    ],
+  },
+  {
+    role: 'Product & Design Curiosity',
+    company: 'Personal',
+    period: 'Ongoing',
+    description:
+      'Exploring UI/UX patterns and product decisions that make technical work simpler and more intuitive.',
+    highlights: [
+      'Interface research and iteration',
+      'Design thinking for software',
+      'Practical product-minded learning',
+    ],
   },
 ]
 
@@ -223,5 +250,5 @@ export const contactMethods: ContactMethod[] = [
   { label: 'GitHub', value: 'github.com/aditya8281', href: 'https://github.com/aditya8281' },
   { label: 'LinkedIn', value: 'linkedin.com/in/aditya-rathod', href: 'https://www.linkedin.com/in/aditya-rathod/' },
   { label: 'Email', value: 'aditya.rathod2912@gmail.com', href: 'mailto:aditya.rathod2912@gmail.com' },
-  { label: 'Resume', value: 'Download resume', href: '#', },
+  { label: 'Resume', value: 'View CV', href: '#contact' },
 ]

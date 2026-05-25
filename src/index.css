@@ -11,6 +11,9 @@
   --glass-bg: rgba(15,23,42,0.72);
   --accent-cyan: 34,211,238;
   --transition-fast: 160ms;
+  --shadow-soft: 0 20px 60px rgba(15,23,42,0.45);
+  --shadow-deep: 0 28px 90px rgba(8,15,31,0.35);
+  --blur-strong: 22px;
 }
 
 html {
@@ -132,11 +135,16 @@ section[id] {
   }
 
   .glass-card {
-    border-radius: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(15, 23, 42, 0.72);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: linear-gradient(180deg, rgba(15,23,42,0.76), rgba(8,12,20,0.64));
     padding: 1.5rem;
-    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.45);
+    box-shadow: var(--shadow-soft);
+    will-change: transform, opacity;
+    min-width: 0;
   }
 
   .glass-card::before {
@@ -150,11 +158,15 @@ section[id] {
     opacity: 0.9;
   }
 
+  /* Replace hard dividers with soft blending bridges */
   .section-divider {
-    height: 1px;
-    background: linear-gradient(90deg, rgba(34,211,238,0.06), rgba(99,102,241,0.04), rgba(34,211,238,0.02));
-    box-shadow: 0 2px 18px rgba(34,211,238,0.03) inset;
-    margin: 2.5rem 0;
+    height: 64px;
+    margin: 1.5rem 0;
+    background: linear-gradient(180deg, rgba(8,12,20,0) 0%, rgba(8,12,20,0.22) 30%, rgba(8,12,20,0.5) 70%, rgba(8,12,20,0.85) 100%);
+    pointer-events: none;
+    border-radius: 0.5rem;
+    opacity: 0.85;
+    mix-blend-mode: screen;
   }
 
   .btn-primary {
@@ -163,7 +175,7 @@ section[id] {
     color: #e6fbff;
     padding: 0.5rem 0.9rem;
     border-radius: 0.6rem;
-    box-shadow: 0 8px 30px rgba(34,211,238,0.06);
+    box-shadow: 0 8px 30px rgba(34,211,238,0.04);
     transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
   }
 
@@ -215,12 +227,13 @@ section[id] {
   }
 
   .glow-border {
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    box-shadow: 0 0 30px rgba(34, 211, 238, 0.14);
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.06);
   }
 
+  /* Reduced glow to avoid bleeding between nearby cards */
   .shadow-glow {
-    box-shadow: 0 28px 90px rgba(34, 211, 238, 0.14);
+    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.06), 0 4px 12px rgba(2, 6, 23, 0.35);
   }
 
   .hero-gradient-bg {
@@ -229,6 +242,15 @@ section[id] {
       radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.08), transparent 24%),
       linear-gradient(180deg, rgba(5, 11, 22, 0.96), rgba(2, 6, 15, 0.98));
   }
+
+    /* subtle breathing gradient for background depth */
+    @keyframes gradient-breath {
+      0% { filter: saturate(1) brightness(0.98); }
+      50% { filter: saturate(1.06) brightness(1.02); }
+      100% { filter: saturate(1) brightness(0.98); }
+    }
+
+    .bg-light { animation: gradient-breath 18s ease-in-out infinite; }
 
   .hero-grid-overlay {
     background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
@@ -286,7 +308,7 @@ section[id] {
     filter: saturate(0.95);
     transform-origin: center;
     will-change: transform;
-    animation: grid-slow 48s linear infinite;
+    animation: grid-slow 36s linear infinite;
   }
 
   /* Lighting layer: sophisticated blurred radial gradients with cinematic depth */
