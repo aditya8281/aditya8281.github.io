@@ -1,29 +1,6 @@
 import type React from 'react'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { cn } from '../utils/cn'
-
-interface MousePosition {
-  x: number
-  y: number
-}
-
-function useMousePosition(): MousePosition {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: 0,
-    y: 0,
-  })
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY })
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
-  return mousePosition
-}
 
 export interface ParticlesBackgroundProps {
   className?: string
@@ -95,7 +72,6 @@ export default function ParticlesBackground({
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context = useRef<CanvasRenderingContext2D | null>(null)
   const circles = useRef<Circle[]>([])
-  const mousePosition = useMousePosition()
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const animationRef = useRef<number | null>(null)
@@ -162,19 +138,19 @@ export default function ParticlesBackground({
     }
   }, [])
 
-  const onMouseMove = useCallback(() => {
+  const onMouseMove = useCallback((event: MouseEvent) => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect()
       const { w, h } = canvasSize.current
-      const x = mousePosition.x - rect.left - w / 2
-      const y = mousePosition.y - rect.top - h / 2
+      const x = event.clientX - rect.left - w / 2
+      const y = event.clientY - rect.top - h / 2
       const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
       if (inside) {
         mouse.current.x = x
         mouse.current.y = y
       }
     }
-  }, [mousePosition.x, mousePosition.y])
+  }, [])
 
   const drawParticles = useCallback(() => {
     const particleCount = quantity
@@ -245,18 +221,16 @@ export default function ParticlesBackground({
     initCanvas()
     animate()
     window.addEventListener('resize', initCanvas)
+    window.addEventListener('mousemove', onMouseMove)
 
     return () => {
       window.removeEventListener('resize', initCanvas)
+      window.removeEventListener('mousemove', onMouseMove)
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [animate, initCanvas])
-
-  useEffect(() => {
-    onMouseMove()
-  }, [onMouseMove])
+  }, [animate, initCanvas, onMouseMove])
 
   useEffect(() => {
     initCanvas()

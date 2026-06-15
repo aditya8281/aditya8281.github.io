@@ -76,7 +76,7 @@ export default function SkillsSection() {
           <SectionHeading title="Skills" subtitle="Expertise" />
         </motion.div>
 
-        <div className="mt-8 relative overflow-hidden" onMouseMove={onMove}>
+        <div className="mt-8 relative" onMouseMove={onMove}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <AnimatedOrbs />
           </div>

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
 
 type Props = {
@@ -10,46 +10,79 @@ type Props = {
 export default function ResumeModal({ open, onClose }: Props) {
   const pdfUrl = new URL('../assets/my_cv.pdf', import.meta.url).href
   useBodyScrollLock(open)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    },
+    [onClose],
+  )
 
   useEffect(() => {
-    if (!open) {
-      return undefined
-    }
+    if (!open) return undefined
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [open, handleKeyDown])
 
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+  // Focus the iframe when modal opens so keyboard users can interact
+  useEffect(() => {
+    if (open && iframeRef.current) {
+      iframeRef.current.focus()
     }
-
-    window.addEventListener('keydown', onKey)
-
-    return () => {
-      window.removeEventListener('keydown', onKey)
-    }
-  }, [open, onClose])
+  }, [open])
 
   return (
     <AnimatePresence>
       {open && (
-        <motion.div className="fixed inset-0 z-[900] flex items-center justify-center p-3 sm:p-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-          <div className="absolute inset-0 bg-slate-950/74 backdrop-blur-2xl" onClick={onClose} />
+        <motion.div
+          className="fixed inset-0 z-[900] flex items-center justify-center p-3 sm:p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume viewer"
+        >
+          <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-2xl" onClick={onClose} />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(34,211,238,0.18),transparent_30%),radial-gradient(circle_at_82%_80%,rgba(99,102,241,0.16),transparent_32%)]" />
 
           <motion.div
-            initial={{ scale: 0.98, y: 12 }}
+            initial={{ scale: 0.97, y: 16 }}
             animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.98, y: 8 }}
-            transition={{ duration: 0.18 }}
-            className="relative z-10 w-full max-w-[900px] sm:max-w-[1100px] md:max-w-5xl h-[78vh] sm:h-[80vh] md:h-[76vh] lg:h-[70vh] rounded-2xl overflow-hidden border border-cyan-300/15 bg-slate-950/92 shadow-[0_40px_140px_rgba(2,8,23,0.72)] backdrop-blur-2xl"
+            exit={{ scale: 0.97, y: 10 }}
+            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 flex w-full max-w-[900px] flex-col overflow-hidden rounded-2xl border border-cyan-300/15 bg-slate-950/95 shadow-[0_40px_140px_rgba(2,8,23,0.72)] backdrop-blur-2xl sm:max-w-[1100px] md:max-w-5xl"
+            style={{ height: 'min(80vh, 80svh)' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between gap-2 p-3 border-b border-white/6 bg-slate-900/70 backdrop-blur-xl">
+            <div className="flex shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-slate-900/80 px-4 py-3 backdrop-blur-xl">
               <h3 className="text-sm font-semibold text-white">Resume</h3>
-              <button type="button" onClick={onClose} className="rounded-md px-3 py-1 text-sm font-medium text-slate-200 hover:bg-white/5">
-                Close
-              </button>
+              <div className="flex items-center gap-2">
+                <a
+                  href={pdfUrl}
+                  download
+                  className="rounded-md px-3 py-1.5 text-xs font-medium text-cyan-200 transition hover:bg-white/5"
+                >
+                  Download
+                </a>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="rounded-md px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:bg-white/5"
+                >
+                  Close
+                </button>
+              </div>
             </div>
 
-            <iframe src={pdfUrl} title="Resume PDF" className="w-full h-full" sandbox="allow-same-origin allow-scripts" />
+            <iframe
+              ref={iframeRef}
+              src={pdfUrl}
+              title="Resume PDF"
+              className="h-full w-full flex-1 border-0"
+              style={{ minHeight: 0 }}
+            />
           </motion.div>
         </motion.div>
       )}

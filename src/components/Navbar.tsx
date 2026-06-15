@@ -121,9 +121,10 @@ export default function Navbar() {
     }
 
     setIsOpen(false)
+    // Wait for mobile menu close animation + scroll lock release before scrolling
     window.setTimeout(() => {
       window.requestAnimationFrame(() => handleScroll(id))
-    }, 0)
+    }, 50)
   }
 
   const mobileMenu = (

@@ -19,7 +19,7 @@ function App() {
     <div className="relative min-h-screen overflow-x-hidden bg-transparent text-slate-100">
       <ParticlesBackground />
       <Navbar />
-      <main className="relative z-10 w-full px-0">
+      <main className="relative z-10 w-full overflow-x-hidden px-0">
         <HeroSection onOpenResume={() => setShowResume(true)} />
         <AboutSection />
         <ResearchSection />
