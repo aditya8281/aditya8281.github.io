@@ -22,8 +22,8 @@ export default {
         'panel-gradient': 'linear-gradient(135deg, rgba(15,23,42,0.88), rgba(15,23,42,0.72))',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Geist Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Geist Sans"', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         xl2: '1.75rem',

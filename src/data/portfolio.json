@@ -1,0 +1,241 @@
+{
+  "personal": {
+    "name": "Aditya Rathod",
+    "fullName": "Aditya Kaushikbhai Rathod",
+    "phone": "+91-9726608281",
+    "email": "aditya.rathod2912@gmail.com",
+    "emailSecondary": "b24ee1062@iitj.ac.in",
+    "roll": "B24EE1062",
+    "github": "https://github.com/aditya8281",
+    "linkedin": "https://linkedin.com/in/adityarathod2912",
+    "website": "https://aditya8281.github.io/",
+    "title": "Systems • Backend • AI Tooling • Computer Vision",
+    "college": "IIT Jodhpur",
+    "course": "B.Tech in Electrical Engineering",
+    "education": "B.Tech in Electrical Engineering, IIT Jodhpur (2024–2028), CGPA: 7.38/10",
+    "schoolSecondary": "Tapovan School, Rajkot — 90.8% (2022)",
+    "schoolSenior": "Tapovan School, Rajkot — 88.8% (2024)"
+  },
+
+  "hero": {
+    "name": "Aditya Rathod",
+    "title": "Systems • Backend • AI Tooling • Computer Vision",
+    "college": "IIT Jodhpur",
+    "roles": ["Backend Engineering", "Systems Programming", "AI Tooling", "Computer Vision", "Static Analysis"],
+    "description": "Building infrastructure platforms, static analysis engines, and real-time vision systems with production-grade engineering, comprehensive testing, and clean architecture.",
+    "cta": "Explore projects"
+  },
+
+  "about": {
+    "text": [
+      "Third-year Electrical Engineering student at IIT Jodhpur building infrastructure platforms, static analysis engines, and real-time computer vision systems.",
+      "I work across backend engineering, systems programming, and applied ML — from 180+ endpoint API platforms with 1,900+ tests to Rust-based static analysis with Tree-sitter and 14-language parsing."
+    ],
+    "highlights": [
+      "Built CORTEX, a local-first AI infrastructure platform with FastAPI, PostgreSQL, Redis, Qdrant, agent execution loops, and 1,900+ automated tests.",
+      "Built ASTERA, a production-grade static analysis engine in Rust with Tree-sitter parsers for 14 languages, 153 tests, and 92 Criterion benchmarks.",
+      "Shipped computer vision systems on Jetson Orin NX (YOLO at 10–14 FPS onboard), ESP32-CAM face recognition, and CNN-Attention research under Prof. Pratik Mazumder.",
+      "Focused on backend engineering, infrastructure, and systems roles requiring APIs, databases, concurrency, testing, and reproducible evaluation."
+    ],
+    "exploringTopics": [
+      { "title": "Backend & Infrastructure", "description": "FastAPI platforms, agent systems, JWT/CSRF auth, Redis queues, vector search, and production-grade API architecture." },
+      { "title": "Static Analysis & Code Intelligence", "description": "Tree-sitter parsing, Code Property Graphs, symbol resolution, dependency traversal, and semantic search in Rust." },
+      { "title": "Computer Vision & Embedded AI", "description": "Real-time YOLO inference on Jetson, TinyML on ESP32-CAM, and hybrid CNN-Attention architectures for imbalanced image classification." },
+      { "title": "Systems & Concurrency", "description": "Multithreaded blockchain validation, P2P networking, async Rust with Tokio/Rayon, and concurrent systems design." }
+    ]
+  },
+
+  "experience": [
+    {
+      "role": "Undergraduate Researcher — Computer Vision",
+      "company": "IIT Jodhpur",
+      "period": "May 2026 – Present",
+      "description": "Researching imbalanced image classification under Prof. Pratik Mazumder using hybrid CNN-Attention architectures for robust classification of natural image datasets.",
+      "highlights": [
+        "Designed experiments to measure robustness across class imbalance, disease categories, and real-world image variation",
+        "Reproduced PLDNet as a controlled baseline; fixed dataset splits, training configuration, evaluation scripts, and comparison protocol",
+        "Evaluated 30+ model variants with ablations on attention placement, feature fusion, and representation changes",
+        "Benchmarked Mendeley Potato Leaf Disease (3,076 images, 7 classes) and curated PlantVillage data (2,152 images, 3 classes)",
+        "Prepared reporting pipeline for accuracy, F1 score, per-class recall, confusion matrices, and PLDNet-relative comparisons"
+      ],
+      "link": "https://github.com/aditya8281/Summer-research-computerVision"
+    },
+    {
+      "role": "Open Source Contributor",
+      "company": "DevLup Labs — plink Summer of Code",
+      "period": "May 2025 – Nov 2025",
+      "description": "Contributed to plink, a peer-to-peer file transfer platform, across networking, secure transfer flows, reliability, and product polish.",
+      "highlights": [
+        "Contributed networking modules for direct connections, UPnP/NAT traversal, role reversal, and heterogeneous client networks",
+        "Implemented TCP socket paths for encrypted file chunks, metadata exchange, multithreaded transfer coordination, and port-scanning utilities",
+        "Completed 16 assigned tasks across cryptography, networking, file metadata, chunk handling, parsing, and documentation"
+      ],
+      "link": "https://github.com/shikavan/plink"
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "CORTEX",
+      "description": "Local-first AI infrastructure for developer intelligence with 180+ endpoints across 10 routers.",
+      "longDescription": "Designed a local-first AI infrastructure platform using FastAPI, Next.js 15, React 19, PostgreSQL, Redis, embedded Qdrant, arq workers, JWT/CSRF auth, Argon2, Fernet/PBKDF2 encryption. Organized backend into 106 services, 44 models, 45 schemas, and 37 migrations. Implemented agent execution loop with tool dispatch, stall detection, context compaction, token accounting, and hybrid retrieval over episodic, semantic, and working memory. Validated with 1,900+ automated tests.",
+      "tools": ["Python", "FastAPI", "Next.js", "React", "TypeScript", "PostgreSQL", "Redis", "Qdrant", "JWT", "Agent Systems"],
+      "repo": "https://github.com/aditya8281/Cortex-Workspace",
+      "metric": "1,900+ tests",
+      "tag": "AI Infrastructure"
+    },
+    {
+      "title": "ASTERA",
+      "description": "Production-grade static analysis and code intelligence engine in Rust.",
+      "longDescription": "Built a local-first static-analysis engine that parses repositories into a queryable Code Property Graph for symbol lookup, semantic search, dependency traversal, impact analysis, metrics, and architecture checks. Implemented a 12-crate Rust workspace with Tree-sitter parsers for 14 languages, Axum REST APIs, WebSocket events, plugin hooks, SQLite FTS5 indexing, CLI commands, and incremental file watching. Covered with 153 automated tests and 92 Criterion benchmarks.",
+      "tools": ["Rust", "Tree-sitter", "SQLite FTS5", "Axum", "Tokio", "Rayon", "Static Analysis", "REST APIs"],
+      "repo": "https://github.com/aditya8281/Astera.git",
+      "metric": "153 tests, 92 benchmarks",
+      "tag": "Systems"
+    },
+    {
+      "title": "Jetson-Enabled UAV Systems Integration",
+      "description": "Companion-computer architecture for MAVLink control, telemetry, and onboard perception.",
+      "longDescription": "Integrated an NVIDIA Jetson companion computer with a Cube Orange flight controller over MAVLink for command exchange, telemetry streaming, and onboard perception. Assembled and flight-tested a quadcopter platform under Dr. Hardik Jain, validating ~20 minutes of endurance on a 3S LiPo battery. Deployed YOLO-based object detection at ~10–14 FPS onboard inference during flight tests.",
+      "tools": ["Python", "NVIDIA Jetson", "MAVLink", "Cube Orange", "ArduPilot", "YOLO", "Embedded Linux"],
+      "repo": "https://github.com/aditya8281/jetson-autonomous-drone.git",
+      "metric": "10–14 FPS",
+      "tag": "Edge Vision"
+    },
+    {
+      "title": "Parallel Blockchain Simulator",
+      "description": "Concurrent blockchain simulation with thread-safe validation and 7 parallel threads.",
+      "longDescription": "Coordinated 7 blockchain threads — 3 miners, 3 validators, and 1 transaction generator — using mutex locks and events around shared chain state. Modeled account balances, linked-list blocks, queued transactions, hash-map mempool lookup, Merkle verification, and SHA-256 Proof-of-Work at difficulty 3. Stress-tested under randomized loads, processing 131–200 validated transactions per simulation.",
+      "tools": ["Python", "Multithreading", "SHA-256", "Queues", "Merkle Trees", "Mutex Locks"],
+      "repo": "https://github.com/Aarsussh/DSA-PROJECT---Blockchain",
+      "metric": "7 threads",
+      "tag": "Systems"
+    },
+    {
+      "title": "Adaptive Traffic Signal Control",
+      "description": "PPO-based traffic-signal optimizer trained in a custom Gymnasium simulation environment.",
+      "longDescription": "Trained PPO traffic-signal policies for 500,000+ timesteps using 16 vectorized Gymnasium environments and TensorBoard diagnostics. Defined state and reward features for vehicle density, waiting time, stochastic arrivals, congestion penalties, and throughput. Measured policy improvement with 2341.5 final test reward and 2371.47 mean evaluation reward.",
+      "tools": ["Python", "PyTorch", "Stable-Baselines3", "Gymnasium", "TensorBoard", "PPO"],
+      "repo": "https://github.com/aditya8281/traffic_rl.git",
+      "metric": "500k+ steps",
+      "tag": "RL Systems"
+    },
+    {
+      "title": "Edge AI Face Recognition System",
+      "description": "Offline face recognition on ESP32-CAM with on-device TinyML inference.",
+      "longDescription": "Deployed offline face recognition on ESP32-CAM with Edge Impulse, achieving ~90% internal evaluation accuracy through on-device inference. Collected a custom dataset of ~100–150 images across 5 individuals. Completed the TinyML workflow from data collection and labeling to model training, Arduino IDE deployment, and embedded inference.",
+      "tools": ["ESP32-CAM", "Edge Impulse", "Arduino IDE", "C++", "TinyML"],
+      "metric": "~90% accuracy",
+      "tag": "TinyML"
+    },
+    {
+      "title": "Autonomous Wall-Following Robot",
+      "description": "PID-controlled differential-drive robot with ultrasonic sensor feedback.",
+      "longDescription": "Programmed autonomous wall-following navigation on Arduino Uno/Nano using 3 HC-SR04 ultrasonic sensors and an L298N differential-drive motor driver. Implemented PID control with integral windup protection, output limiting, dynamic derivative calculation, turn reset logic, and serial diagnostics for tuning.",
+      "tools": ["Arduino Uno", "C++", "HC-SR04 Sensors", "L298N Motor Driver", "PID Control"],
+      "repo": "https://github.com/aditya8281/Maze-solving-bot.git",
+      "metric": "PID tuned",
+      "tag": "Robotics"
+    },
+    {
+      "title": "Game Centre",
+      "description": "Console-based multi-game platform with user authentication in C.",
+      "longDescription": "Led a 5-member team building a menu-driven C gaming platform with 3 classic games and shared module interfaces. Implemented Minesweeper, authentication, login validation, persistent sessions, saved state, and structured file I/O. Managed the central GitHub repository, resolved merge conflicts, and coordinated module integration.",
+      "tools": ["C", "Modular Programming", "File I/O", "Git"],
+      "repo": "https://github.com/aditya8281/Game-Centre",
+      "metric": "3 games",
+      "tag": "Software"
+    }
+  ],
+
+  "skills": {
+    "languages": ["Python", "Rust", "C", "C++", "JavaScript", "TypeScript", "SQL", "Embedded C/C++"],
+    "backend": ["FastAPI", "Axum", "REST APIs", "WebSockets", "Pydantic", "SQLAlchemy", "JWT", "CSRF", "Authentication"],
+    "systems": ["Data Structures", "Algorithms", "Operating Systems", "Computer Networks", "Concurrency", "Multithreading", "Async Programming", "Tokio", "Rayon", "CLI Development"],
+    "databases": ["PostgreSQL", "SQLite", "SQLite FTS5", "Redis", "Qdrant", "Vector Search", "Semantic Search", "Full-Text Search", "BM25", "HNSW"],
+    "aiMl": ["PyTorch", "TensorFlow", "Scikit-learn", "OpenCV", "Hugging Face", "YOLO", "TensorBoard", "CNNs", "Transformers", "Attention"],
+    "devTools": ["Tree-sitter", "Static Analysis", "Git", "GitHub", "pytest", "Criterion", "Jupyter", "MATLAB", "Docker", "GitHub Actions"],
+    "roboticsEmbedded": ["NVIDIA Jetson", "Jetson Orin NX", "Cube Orange", "ArduPilot", "MAVLink", "ESP32-CAM", "Arduino", "TinyML", "Edge AI"],
+    "frontendDevOps": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma", "Linux", "Docker Compose", "CI/CD"]
+  },
+
+  "research": [
+    {
+      "title": "Hybrid CNN-Attention Architectures for Robust Classification of Imbalanced Natural Image Datasets",
+      "description": "Researching imbalanced image classification under Prof. Pratik Mazumder using hybrid CNN-Attention architectures with reproducible evaluation.",
+      "status": "In Progress",
+      "supervisor": "Prof. Pratik Mazumder, IIT Jodhpur",
+      "link": "https://github.com/aditya8281/Summer-research-computerVision",
+      "highlights": [
+        "Reproduced PLDNet as a controlled baseline and fixed evaluation protocol",
+        "Evaluated 30+ model variants with ablations on attention placement and feature fusion",
+        "Benchmarked Mendeley Potato Leaf Disease (3,076 images, 7 classes) and PlantVillage data (2,152 images, 3 classes)",
+        "Prepared pipeline for accuracy, F1 score, per-class recall, and confusion matrices"
+      ]
+    }
+  ],
+
+  "leadership": [
+    {
+      "role": "Secretary",
+      "organization": "Designerds — The Design Club, IIT Jodhpur",
+      "period": "Aug 2025 – Apr 2026",
+      "highlights": [
+        "Guided 50+ students, ran design workshops, and helped secure 7th rank at Inter IIT Cultural Meet 8.0",
+        "Coordinated design competitions and club events throughout the academic year"
+      ]
+    },
+    {
+      "role": "Student Guide",
+      "organization": "Student Wellbeing Committee (SWC), IIT Jodhpur",
+      "period": "Aug 2025 – Apr 2026",
+      "highlights": [
+        "Supported 12 first-year students through academic transition and campus onboarding"
+      ]
+    },
+    {
+      "role": "Core Member",
+      "organization": "Inside — The Game Development Society, IIT Jodhpur",
+      "period": "Aug 2025 – Apr 2026",
+      "highlights": [
+        "Coached 5 first-year students on an Inside-backed game-building project"
+      ]
+    },
+    {
+      "role": "Assistant Head",
+      "organization": "Ignus '26, IIT Jodhpur",
+      "period": "Jan 2026 – Feb 2026",
+      "highlights": [
+        "Led 30+ volunteers and managed digital design for Ignus '26"
+      ]
+    },
+    {
+      "role": "Assistant Head",
+      "organization": "Prometeo '26, IIT Jodhpur",
+      "period": "Oct 2025 – Jan 2026",
+      "highlights": [
+        "Led 30+ volunteers and managed digital design for Prometeo '26"
+      ]
+    },
+    {
+      "role": "Assistant Head",
+      "organization": "Varchas '25, IIT Jodhpur",
+      "period": "Sep 2025 – Nov 2025",
+      "highlights": [
+        "Led 30+ volunteers and managed digital design for Varchas '25"
+      ]
+    }
+  ],
+
+  "achievements": [
+    "JEE Main 2024 — All India Rank 7,932 out of 1,415,110 candidates",
+    "JEE Advanced 2024 — All India Rank 8,663 out of 180,200 candidates"
+  ],
+
+  "contact": [
+    { "label": "Email", "value": "aditya.rathod2912@gmail.com", "href": "mailto:aditya.rathod2912@gmail.com" },
+    { "label": "Phone", "value": "+91-9726608281", "href": "tel:+919726608281" },
+    { "label": "GitHub", "value": "github.com/aditya8281", "href": "https://github.com/aditya8281" },
+    { "label": "LinkedIn", "value": "linkedin.com/in/adityarathod2912", "href": "https://linkedin.com/in/adityarathod2912" }
+  ]
+}

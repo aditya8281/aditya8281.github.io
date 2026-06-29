@@ -36,7 +36,7 @@ function NavLink({
       onClick={() => onClick(id)}
       aria-current={isActive ? 'page' : undefined}
       className={cn(
-        'relative z-10 rounded-full px-3 py-2 text-xs font-semibold transition-all duration-300 outline-none xl:px-4 xl:text-sm focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950',
+        'relative z-10 rounded-full px-3 py-2 text-xs font-semibold transition-colors duration-300 outline-none xl:px-4 xl:text-sm focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950',
         isActive ? 'text-white' : isCta ? 'text-cyan-100 hover:text-white' : 'text-slate-300 hover:text-white'
       )}
     >
@@ -49,6 +49,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [indicator, setIndicator] = useState({ left: 0, width: 0 })
+  const [scrollProgress, setScrollProgress] = useState(0)
   const navRef = useRef<HTMLDivElement | null>(null)
   const itemRefs = useRef<Record<string, HTMLButtonElement | null>>({})
   const activeSection = useActiveSection()
@@ -60,6 +61,8 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20)
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      setScrollProgress(docHeight > 0 ? Math.min(window.scrollY / docHeight, 1) : 0)
     }
 
     onScroll()
@@ -148,6 +151,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -10, scale: 0.98 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
             className="fixed inset-x-3 bottom-3 top-[calc(4.75rem+env(safe-area-inset-top))] z-[1000] flex flex-col overflow-hidden rounded-3xl border border-cyan-300/18 bg-slate-950 shadow-[0_40px_120px_rgba(2,8,23,0.82)] p-4 sm:inset-x-4 sm:bottom-auto sm:max-h-[calc(100svh-6.5rem)] sm:p-5 lg:hidden"
+            id="mobile-nav-drawer"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
@@ -215,7 +219,7 @@ export default function Navbar() {
       <motion.header
         data-site-navbar
         className={cn(
-          'fixed inset-x-0 top-0 z-[100] border-b border-transparent bg-slate-950/20 backdrop-blur-xl transition-all duration-400 ease-out',
+          'fixed inset-x-0 top-0 z-[100] border-b border-transparent bg-slate-950/20 backdrop-blur-xl',
           scrolled ? 'border-white/10 bg-slate-950/86 shadow-[0_22px_70px_rgba(8,15,31,0.38)]' : 'shadow-none'
         )}
       >
@@ -255,7 +259,8 @@ export default function Navbar() {
             type="button"
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/5 text-cyan-300 transition-all duration-300 hover:border-cyan-300/40 hover:bg-cyan-400/10 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 lg:hidden"
+            aria-controls="mobile-nav-drawer"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/5 text-cyan-300 transition-colors duration-300 hover:border-cyan-300/40 hover:bg-cyan-400/10 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 lg:hidden"
             onClick={() => setIsOpen((current) => !current)}
           >
             <span className="relative block h-5 w-5">
@@ -264,6 +269,14 @@ export default function Navbar() {
               <span className={cn('absolute left-0 top-1/2 block h-0.5 w-full bg-current transition-all duration-300', isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2')} />
             </span>
           </button>
+        </div>
+
+        {/* Scroll progress bar */}
+        <div className="absolute bottom-0 left-0 h-[2px] w-full bg-transparent">
+          <div
+            className="h-full bg-gradient-to-r from-cyan-400/80 via-cyan-300/60 to-violet-400/50 shadow-[0_0_12px_rgba(34,211,238,0.4)]"
+            style={{ width: `${scrollProgress * 100}%`, transition: 'width 80ms linear' }}
+          />
         </div>
       </motion.header>
 

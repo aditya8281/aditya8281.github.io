@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
 
 type Props = {
@@ -11,6 +11,8 @@ export default function ResumeModal({ open, onClose }: Props) {
   const pdfUrl = new URL('../assets/my_cv.pdf', import.meta.url).href
   useBodyScrollLock(open)
   const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -29,6 +31,14 @@ export default function ResumeModal({ open, onClose }: Props) {
   useEffect(() => {
     if (open && iframeRef.current) {
       iframeRef.current.focus()
+    }
+  }, [open])
+
+  // Reset loading/error state when modal opens
+  useEffect(() => {
+    if (open) {
+      setLoading(true)
+      setError(false)
     }
   }, [open])
 
@@ -76,13 +86,35 @@ export default function ResumeModal({ open, onClose }: Props) {
               </div>
             </div>
 
-            <iframe
-              ref={iframeRef}
-              src={pdfUrl}
-              title="Resume PDF"
-              className="h-full w-full flex-1 border-0"
-              style={{ minHeight: 0 }}
-            />
+            <div className="relative flex-1 min-h-0">
+              {loading && !error && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-slate-400">
+                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent" />
+                  Loading resume...
+                </div>
+              )}
+              {error && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-slate-400">
+                  <p>Failed to load the resume PDF.</p>
+                  <a
+                    href={pdfUrl}
+                    download
+                    className="rounded-lg bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                  >
+                    Download instead
+                  </a>
+                </div>
+              )}
+              <iframe
+                ref={iframeRef}
+                src={pdfUrl}
+                title="Resume PDF"
+                className="h-full w-full flex-1 border-0"
+                style={{ minHeight: 0, opacity: loading || error ? 0 : 1 }}
+                onLoad={() => setLoading(false)}
+                onError={() => { setLoading(false); setError(true) }}
+              />
+            </div>
           </motion.div>
         </motion.div>
       )}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SkillBadge from './SkillBadge'
+import { staggerPopItem } from '../utils/animations'
 
 type Props = {
   title: string
@@ -9,10 +10,8 @@ type Props = {
 export default function SkillCategory({ title, items }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
+      variants={staggerPopItem}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="glass-card p-6 min-w-0 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/25 hover:shadow-[0_30px_90px_rgba(34,211,238,0.1)]"
     >
       <div className="flex items-center justify-between gap-3">

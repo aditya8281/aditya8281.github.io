@@ -45,6 +45,7 @@ export default function ProjectModal({ project, onClose }: Props) {
           transition={{ duration: 0.22 }}
           role="dialog"
           aria-modal="true"
+          aria-label={project.title}
         >
           <div className="flex items-start justify-between">
             <div>

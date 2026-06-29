@@ -78,6 +78,12 @@ export default function ParticlesBackground({
   const animateStepRef = useRef<() => void>(() => undefined)
   const rgb = useMemo(() => hexToRgb(color), [color])
 
+  // Respect prefers-reduced-motion — pause canvas animation loop
+  const prefersReducedMotion = useMemo(() => {
+    if (typeof window === 'undefined') return false
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  }, [])
+
   const resizeCanvas = useCallback(() => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       const dpr = window.devicePixelRatio || 1
@@ -219,7 +225,12 @@ export default function ParticlesBackground({
       context.current = canvasRef.current.getContext('2d')
     }
     initCanvas()
-    animate()
+
+    // Don't run animation loop if user prefers reduced motion
+    if (!prefersReducedMotion) {
+      animate()
+    }
+
     window.addEventListener('resize', initCanvas)
     window.addEventListener('mousemove', onMouseMove)
 
@@ -230,7 +241,7 @@ export default function ParticlesBackground({
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [animate, initCanvas, onMouseMove])
+  }, [animate, initCanvas, onMouseMove, prefersReducedMotion])
 
   useEffect(() => {
     initCanvas()

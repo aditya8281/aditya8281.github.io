@@ -3,10 +3,10 @@ import { containerStagger, fadeUp } from '../utils/animations'
 
 type SectionHeadingProps = {
   title: string
-  subtitle: string
+  subtitle?: string
 }
 
-export default function SectionHeading({ title, subtitle }: SectionHeadingProps) {
+export default function SectionHeading({ title }: SectionHeadingProps) {
   return (
     <motion.div
       className="mb-6 w-full max-w-5xl sm:mb-8"
@@ -15,11 +15,11 @@ export default function SectionHeading({ title, subtitle }: SectionHeadingProps)
       viewport={{ once: true, amount: 0.2 }}
       variants={containerStagger}
     >
-      <motion.div className="flex min-w-0 flex-wrap items-center gap-3" variants={fadeUp}>
-        <span className="block h-px w-10 shrink-0 rounded-full bg-gradient-to-r from-cyan-400/50 via-blue-400/30 to-transparent sm:w-16" aria-hidden="true" />
-        <p className="min-w-0 break-words text-xs uppercase tracking-[0.22em] text-cyan-300/80 sm:tracking-[0.34em]">{subtitle}</p>
-      </motion.div>
-      <motion.h2 className="mt-3 break-words text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-[2.75rem]" variants={fadeUp}>
+      <motion.h2
+        className="break-words text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-[2.75rem]"
+        style={{ textWrap: 'balance' }}
+        variants={fadeUp}
+      >
         {title}
       </motion.h2>
       <div className="section-divider" />

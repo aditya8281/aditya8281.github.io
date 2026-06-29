@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading'
 import { experience } from '../data/portfolio'
-
-const timelineVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-}
+import { slideFromLeft } from '../utils/animations'
 
 export default function ExperienceSection() {
   return (
     <section id="experience" className="section-vert">
       <div className="app-container">
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }}>
-          <SectionHeading title="Experience" subtitle="Timeline" />
-        </motion.div>
+        <SectionHeading title="Experience" />
 
         <div className="relative mt-8 grid gap-10 lg:grid-cols-[auto_1fr] lg:items-start">
-          <div className="absolute left-5 top-8 bottom-8 w-[2px] bg-cyan-400/15 lg:left-8" />
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transformOrigin: 'top' }}
+            className="absolute left-5 top-8 bottom-8 w-[2px] bg-cyan-400/15 lg:left-8"
+          />
 
           <div className="space-y-10">
             {experience.map((item, index) => (
@@ -25,8 +26,8 @@ export default function ExperienceSection() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                variants={timelineVariants}
-                transition={{ duration: 0.65, ease: 'easeOut', delay: index * 0.12 }}
+                variants={slideFromLeft}
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
                 className="relative flex gap-6 lg:gap-8"
               >
                 <div className="relative z-10 mt-2 flex h-12 w-12 items-center justify-center rounded-full border border-cyan-300/20 bg-slate-950/90 shadow-[0_0_0_8px_rgba(8,23,42,0.08)]">

@@ -1,31 +1,21 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading'
 import { leadership } from '../data/portfolio'
-
-const floatingVariant = {
-  hidden: { opacity: 0, y: 32 },
-  visible: { opacity: 1, y: 0 },
-}
+import { popUp, staggerPop } from '../utils/animations'
 
 export default function LeadershipSection() {
   return (
     <section id="leadership" className="section-vert">
       <div className="app-container">
-        <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: 'easeOut' }}>
-          <SectionHeading title="Campus Leadership" subtitle="Student organisations" />
-        </motion.div>
+        <SectionHeading title="Leadership" />
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.15 }} variants={staggerPop} className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {leadership.map((item, index) => (
             <motion.article
               key={`${item.role}-${item.organization}`}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={floatingVariant}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.08 }}
-              whileHover={{ y: -6 }}
-              className="group rounded-[2rem] border border-cyan-400/10 bg-slate-950/85 p-6 shadow-lg shadow-cyan-500/5 transition duration-300 hover:border-cyan-300/30 hover:bg-slate-900/90 hover:shadow-[0_30px_90px_rgba(34,211,238,0.18)]"
+              variants={popUp}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: index * 0.06 }}
+              className="group rounded-[2rem] border border-cyan-400/10 bg-slate-950/85 p-6 shadow-lg shadow-cyan-500/5 transition-all duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-cyan-300/30 hover:bg-slate-900/90 hover:shadow-[0_30px_90px_rgba(34,211,238,0.18)] hover-lift"
             >
               <div className="mb-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="min-w-0">
@@ -46,7 +36,7 @@ export default function LeadershipSection() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

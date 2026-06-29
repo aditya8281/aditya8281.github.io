@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { containerStagger, fadeUp } from '../utils/animations'
+import { containerStagger, fadeUp, heroNameReveal } from '../utils/animations'
 import { hero } from '../data/portfolio'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 import { useTypewriter } from '../hooks/useTypewriter'
@@ -28,7 +28,7 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
             <TerminalIntro />
           </div>
 
-          <motion.h1 variants={fadeUp} className="mt-8 text-3xl font-semibold leading-tight tracking-[-0.03em] text-white sm:text-4xl md:text-5xl lg:text-[5.2rem]">
+          <motion.h1 variants={heroNameReveal} className="mt-8 text-3xl font-semibold leading-tight tracking-[-0.03em] text-white sm:text-4xl md:text-5xl lg:text-[5.2rem]">
             {hero.name}
           </motion.h1>
 
@@ -46,14 +46,13 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
           </div>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-3">
-            <motion.button
+            <button
               type="button"
-              whileHover={{ y: -1, scale: 1.01 }}
               onClick={() => handleScroll('projects')}
-              className="w-full min-w-0 rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-cyan-300 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
+              className="w-full min-w-0 rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-cyan-300 focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:w-auto"
             >
               Explore Projects
-            </motion.button>
+            </button>
 
             <div className="flex w-full max-w-[14rem] justify-center items-center gap-3 rounded-lg border border-white/8 bg-white/4 px-3 py-2 sm:w-auto sm:justify-start">
               <a
@@ -90,27 +89,13 @@ export default function HeroSection({ onOpenResume }: { onOpenResume?: () => voi
               </button>
             </div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.08, ease: 'easeOut' }}
-            className="mt-8 flex flex-wrap gap-3 text-sm text-slate-400"
-          >
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Vision Transformer</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Computer Vision</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Reinforcement Learning</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Deep Learning</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">Embedded Systems</span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">P2P Networking</span>
-          </motion.div>
         </motion.div>
 
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          transition={{ duration: 0.95, delay: 0.14, ease: 'easeOut' }}
+          transition={{ duration: 0.6, delay: 0.14, ease: [0.23, 1, 0.32, 1] }}
           className="grid gap-6"
         >
           <div className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-4 shadow-[0_40px_120px_rgba(8,15,31,0.55)] sm:p-5">

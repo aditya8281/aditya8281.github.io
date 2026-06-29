@@ -1,6 +1,7 @@
 import { useRef, type MouseEvent } from 'react'
 import { motion } from 'framer-motion'
 import type { Project } from '../data/portfolio'
+import { staggerPopItem } from '../utils/animations'
 
 type Props = {
   project: Project
@@ -23,7 +24,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
 
   function handleLeave() {
     if (!el.current) return
-    el.current.style.transition = 'transform 420ms cubic-bezier(.22,1,.36,1)'
+    el.current.style.transition = 'transform 200ms cubic-bezier(.22,1,.36,1)'
     el.current.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)'
   }
 
@@ -32,11 +33,8 @@ export default function ProjectCard({ project, onOpen }: Props) {
       ref={el}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      whileHover={{ scale: 1.01 }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.54, ease: 'easeOut' }}
+      variants={staggerPopItem}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="group relative rounded-[2rem] p-4 overflow-hidden sm:p-5"
     >
       <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_30%),radial-gradient(circle_at_bottom_right,_rgba(99,102,241,0.16),_transparent_32%)] opacity-80 pointer-events-none transition duration-500 group-hover:opacity-100" />

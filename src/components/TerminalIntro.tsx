@@ -48,7 +48,7 @@ export default function TerminalIntro() {
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
       className="rounded-3xl border border-slate-700/70 bg-slate-950/80 p-5 shadow-[0_24px_80px_rgba(15,23,42,0.45)] backdrop-blur-xl"
     >
       <div className="flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-slate-500">
