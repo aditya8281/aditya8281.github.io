@@ -1,0 +1,56 @@
+# Aditya Rathod — Systems & Backend Engineer
+
+## Who I Am
+
+Aditya Rathod is a B.Tech Electrical Engineering student at IIT Jodhpur (CGPA 7.38/10, 2024–2028). He builds backend infrastructure platforms, static analysis engines, and computer vision systems with production-grade engineering.
+
+## What I Build
+
+### CORTEX — Local-First AI Infrastructure Platform
+- FastAPI backend with 180+ endpoints across 10 routers
+- 106 services, 44 models, 45 schemas, 37 database migrations
+- PostgreSQL, Redis, embedded Qdrant vector DB, arq async workers
+- JWT/CSRF authentication, Argon2 password hashing, Fernet/PBKDF2 encryption
+- Agent execution loops: tool dispatch, stall detection, context compaction, token accounting
+- Hybrid retrieval: episodic + semantic + working memory with vector search and knowledge-graph recall
+- Next.js 15 + React 19 frontend
+- 1,900+ automated tests
+- GitHub: https://github.com/aditya8281/Cortex-Workspace
+
+### ASTERA — Static Analysis & Code Intelligence Engine
+- 12-crate Rust workspace
+- Tree-sitter parsers for 14 languages
+- Code Property Graph for symbol lookup, semantic search, dependency traversal, impact analysis
+- Axum REST APIs, WebSocket events, plugin hooks
+- SQLite FTS5 indexing, CLI commands, incremental file watching
+- 153 automated tests, 92 Criterion benchmarks
+- Performance: ~33ns language classification, ~3.27µs API stats, ~16µs FTS5 search
+- GitHub: https://github.com/aditya8281/Astera.git
+
+### Computer Vision & Embedded Systems
+- Jetson Orin NX companion computer with Cube Orange flight controller over MAVLink
+- YOLO object detection at 10–14 FPS onboard inference during flight tests
+- ESP32-CAM face recognition with Edge Impulse (~90% accuracy)
+- CNN-Attention research under Prof. Pratik Mazumder: imbalanced image classification, 30+ model variants
+
+### Other Systems Projects
+- PPO traffic signal control: 500k+ timesteps, 16 vectorized Gymnasium environments
+- Parallel blockchain simulator: 7 concurrent threads, mutex-locked validation, SHA-256 PoW
+- Peer-to-peer file transfer (plink): UPnP, NAT traversal, AES-256, 16 tasks completed
+
+## Technical Skills
+
+**Languages:** Python, Rust, C, C++, TypeScript, JavaScript, SQL, Embedded C/C++
+**Backend:** FastAPI, Axum, REST APIs, WebSockets, Pydantic, SQLAlchemy, JWT, CSRF
+**Systems:** Concurrency, Multithreading, Tokio, Rayon, CLI Development, Async Programming
+**Databases:** PostgreSQL, SQLite FTS5, Redis, Qdrant, Vector Search, Semantic Search, BM25, HNSW
+**AI/ML:** PyTorch, TensorFlow, Scikit-learn, OpenCV, YOLO, CNNs, Transformers, Attention
+**DevTools:** Tree-sitter, Static Analysis, Git, pytest, Criterion, Docker, GitHub Actions
+**Robotics:** NVIDIA Jetson, Cube Orange, ArduPilot, MAVLink, ESP32-CAM, Arduino, TinyML
+
+## Contact
+
+- Email: aditya.rathod2912@gmail.com
+- GitHub: https://github.com/aditya8281
+- LinkedIn: https://linkedin.com/in/adityarathod2912
+- Website: https://aditya8281.github.io/
