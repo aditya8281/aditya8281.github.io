@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import type { Project } from '../data/portfolio'
 import { useBodyScrollLock } from '../hooks/useBodyScrollLock'
@@ -13,6 +13,42 @@ const panel = { hidden: { opacity: 0, y: 14, scale: 0.98 }, visible: { opacity: 
 
 export default function ProjectModal({ project, onClose }: Props) {
   useBodyScrollLock(true)
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const previousFocus = useRef<HTMLElement | null>(null)
+
+  // Focus trap + Escape key
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onClose()
+      return
+    }
+    if (e.key !== 'Tab' || !dialogRef.current) return
+    const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    )
+    if (focusable.length === 0) return
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus() }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
+  }, [onClose])
+
+  useEffect(() => {
+    previousFocus.current = document.activeElement as HTMLElement
+    // Defer focus to after render
+    const timer = setTimeout(() => {
+      dialogRef.current?.focus()
+    }, 50)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      clearTimeout(timer)
+      document.removeEventListener('keydown', handleKeyDown)
+      previousFocus.current?.focus()
+    }
+  }, [handleKeyDown])
 
   return (
     <Fragment>
@@ -33,7 +69,9 @@ export default function ProjectModal({ project, onClose }: Props) {
         variants={overlay}
       >
         <motion.article
-          className="w-full max-w-5xl border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-6 max-h-[80vh] overflow-auto"
+          ref={dialogRef}
+          tabIndex={-1}
+          className="w-full max-w-5xl border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-6 max-h-[80vh] overflow-auto outline-none"
           variants={panel}
           transition={{ duration: 0.22 }}
           role="dialog"
@@ -44,7 +82,7 @@ export default function ProjectModal({ project, onClose }: Props) {
             <div>
               <div className="mb-3 flex flex-wrap gap-2">
                 {project.tag && (
-                  <span className="bg-[var(--mono-surface-2)] px-2.5 py-1 text-xs font-mono text-[var(--mono-cyan)]">
+                  <span className="bg-[var(--mono-surface-2)] px-2.5 py-1 text-xs font-mono text-[var(--mono-accent)]">
                     {project.tag}
                   </span>
                 )}
@@ -58,7 +96,7 @@ export default function ProjectModal({ project, onClose }: Props) {
               <p className="mt-2 text-sm text-[var(--mono-text-dim)]">{project.description}</p>
             </div>
 
-            <button onClick={onClose} aria-label="Close" className="ml-4 border border-[var(--mono-surface-3)] p-2 text-[var(--mono-comment)] hover:text-[var(--mono-cyan)] hover:border-[var(--mono-cyan)] transition-colors">
+            <button onClick={onClose} aria-label="Close" className="ml-4 border border-[var(--mono-surface-3)] p-2 text-[var(--mono-comment)] hover:text-[var(--mono-accent)] hover:border-[var(--mono-accent)] transition-colors">
               &#x2715;
             </button>
           </div>

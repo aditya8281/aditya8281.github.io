@@ -12,10 +12,10 @@ export default function SkillCategory({ title, items }: Props) {
     <motion.div
       variants={staggerPopItem}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="glass-card p-5 min-w-0 transition duration-200 hover:border-[var(--mono-cyan)]/30"
+      className="glass-card p-5 min-w-0 transition duration-200 hover:border-[var(--mono-accent)]/30"
     >
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm font-mono font-medium text-[var(--mono-cyan)]">{title}</p>
+        <p className="text-sm font-mono font-medium text-[var(--mono-accent)]">{title}</p>
         <span className="inline-flex h-6 min-w-[1.5rem] items-center justify-center bg-[var(--mono-surface-2)] px-2 text-[0.65rem] font-mono text-[var(--mono-comment)]">
           {items.length}
         </span>

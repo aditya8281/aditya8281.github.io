@@ -5,6 +5,7 @@
   font-family: "Geist Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--mono-bg);
   color: var(--mono-text);
+  font-size: 1rem;
   text-rendering: optimizeLegibility;
 
   /* Silk palette */
@@ -15,7 +16,7 @@
   --mono-text: #f2ebe8;
   --mono-text-dim: #b8a8a0;
   --mono-comment: #7a6560;
-  --mono-cyan: #e85d3a;
+  --mono-accent: #e85d3a;
   --mono-green: #e8a848;
   --mono-orange: #c96a3c;
   --mono-pink: #e84070;
@@ -65,7 +66,7 @@ a, button, [role="button"], label[for] { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-  outline: 2px solid var(--mono-cyan);
+  outline: 2px solid var(--mono-accent);
   outline-offset: 2px;
 }
 
@@ -86,7 +87,9 @@ section[id] { scroll-margin-top: 7rem; }
     font-family: "Geist Sans", system-ui, sans-serif;
     letter-spacing: -0.03em;
     color: var(--mono-text);
+    text-wrap: balance;
   }
+  p { text-wrap: pretty; }
 }
 
 @layer utilities {
@@ -121,7 +124,7 @@ section[id] { scroll-margin-top: 7rem; }
     height: 2px;
     margin: 1rem 0 0;
     max-width: 6rem;
-    background: var(--mono-cyan);
+    background: var(--mono-accent);
     opacity: 0.5;
   }
 
@@ -149,7 +152,7 @@ section[id] { scroll-margin-top: 7rem; }
     left: 0;
     width: 3px;
     height: 100%;
-    background: var(--mono-cyan);
+    background: var(--mono-accent);
     opacity: 0;
     transition: opacity 0.25s ease-out;
     pointer-events: none;
@@ -158,7 +161,7 @@ section[id] { scroll-margin-top: 7rem; }
   .glass-card:hover::before { opacity: 1; }
 
   .btn-primary {
-    background: var(--mono-cyan);
+    background: var(--mono-accent);
     border: none;
     color: var(--mono-bg);
     padding: 0.6rem 1.2rem;
@@ -168,7 +171,7 @@ section[id] { scroll-margin-top: 7rem; }
   }
 
   .btn-primary:hover {
-    background: #7ce4f7;
+    background: color-mix(in oklch, var(--mono-accent) 85%, white);
     transform: translateY(-1px);
   }
 
@@ -182,7 +185,7 @@ section[id] { scroll-margin-top: 7rem; }
   }
 
   .btn-ghost:hover {
-    border-color: var(--mono-cyan);
+    border-color: var(--mono-accent);
     color: var(--mono-text);
   }
 
@@ -210,7 +213,7 @@ section[id] { scroll-margin-top: 7rem; }
     transition: outline-color 0.15s ease-out;
   }
   .focus-ring:focus-visible {
-    outline-color: var(--mono-cyan);
+    outline-color: var(--mono-accent);
   }
 }
 
@@ -272,7 +275,7 @@ nav button::after {
   left: 0;
   width: 100%;
   height: 2px;
-  background: var(--mono-cyan);
+  background: var(--mono-accent);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.2s ease-out;
@@ -283,12 +286,12 @@ nav button::after {
 }
 
 nav button:focus-visible {
-  outline: 2px solid var(--mono-cyan);
+  outline: 2px solid var(--mono-accent);
   outline-offset: 2px;
 }
 
 a[role="button"]:focus-visible {
-  outline: 2px solid var(--mono-cyan);
+  outline: 2px solid var(--mono-accent);
   outline-offset: 2px;
 }
 
@@ -337,8 +340,8 @@ a[role="button"]:focus-visible {
 }
 
 .skill-badge-geo:hover {
-  border-color: var(--mono-cyan);
-  color: var(--mono-cyan);
+  border-color: var(--mono-accent);
+  color: var(--mono-accent);
 }
 
 /* ─── Hover lift — touch-gated ──────────────────────── */

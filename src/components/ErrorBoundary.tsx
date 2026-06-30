@@ -18,14 +18,14 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
-          <div className="rounded-2xl border border-cyan-400/15 bg-slate-950/90 p-8 backdrop-blur-xl max-w-md">
-            <p className="text-sm uppercase tracking-[0.24em] text-cyan-300/80">Something went wrong</p>
-            <p className="mt-4 text-slate-300 leading-7">
+          <div className="border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-8 max-w-md">
+            <p className="text-sm font-mono uppercase tracking-[0.24em] text-[var(--mono-accent)]">Something went wrong</p>
+            <p className="mt-4 text-[var(--mono-text-dim)] leading-7">
               The page hit an unexpected error. Refresh to try again.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="mt-6 rounded-lg bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+              className="mt-6 btn-primary"
             >
               Reload page
             </button>

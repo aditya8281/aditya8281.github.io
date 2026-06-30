@@ -12,11 +12,11 @@ export default function ProjectCard({ project, onOpen }: Props) {
     <motion.div
       variants={staggerPopItem}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="group glass-card min-h-[18rem] md:min-h-[22rem] flex flex-col justify-between transition duration-200 hover:border-[var(--mono-cyan)]/30"
+      className="group glass-card min-h-[18rem] md:min-h-[22rem] flex flex-col justify-between transition duration-200 hover:border-[var(--mono-accent)]/30"
     >
       <div>
         <div className="flex flex-wrap items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 bg-[var(--mono-surface-2)] px-2.5 py-1 text-xs font-mono text-[var(--mono-cyan)]">
+          <span className="inline-flex items-center gap-1.5 bg-[var(--mono-surface-2)] px-2.5 py-1 text-xs font-mono text-[var(--mono-accent)]">
             {project.tag ?? 'Project'}
           </span>
           {project.metric && (
@@ -31,7 +31,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.tools.map((t) => (
-            <span key={t} className="bg-[var(--mono-surface-2)] px-2.5 py-1 text-xs font-mono text-[var(--mono-text-dim)] border border-[var(--mono-surface-3)] transition-colors group-hover:border-[var(--mono-cyan)]/20">
+            <span key={t} className="bg-[var(--mono-surface-2)] px-2.5 py-1 text-xs font-mono text-[var(--mono-text-dim)] border border-[var(--mono-surface-3)] transition-colors group-hover:border-[var(--mono-accent)]/20">
               {t}
             </span>
           ))}
@@ -45,7 +45,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 border border-[var(--mono-surface-3)] px-3 py-1.5 text-xs font-medium text-[var(--mono-text-dim)] hover:border-[var(--mono-cyan)] hover:text-[var(--mono-cyan)] transition-colors"
+              className="inline-flex items-center gap-1.5 border border-[var(--mono-surface-3)] px-3 py-1.5 text-xs font-medium text-[var(--mono-text-dim)] hover:border-[var(--mono-accent)] hover:text-[var(--mono-accent)] transition-colors"
               aria-label="Open repository"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>

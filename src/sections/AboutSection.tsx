@@ -29,7 +29,7 @@ export default function AboutSection() {
 
             <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.16 }} className="mt-5">
               <div className="glass-card flex items-center gap-3 p-3">
-                <span className="font-mono text-sm text-[var(--mono-cyan)]">$</span>
+                <span className="font-mono text-sm text-[var(--mono-accent)]">$</span>
                 <span className="font-mono text-sm text-[var(--mono-text-dim)]">{typeText}</span>
               </div>
             </motion.div>
@@ -37,10 +37,10 @@ export default function AboutSection() {
             <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.24 }} className="mt-5">
               <div className="glass-card p-5">
                 <h3 className="text-lg font-semibold text-white">{currentResearch.title}</h3>
-                <p className="mt-1 text-sm font-mono text-[var(--mono-cyan)]">{currentResearch.supervisor}</p>
+                <p className="mt-1 text-sm font-mono text-[var(--mono-green)]">{currentResearch.supervisor}</p>
                 <p className="mt-3 text-sm text-[var(--mono-text-dim)]">{currentResearch.description}</p>
                 {currentResearch.link && (
-                  <a href={currentResearch.link} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 text-sm text-[var(--mono-cyan)] hover:underline">
+                  <a href={currentResearch.link} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 text-sm text-[var(--mono-accent)] hover:underline">
                     View on GitHub &rarr;
                   </a>
                 )}
@@ -51,7 +51,7 @@ export default function AboutSection() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideFromRight} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="relative">
             <div className="relative z-10 space-y-5">
               <div className="glass-card">
-                <p className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--mono-cyan)]">Highlights</p>
+                <p className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--mono-green)]">Highlights</p>
                 <ul className="mt-3 space-y-2">
                   {aboutHighlights.slice(0, 4).map((h) => (
                     <li key={h} className="text-sm text-[var(--mono-text-dim)]">{h}</li>

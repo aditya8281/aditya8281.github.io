@@ -67,7 +67,7 @@ export default function TerminalIntro() {
           <button
             type="button"
             onClick={handleReplay}
-            className="text-xs font-mono text-[var(--mono-comment)] hover:text-[var(--mono-cyan)] transition-colors"
+            className="text-xs font-mono text-[var(--mono-comment)] hover:text-[var(--mono-accent)] transition-colors"
             aria-label="Replay terminal animation"
           >
             replay
@@ -80,9 +80,9 @@ export default function TerminalIntro() {
           const isCurrent = !cycleComplete && index === displayLines.length - 1 && currentLineIndex < terminalLines.length
           return (
             <div key={`${line}-${index}`} className="flex gap-2">
-              <span className="text-[var(--mono-cyan)]">&gt;</span>
+              <span className="text-[var(--mono-accent)]">&gt;</span>
               <span>{line}</span>
-              {isCurrent && <span className="inline-block h-4 w-[2px] bg-[var(--mono-cyan)] animate-pulse" />}
+              {isCurrent && <span className="inline-block h-4 w-[2px] bg-[var(--mono-accent)] animate-pulse" />}
             </div>
           )
         })}

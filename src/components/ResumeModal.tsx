@@ -64,7 +64,7 @@ export default function ResumeModal({ open, onClose }: Props) {
                 <a
                   href={pdfUrl}
                   download
-                  className="rounded-sm px-3 py-1.5 text-xs font-medium text-[var(--mono-cyan)] transition hover:bg-[var(--mono-surface-2)]"
+                  className="rounded-sm px-3 py-1.5 text-xs font-medium text-[var(--mono-accent)] transition hover:bg-[var(--mono-surface-2)]"
                 >
                   Download
                 </a>
@@ -81,7 +81,7 @@ export default function ResumeModal({ open, onClose }: Props) {
             <div className="relative flex-1 min-h-0">
               {loading && !error && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-[var(--mono-comment)]">
-                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--mono-cyan)] border-t-transparent" />
+                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--mono-accent)] border-t-transparent" />
                   Loading resume...
                 </div>
               )}

@@ -31,7 +31,7 @@ function NavLink({
       aria-current={isActive ? 'page' : undefined}
       className={cn(
         'relative z-10 px-3 py-2 text-xs font-medium transition-colors duration-200 outline-none xl:px-4 xl:text-sm',
-        isActive ? 'text-[var(--mono-cyan)]' : isCta ? 'text-[var(--mono-green)] hover:text-[var(--mono-cyan)]' : 'text-[var(--mono-comment)] hover:text-[var(--mono-text)]'
+        isActive ? 'text-[var(--mono-accent)]' : isCta ? 'text-[var(--mono-green)] hover:text-[var(--mono-accent)]' : 'text-[var(--mono-comment)] hover:text-[var(--mono-text)]'
       )}
     >
       {label}
@@ -132,13 +132,13 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="inline-flex h-10 shrink-0 items-center border border-[var(--mono-surface-3)] px-4 text-sm font-medium text-[var(--mono-text-dim)] hover:border-[var(--mono-cyan)] hover:text-[var(--mono-cyan)] transition-colors"
+                  className="inline-flex h-10 shrink-0 items-center border border-[var(--mono-surface-3)] px-4 text-sm font-medium text-[var(--mono-text-dim)] hover:border-[var(--mono-accent)] hover:text-[var(--mono-accent)] transition-colors"
                 >
                   Close
                 </button>
               </div>
 
-              <div className="mt-4 grid min-h-0 flex-1 content-start gap-2 overflow-y-auto overscroll-contain pr-1 sm:grid-cols-2">
+              <nav aria-label="Mobile navigation" className="mt-4 grid min-h-0 flex-1 content-start gap-2 overflow-y-auto overscroll-contain pr-1 sm:grid-cols-2">
                 {navItems.map((link) => {
                   const isActive = activeSection === link.id
                   return (
@@ -151,15 +151,15 @@ export default function Navbar() {
                         link.id === 'contact'
                           ? 'border-[var(--mono-green)]/30 bg-[var(--mono-green)]/5 text-[var(--mono-green)] hover:bg-[var(--mono-green)]/10'
                           : isActive
-                          ? 'border-[var(--mono-cyan)] bg-[var(--mono-cyan)]/5 text-[var(--mono-cyan)]'
-                          : 'border-[var(--mono-surface-3)] bg-transparent text-[var(--mono-comment)] hover:border-[var(--mono-cyan)]/30 hover:text-[var(--mono-text)]'
+                          ? 'border-[var(--mono-accent)] bg-[var(--mono-accent)]/5 text-[var(--mono-accent)]'
+                          : 'border-[var(--mono-surface-3)] bg-transparent text-[var(--mono-comment)] hover:border-[var(--mono-accent)]/30 hover:text-[var(--mono-text)]'
                       )}
                     >
                       <span className="block leading-tight">{link.label}</span>
                     </button>
                   )
                 })}
-              </div>
+              </nav>
             </div>
           </motion.div>
         </>
@@ -178,7 +178,7 @@ export default function Navbar() {
       >
         <div className={cn('app-container flex items-center justify-between gap-4 transition-all', scrolled ? 'py-3' : 'py-4 md:py-5')}>
           <button type="button" onClick={() => handleNavClick('home')} className="group inline-flex items-center gap-3 text-left">
-            <span className="flex h-9 w-9 items-center justify-center border border-[var(--mono-surface-3)] text-xs font-mono font-bold text-[var(--mono-cyan)]">
+            <span className="flex h-9 w-9 items-center justify-center border border-[var(--mono-surface-3)] text-xs font-mono font-bold text-[var(--mono-accent)]">
               AR
             </span>
             <span className="hidden sm:block">
@@ -187,12 +187,9 @@ export default function Navbar() {
             </span>
           </button>
 
-          <div
-            className="relative hidden items-center gap-1 border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-1 lg:flex"
-            ref={navRef}
-          >
+          <nav aria-label="Main navigation" className="relative hidden items-center gap-1 border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-1 lg:flex">
             <motion.span
-              className="pointer-events-none absolute top-1 bottom-1 border border-[var(--mono-cyan)]/30 bg-[var(--mono-cyan)]/5"
+              className="pointer-events-none absolute top-1 bottom-1 border border-[var(--mono-accent)]/30 bg-[var(--mono-accent)]/5"
               animate={{ left: indicator.left, width: indicator.width }}
               transition={softSpring}
             />
@@ -206,14 +203,14 @@ export default function Navbar() {
                 onClick={handleNavClick}
               />
             ))}
-          </div>
+          </nav>
 
           <button
             type="button"
             aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isOpen}
             aria-controls="mobile-nav-drawer"
-            className="inline-flex h-11 w-11 items-center justify-center border border-[var(--mono-surface-3)] text-[var(--mono-comment)] transition-colors hover:border-[var(--mono-cyan)] hover:text-[var(--mono-cyan)] lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center border border-[var(--mono-surface-3)] text-[var(--mono-comment)] transition-colors hover:border-[var(--mono-accent)] hover:text-[var(--mono-accent)] lg:hidden"
             onClick={() => setIsOpen((c) => !c)}
           >
             <span className="relative block h-5 w-5">
@@ -226,7 +223,7 @@ export default function Navbar() {
 
         <div className="absolute bottom-0 left-0 h-[2px] w-full bg-transparent overflow-hidden">
           <div
-            className="h-full w-full origin-left bg-[var(--mono-cyan)]"
+            className="h-full w-full origin-left bg-[var(--mono-accent)]"
             style={{ transform: `scaleX(${scrollProgress})` }}
           />
         </div>

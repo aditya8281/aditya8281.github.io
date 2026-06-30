@@ -23,7 +23,7 @@ export default function SectionHeading({ title, subtitle }: SectionHeadingProps)
         {title}
       </motion.h2>
       {subtitle && (
-        <motion.p className="mt-2 max-w-2xl text-sm text-[var(--mono-text-dim)] leading-relaxed sm:text-base" variants={fadeUp}>
+        <motion.p className="mt-2 max-w-2xl text-[var(--mono-text-dim)] leading-relaxed sm:text-base" variants={fadeUp}>
           {subtitle}
         </motion.p>
       )}

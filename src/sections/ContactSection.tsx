@@ -15,7 +15,7 @@ export default function ContactSection() {
                 <a
                   key={method.label}
                   href={method.href}
-                  className="border border-[var(--mono-surface-3)] bg-[var(--mono-bg)] px-4 py-3 text-sm text-[var(--mono-text-dim)] transition hover:border-[var(--mono-cyan)] hover:text-[var(--mono-text)]"
+                  className="border border-[var(--mono-surface-3)] bg-[var(--mono-bg)] px-4 py-3 text-sm text-[var(--mono-text-dim)] transition hover:border-[var(--mono-green)] hover:text-[var(--mono-text)]"
                   target={method.href.startsWith('http') ? '_blank' : undefined}
                   rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 >
@@ -26,7 +26,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
           <motion.div variants={staggerPopItem} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-6 text-[var(--mono-text-dim)]">
-            <p className="text-xs font-mono text-[var(--mono-cyan)]">What I'm looking for</p>
+            <p className="text-xs font-mono text-[var(--mono-green)]">What I'm looking for</p>
             <p className="mt-3 text-sm leading-7">
               Internships, research collaborations, and practical AI systems that move from prototype to something usable. Computer vision, edge AI, robotics, RL, and systems work.
             </p>
