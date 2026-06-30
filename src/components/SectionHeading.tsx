@@ -6,7 +6,7 @@ type SectionHeadingProps = {
   subtitle?: string
 }
 
-export default function SectionHeading({ title }: SectionHeadingProps) {
+export default function SectionHeading({ title, subtitle }: SectionHeadingProps) {
   return (
     <motion.div
       className="mb-6 w-full max-w-5xl sm:mb-8"
@@ -22,6 +22,11 @@ export default function SectionHeading({ title }: SectionHeadingProps) {
       >
         {title}
       </motion.h2>
+      {subtitle && (
+        <motion.p className="mt-2 max-w-2xl text-sm text-[var(--mono-text-dim)] leading-relaxed sm:text-base" variants={fadeUp}>
+          {subtitle}
+        </motion.p>
+      )}
       <div className="section-divider" />
     </motion.div>
   )

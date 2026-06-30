@@ -27,19 +27,12 @@ export default function ResumeModal({ open, onClose }: Props) {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [open, handleKeyDown])
 
-  // Focus the iframe when modal opens so keyboard users can interact
   useEffect(() => {
-    if (open && iframeRef.current) {
-      iframeRef.current.focus()
-    }
+    if (open && iframeRef.current) iframeRef.current.focus()
   }, [open])
 
-  // Reset loading/error state when modal opens
   useEffect(() => {
-    if (open) {
-      setLoading(true)
-      setError(false)
-    }
+    if (open) { setLoading(true); setError(false) }
   }, [open])
 
   return (
@@ -54,32 +47,31 @@ export default function ResumeModal({ open, onClose }: Props) {
           aria-modal="true"
           aria-label="Resume viewer"
         >
-          <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-2xl" onClick={onClose} />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(34,211,238,0.18),transparent_30%),radial-gradient(circle_at_82%_80%,rgba(99,102,241,0.16),transparent_32%)]" />
+          <div className="absolute inset-0 bg-[#1a1b16]/95" onClick={onClose} />
 
           <motion.div
             initial={{ scale: 0.97, y: 16 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.97, y: 10 }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 flex w-full max-w-[900px] flex-col overflow-hidden rounded-2xl border border-cyan-300/15 bg-slate-950/95 shadow-[0_40px_140px_rgba(2,8,23,0.72)] backdrop-blur-2xl sm:max-w-[1100px] md:max-w-5xl"
+            className="relative z-10 flex w-full max-w-[900px] flex-col overflow-hidden border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] sm:max-w-[1100px] md:max-w-5xl"
             style={{ height: 'min(80vh, 80svh)' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-slate-900/80 px-4 py-3 backdrop-blur-xl">
+            <div className="flex shrink-0 items-center justify-between gap-2 border-b border-[var(--mono-surface-3)] bg-[var(--mono-bg)] px-4 py-3">
               <h3 className="text-sm font-semibold text-white">Resume</h3>
               <div className="flex items-center gap-2">
                 <a
                   href={pdfUrl}
                   download
-                  className="rounded-md px-3 py-1.5 text-xs font-medium text-cyan-200 transition hover:bg-white/5"
+                  className="rounded-sm px-3 py-1.5 text-xs font-medium text-[var(--mono-cyan)] transition hover:bg-[var(--mono-surface-2)]"
                 >
                   Download
                 </a>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="rounded-md px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:bg-white/5"
+                  className="rounded-sm px-3 py-1.5 text-xs font-medium text-[var(--mono-text-dim)] transition hover:bg-[var(--mono-surface-2)]"
                 >
                   Close
                 </button>
@@ -88,18 +80,18 @@ export default function ResumeModal({ open, onClose }: Props) {
 
             <div className="relative flex-1 min-h-0">
               {loading && !error && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-slate-400">
-                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-[var(--mono-comment)]">
+                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--mono-cyan)] border-t-transparent" />
                   Loading resume...
                 </div>
               )}
               {error && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-slate-400">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-sm text-[var(--mono-comment)]">
                   <p>Failed to load the resume PDF.</p>
                   <a
                     href={pdfUrl}
                     download
-                    className="rounded-lg bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+                    className="btn-primary"
                   >
                     Download instead
                   </a>

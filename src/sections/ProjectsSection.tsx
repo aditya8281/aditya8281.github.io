@@ -13,9 +13,9 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="section-vert">
       <div className="app-container">
-        <SectionHeading title="Projects" />
+        <SectionHeading title="Projects" subtitle="Things I've built — from backend infrastructure to computer vision systems." />
 
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={staggerPop} className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={staggerPop} className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} onOpen={() => setActive(project)} />
           ))}

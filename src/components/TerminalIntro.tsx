@@ -2,20 +2,23 @@ import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const terminalLines = [
-  'Probably listening songs and typing code...',
+  'Probably listening to songs and typing code...',
   'Maybe crashing out on bugs and coffee...',
   'Most likely just procrastinating...',
 ]
 
 export default function TerminalIntro() {
-  const [currentLineIndex, setCurrentLineIndex] = useState(0)
+  const prefersReduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const [currentLineIndex, setCurrentLineIndex] = useState(prefersReduced ? terminalLines.length : 0)
   const [typedText, setTypedText] = useState('')
   const [completedLines, setCompletedLines] = useState<string[]>([])
+  const [cycleComplete, setCycleComplete] = useState(prefersReduced)
 
   const currentLine = terminalLines[currentLineIndex] ?? ''
 
   useEffect(() => {
-    if (currentLineIndex >= terminalLines.length) {
+    if (prefersReduced || currentLineIndex >= terminalLines.length) {
+      setCycleComplete(true)
       return
     }
 
@@ -25,47 +28,61 @@ export default function TerminalIntro() {
         setTypedText('')
         setCurrentLineIndex((prev) => prev + 1)
       }, 1000)
-
       return () => window.clearTimeout(hold)
     }
 
     const timeout = window.setTimeout(() => {
       setTypedText(currentLine.slice(0, typedText.length + 1))
     }, 75)
-
     return () => window.clearTimeout(timeout)
-  }, [currentLine, currentLineIndex, typedText])
+  }, [currentLine, currentLineIndex, typedText, prefersReduced])
+
+  const handleReplay = () => {
+    setCompletedLines([])
+    setTypedText('')
+    setCurrentLineIndex(0)
+    setCycleComplete(false)
+  }
 
   const displayLines = useMemo(() => {
+    if (prefersReduced || cycleComplete) return [...terminalLines]
     const lines = [...completedLines]
-    if (currentLineIndex < terminalLines.length) {
-      lines.push(typedText)
-    }
+    if (currentLineIndex < terminalLines.length) lines.push(typedText)
     return lines
-  }, [completedLines, currentLineIndex, typedText])
+  }, [completedLines, currentLineIndex, typedText, prefersReduced, cycleComplete])
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-      className="rounded-3xl border border-slate-700/70 bg-slate-950/80 p-5 shadow-[0_24px_80px_rgba(15,23,42,0.45)] backdrop-blur-xl"
+      transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+      className="border border-[var(--mono-surface-3)] bg-[var(--mono-surface)] p-4"
     >
-      <div className="flex items-center gap-2 text-xs uppercase tracking-[0.32em] text-slate-500">
-        <span className="inline-flex h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_16px_rgba(34,211,238,0.4)]" />
-        System startup
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2 text-xs font-mono text-[var(--mono-comment)]">
+          <span className="inline-block h-2 w-2 bg-[var(--mono-green)]" />
+          system
+        </div>
+        {cycleComplete && (
+          <button
+            type="button"
+            onClick={handleReplay}
+            className="text-xs font-mono text-[var(--mono-comment)] hover:text-[var(--mono-cyan)] transition-colors"
+            aria-label="Replay terminal animation"
+          >
+            replay
+          </button>
+        )}
       </div>
 
-      <div className="mt-4 space-y-2 font-mono text-sm leading-6 text-slate-300">
+      <div className="mt-3 space-y-1 font-mono text-sm text-[var(--mono-text-dim)]">
         {displayLines.map((line, index) => {
-          const isCurrent = index === displayLines.length - 1 && currentLineIndex < terminalLines.length
+          const isCurrent = !cycleComplete && index === displayLines.length - 1 && currentLineIndex < terminalLines.length
           return (
             <div key={`${line}-${index}`} className="flex gap-2">
-              <span className="text-cyan-300">&gt;</span>
+              <span className="text-[var(--mono-cyan)]">&gt;</span>
               <span>{line}</span>
-              {isCurrent ? (
-                <span className="inline-block h-4 w-1 bg-cyan-300 animate-pulse" />
-              ) : null}
+              {isCurrent && <span className="inline-block h-4 w-[2px] bg-[var(--mono-cyan)] animate-pulse" />}
             </div>
           )
         })}

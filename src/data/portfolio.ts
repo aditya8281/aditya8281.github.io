@@ -35,12 +35,10 @@ export type ContactMethod = {
 // ─── Re-exports (single source of truth: portfolio.json) ──
 export const navLinks: NavLink[] = [
   { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'research', label: 'Research' },
-  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
+  { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
-  { id: 'leadership', label: 'Leadership' },
+  { id: 'skills', label: 'Skills' },
   { id: 'contact', label: 'Contact' },
 ]
 

@@ -1,4 +1,4 @@
-export const trackedSectionIds = ['home', 'about', 'research', 'skills', 'projects', 'experience', 'leadership', 'contact'] as const
+export const trackedSectionIds = ['home', 'projects', 'about', 'experience', 'skills', 'contact'] as const
 
 export function getScrollOffset() {
   const nav = document.querySelector('[data-site-navbar]')

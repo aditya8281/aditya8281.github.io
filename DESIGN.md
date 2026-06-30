@@ -1,54 +1,53 @@
 ---
 name: Aditya Rathod — Portfolio
-description: Dark command-console portfolio for an AI & systems engineer
+description: Monokai minimalist portfolio for an AI & systems engineer, geometric accents
 colors:
-  deep-black: "#03070f"
-  surface: "#050816"
-  surface-mid: "#0b1223"
-  surface-raised: "#111a33"
-  cathode-cyan: "#22d3ee"
-  phosphor-blue: "#60a5fa"
-  anode-violet: "#a855f7"
-  text-primary: "#e2f7ff"
-  text-secondary: "#cfeffd"
-  text-muted: "#94a3b8"
-  border-subtle: "rgba(56, 189, 248, 0.12)"
+  deep-black: "#1a1b16"
+  surface: "#272822"
+  surface-raised: "#3e3d32"
+  surface-border: "#49483e"
+  text-primary: "#f8f8f2"
+  text-dim: "#c5c5b8"
+  text-muted: "#75715e"
+  signal-cyan: "#66d9ef"
+  signal-green: "#a6e22e"
+  signal-orange: "#fd971f"
+  signal-pink: "#f92672"
+  signal-purple: "#ae81ff"
+  signal-yellow: "#e6db74"
 typography:
   display:
-    fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+    fontFamily: "Geist Sans, system-ui, -apple-system, sans-serif"
     fontSize: "clamp(1.875rem, 5.2vw, 5.2rem)"
     fontWeight: 600
     lineHeight: 1.1
     letterSpacing: "-0.03em"
   headline:
-    fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+    fontFamily: "Geist Sans, system-ui, -apple-system, sans-serif"
     fontSize: "clamp(1.875rem, 3vw, 2.75rem)"
     fontWeight: 800
     lineHeight: 1.15
     letterSpacing: "-0.03em"
   body:
-    fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+    fontFamily: "Geist Sans, system-ui, -apple-system, sans-serif"
     fontSize: "clamp(0.875rem, 1.1vw, 1.125rem)"
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: "normal"
   label:
-    fontFamily: "Inter, system-ui, -apple-system, sans-serif"
+    fontFamily: "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace"
     fontSize: "0.75rem"
     fontWeight: 400
-    letterSpacing: "0.22em"
-    textTransform: "uppercase"
+    letterSpacing: "0.15em"
   mono:
-    fontFamily: "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
+    fontFamily: "ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace"
     fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.5
 rounded:
-  sm: "0.5rem"
-  md: "1rem"
-  lg: "1.5rem"
-  xl: "2rem"
-  full: "9999px"
+  sm: "4px"
+  md: "8px"
+  lg: "12px"
 spacing:
   xs: "0.5rem"
   sm: "0.75rem"
@@ -58,206 +57,191 @@ spacing:
   section-vertical: "clamp(2rem, 5vh, 4.5rem)"
 components:
   button-primary:
-    backgroundColor: "rgba(34, 211, 238, 1)"
-    textColor: "rgba(3, 7, 15, 1)"
+    backgroundColor: "{colors.signal-cyan}"
+    textColor: "{colors.deep-black}"
     rounded: "{rounded.sm}"
-    padding: "0.75rem 1.25rem"
+    padding: "0.6rem 1.2rem"
+  button-primary-hover:
+    backgroundColor: "#7ce4f7"
   button-ghost:
     backgroundColor: "transparent"
-    textColor: "{text-secondary}"
+    textColor: "{colors.text-dim}"
     rounded: "{rounded.sm}"
-    padding: "0.5rem 0.8rem"
+    padding: "0.4rem 0.8rem"
   glass-card:
-    backgroundColor: "rgba(15, 23, 42, 0.76)"
-    textColor: "{text-primary}"
-    rounded: "{rounded.lg}"
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text-primary}"
+    rounded: "{rounded.md}"
     padding: "1.5rem"
   skill-badge:
-    backgroundColor: "linear-gradient(90deg, rgba(34,211,238,0.1), rgba(15,23,42,0.65), rgba(168,85,247,0.1))"
-    textColor: "{text-primary}"
-    rounded: "{rounded.full}"
-    padding: "0.5rem 1rem"
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text-primary}"
+    rounded: "{rounded.sm}"
+    padding: "0.4rem 0.8rem"
 ---
 
 # Design System: Aditya Rathod — Portfolio
 
 ## 1. Overview
 
-**Creative North Star: "The Command Console"**
+**Creative North Star: "The Monokai Workshop"**
 
-A dark, focused command center. The site operates like a heads-up display — precision-engineered depth through layered dark surfaces, subtle cyan signal lines, and grid overlays. Every element earns its place through function. The cyan glow is signal, not decoration. The atmosphere is cinematic without being theatrical: layered radial gradients create ambient light, a multi-scale engineering grid provides structure, and floating glow orbs add depth without distraction. The visual system explicitly rejects overdesigned tech-bro portfolios (neon gradients, excessive parallax, blockchain vibes), generic SaaS landing pages (cream backgrounds, glassmorphism everywhere, gradient text), and minimalist plain-resume sites with no personality. Confidence comes from substance and precision, not from shouting.
+A dark, warm workshop environment. The site operates like a well-organized engineering bench — Monokai palette foundations with geometric accents that feel like precision tools, not decoration. Every element earns its place through function. The warm dark background (#1a1b16) is the workbench surface; cyan is the soldering iron tip glowing hot; green is the success LED; orange is the warning indicator. The visual system explicitly rejects overdesigned tech-bro portfolios (neon gradients, glassmorphism, blockchain vibes), generic SaaS landing pages (cream backgrounds, warm neutrals), and minimalist plain-resume sites with no personality. Confidence comes from substance and the Monokai heritage — a palette beloved by engineers, not borrowed from marketing.
 
 **Key Characteristics:**
-- Deep navy-black foundations with layered depth (base → grid → light → orbs → particles)
-- Cathode cyan as the dominant signal color, used sparingly but with purpose
-- Glass-card surfaces with translucent navy backgrounds and subtle white borders
-- Multi-layer atmospheric background: engineering grid, blurred radial gradients, floating orbs, mouse-following glow
-- Tactile interactions: 3D tilt on project cards, spring animations on badges, lift-on-hover across interactive elements
-- Terminal-style intro with typewriter animation as a signature element
-- Hybrid elevation: ambient atmospheric shadows for depth, structural shadows on interactive elements
+- Warm dark foundations (Monokai #1a1b16) with tonal surface layering, no atmospheric effects
+- Signal-cyan (#66d9ef) as the dominant accent — sparingly, with purpose
+- Sharp-cornered card surfaces with flat tonal backgrounds, no glass blur
+- Geometric accents: rotated diamonds, clipped hexagons, triangular shapes as structural decoration
+- Monospace labels and terminal-style intro as voice accents
+- Left-edge cyan accent on card hover — a single, sharp interaction signal
+- Flat-by-default elevation: depth through tonal layering, not shadows
 
 ## 2. Colors
 
-The palette is a deep-field instrument readout: near-black foundations with three signal accents — cyan as primary reading, blue as secondary, violet as tertiary detail.
+The palette is a Monokai editor ported to web: warm dark foundations with six signal accents — cyan as primary, green and orange as secondary, pink, purple, and yellow as tertiary detail.
 
 ### Primary
-- **Cathode Cyan** (#22d3ee): The dominant signal color. Used for primary CTA buttons, focus rings, active nav indicators, accent borders, hover glows, the profile dot, scrollbar thumb, selection highlight, and all "alive" states. The cyan glow is the visual signature — it carries information, not decoration.
+- **Signal Cyan** (#66d9ef): The dominant accent. Used for primary CTA buttons, focus rings, active nav indicators, left-edge card hover accents, section dividers, the profile image corner accent, and all "alive" states. Its warmth against the dark surface is the visual signature.
 
 ### Secondary
-- **Phosphor Blue** (#60a5fa): Supporting accent. Used in background radial gradients, secondary glows, the hero gradient blend, and as a cooler counterpoint to cyan in mixed-surface treatments.
+- **Phosphor Green** (#a6e22e): Supporting accent. Used for status indicators (green dot in terminal/hero), the contact nav link, and secondary highlights. A natural companion to cyan in the Monokai family.
 
 ### Tertiary
-- **Anode Violet** (#a855f7): Detail accent. Appears in background orbs (orb-2, orb-5), skill badge gradients, project card radial overlays, and the resume modal ambient light. Rare enough to feel special when it appears.
+- **Ember Orange** (#fd971f): Detail accent. Appears in the profile image bottom-right corner, metric badges on project cards, and "What I Explore" section label. Warm and technical.
+- **Signal Pink** (#f92672): Error and danger states. Reserved for destructive actions and error boundaries.
+- **Neon Purple** (#ae81ff): Rare special accent. Used sparingly for emphasis where a third chromatic signal is needed.
+- **Monokai Yellow** (#e6db74): Warning and highlight. Rarely used; reserved for caution states.
 
 ### Neutral
-- **Deep Black** (#03070f): The deepest foundation — html body background, scroll context. Near-pure black with a faint blue undertone.
-- **Surface** (#050816): Tailwind `surface` token. Slightly lifted from deep black. Used for elevated containers.
-- **Surface Mid** (#0b1223): Tailwind `surface2`. Mid-level surface for cards and panels that need more separation from the background.
-- **Surface Raised** (#111a33): Tailwind `surface3`. The lightest surface token — used for the highest-elevation panels.
-- **Text Primary** (#e2f7ff): Body text on dark backgrounds. Cool white with a faint cyan tint — never pure white.
-- **Text Secondary** (#cfeffd): Lighter emphasis text — descriptions, hints, secondary information.
-- **Text Muted** (#94a3b8): Labels, timestamps, disabled states. Must maintain 4.5:1 contrast against surfaces.
-- **Border Subtle** (rgba(56, 189, 248, 0.12)): The default border color. A translucent cyan that creates structure without competing with content.
+- **Deep Black** (#1a1b16): The workbench surface — html body background. Warm black with a faint green undertone, not pure black.
+- **Surface** (#272822): Elevated containers, card backgrounds. One step lighter than deep black.
+- **Surface Raised** (#3e3d32): Count badges, hover states, secondary surfaces. Two steps lighter.
+- **Surface Border** (#49483e): Borders, separators, dividers. The structural edge color.
+- **Text Primary** (#f8f8f2): Body text on dark backgrounds. Warm off-white — the Monokai default foreground.
+- **Text Dim** (#c5c5b8): Secondary text, descriptions. Lighter than muted, darker than primary.
+- **Text Muted** (#75715e): Labels, timestamps, comments. Must maintain 4.5:1 contrast against surfaces.
 
 ### Named Rules
-**The Signal Rule.** Cathode cyan is used on ≤15% of any given screen. Its rarity is the point — when cyan appears, it means something. Overuse turns signal into noise.
-**The Depth Rule.** Every surface layer adds exactly one step of lightness from the deep-black foundation. No surface jumps more than one step. The atmosphere is built from gradient, not from contrast.
+**The Signal Rule.** Cyan is used on ≤15% of any given screen. Its rarity is the point — when cyan appears, it means something. Overuse turns signal into noise.
+**The Flat Rule.** No shadows in the system. Depth comes exclusively from tonal surface layering (surface → surface-raised → surface-border) and border contrast. If a shadow would be needed, use a border instead.
 
 ## 3. Typography
 
-**Display Font:** Inter (with system-ui fallback)
-**Body Font:** Inter (with system-ui fallback)
-**Label Font:** Inter uppercase (with system-ui fallback)
-**Mono Font:** ui-monospace / SF Mono / Consolas (for terminal-style elements only)
+**Display Font:** Geist Sans (with system-ui fallback)
+**Body Font:** Geist Sans (with system-ui fallback)
+**Label/Mono Font:** ui-monospace / SF Mono / Menlo / Consolas (for labels, metadata, terminal elements)
 
-**Character:** A single family used with aggressive weight and size contrast. Inter is technically clean and engineered — it belongs in the Command Console register. The pairing relies on weight (semibold → extrabold → regular) and size (5.2rem display → 2.75rem headline → 1.125rem body) rather than family contrast. Mono appears only in the TerminalIntro component — it is not a system-wide type choice.
+**Character:** A single geometric sans used with aggressive weight and size contrast. Geist Sans is technically clean and engineered — it belongs in the workshop register. The pairing relies on weight (semibold → extrabold → regular) and size (5.2rem display → 2.75rem headline → 1.125rem body) rather than family contrast. Monospace appears in labels, skill categories, badges, and the terminal intro — it is a voice accent, not a system font.
 
 ### Hierarchy
-- **Display** (semibold/600, clamp(1.875rem, 5.2vw, 5.2rem), line-height 1.1): Hero name only. The largest text on the page. Tight letter-spacing (-0.03em) for precision.
-- **Headline** (extrabold/800, clamp(1.875rem, 3vw, 2.75rem), line-height 1.15): Section headings. Bold and commanding with tight tracking.
-- **Title** (semibold/600, 1.5rem, line-height 1.25): Card titles, project names, sub-headings within sections.
-- **Body** (regular/400, clamp(0.875rem, 1.1vw, 1.125rem), line-height 1.65): Paragraph text, descriptions, project details. Max line length ~70ch. Light text on dark gets extra line-height (0.05–0.1 added).
-- **Label** (regular/400, 0.75rem, tracking 0.22em, uppercase): Section eyebrows, category labels, metadata. Used sparingly — the section heading system uses a single uppercase label per section, not repeated eyebrows.
+- **Display** (semibold/600, clamp(1.875rem, 5.2vw, 5.2rem), line-height 1.1): Hero name only. Tight letter-spacing (-0.03em) for precision.
+- **Headline** (extrabold/800, clamp(1.875rem, 3vw, 2.75rem), line-height 1.15): Section headings. Bold with tight tracking.
+- **Title** (semibold/600, 1.5rem, line-height 1.25): Card titles, project names, sub-headings.
+- **Body** (regular/400, clamp(0.875rem, 1.1vw, 1.125rem), line-height 1.65): Paragraph text, descriptions, project details. Max line length ~70ch. Extra line-height for light text on dark.
+- **Label** (regular/400, 0.75rem, tracking 0.15em, uppercase via class): Section eyebrows, category labels, metadata, badges. Used sparingly.
 
 ### Named Rules
-**The Terminal Rule.** Monospace text appears only in the TerminalIntro component and skill/tool labels where it represents code. All other text is Inter. Mono is a voice accent, not a system font.
+**The Mono Voice Rule.** Monospace text appears in labels, badges, terminal elements, and metadata. All other text is Geist Sans. Mono is a voice accent for technical precision, not a system-wide font choice.
 
 ## 4. Elevation
 
-Hybrid system: ambient atmospheric shadows for depth on resting surfaces, structural shadows that respond to interaction state (hover, scroll, focus). Shadows are translucent and cool-toned — never black, never opaque. The deepest shadows use the navy palette (`rgba(15,23,42,...)` or `rgba(8,15,31,...)`), not neutral black.
+Flat by default. No shadows in the system — `.shadow-glow` explicitly sets `box-shadow: none`. Depth is conveyed through tonal surface layering: the background is the darkest layer, cards sit on `surface`, raised elements sit on `surface-raised`, and borders provide structural edges.
 
-### Shadow Vocabulary
-- **Ambient Soft** (`0 20px 60px rgba(15,23,42,0.45)`): Glass cards at rest. Diffuse, atmospheric — creates depth through ambient light falloff, not physical stacking.
-- **Ambient Deep** (`0 28px 90px rgba(8,15,31,0.35)`): Hero profile card, highest-elevation surfaces. The deepest resting shadow.
-- **Cyan Glow** (`0 20px 80px rgba(34,211,238,0.14)`): Accent glow on hero elements and focus states. Adds a subtle cyan halo.
-- **Interactive Lift** (`0 16px 40px rgba(34,211,238,0.09)`): Applied on card hover via `shadow-glow` class. Structural — signals interactivity.
-- **Nav Scroll** (`0 22px 70px rgba(8,15,31,0.38)`): Navbar scrolled state. Structural — signals the nav is now pinned.
-- **Modal Overlay** (`0 40px 140px rgba(2,8,23,0.72)`): Resume modal container. Deepest shadow in the system.
+### Tonal Vocabulary
+- **Background** (#1a1b16): The deepest layer. Fixed via `.geo-bg` diagonal grid pattern.
+- **Surface** (#272822): Card backgrounds, the mobile nav drawer, terminal intro.
+- **Surface Raised** (#3e3d32): Count badges, metric tags, hover highlights.
+- **Surface Border** (#49483e): All borders and separators. The structural edge.
 
 ### Named Rules
-**The Flat-By-Default Rule.** Surfaces are flat at rest with only ambient atmospheric shadow. Structural shadows appear as a response to state — hover, elevation change, focus, scroll position. If a shadow is always visible, it's atmospheric. If it appears on interaction, it's structural.
+**The Flat-By-Default Rule.** Surfaces are flat at rest with only tonal differentiation. The only hover accent is a 3px cyan left-edge stripe on `.glass-card` elements — a single, sharp interaction signal. No lift, no shadow, no glow on hover.
 
 ## 5. Components
 
-### Glass Card
-The foundational surface. A translucent navy panel with a thin white border, backdrop blur, and a subtle top-edge gradient overlay.
-- **Corner Style:** 1.5rem radius (`--radius-lg`), reduced to 1rem on mobile
-- **Background:** `linear-gradient(180deg, rgba(15,23,42,0.76), rgba(8,12,20,0.64))` with a `::before` overlay gradient
-- **Border:** `1px solid rgba(255, 255, 255, 0.06)`
-- **Shadow:** Ambient Soft at rest, Interactive Lift on hover
+### Card (`.glass-card`)
+The foundational surface. Despite the legacy class name, there is no glass/blur effect — it is a flat tonal panel with sharp corners.
+- **Corner Style:** 8px radius (`--radius-md`), reduced to 4px on mobile
+- **Background:** `--mono-surface` (#272822)
+- **Border:** 1px solid `--mono-surface-3` (#49483e)
+- **Hover:** Left-edge 3px cyan stripe appears (`::before` pseudo-element, opacity 0→1). Border shifts to cyan.
 - **Internal Padding:** 1.5rem (1rem on mobile)
-- **State:** `hover:-translate-y-1 hover:shadow-glow` — subtle lift + cyan glow on hover
 
 ### Buttons
-- **Shape:** Gently curved (0.5rem radius / `rounded-lg`)
-- **Primary (CTA):** Cathode cyan background, deep-black text, semibold. Padding 0.75rem 1.25rem. Solid fill — the only opaque accent surface in the system.
-- **Hover / Focus:** `hover:bg-cyan-300` (lighter cyan), `translateY(-1px)`, `scale(1.01)`. Focus ring: `ring-2 ring-cyan-400/60` with offset.
-- **Ghost:** Transparent background, `border-white/8`, `text-cyan-100`. Used for secondary actions.
-- **Nav CTA (Resume):** `.resume-cta` — glassmorphism with a sweep-shine hover effect (left-to-right gradient pass).
+- **Shape:** Sharp corners (4px radius / `--radius-sm`)
+- **Primary (CTA):** Cyan background (#66d9ef), deep-black text, semibold. Padding 0.6rem 1.2rem. Solid fill — the only opaque accent surface.
+- **Hover:** Lighter cyan (#7ce4f7), translateY(-1px). Focus ring: 2px solid cyan with 2px offset.
+- **Ghost:** Transparent background, `--mono-surface-3` border, `--mono-text-dim` text. Used for secondary actions.
 
 ### Chips / Tags
-- **Style:** Rounded-full pill, translucent background with subtle border. Two variants:
-  - **Tech tags (project cards):** `bg-slate-900/70`, `border-cyan-400/10`, `text-slate-100`. Hover: `-translate-y-0.5`, border shifts to `cyan-300/30`.
-  - **Skill badges:** Gradient background (`from-cyan-500/10 via-slate-900/65 to-violet-500/10`), `border-white/10`. Spring animation on hover (`scale(1.05), y: -2`).
-- **State:** Hover lifts and intensifies the border glow.
+- **Style:** Sharp corners (4px), surface background, surface-border border. Two variants:
+  - **Tech tags (project cards):** `--mono-surface-2` background, cyan text for primary tag, orange for metric.
+  - **Skill badges (`.skill-badge-geo`):** `--mono-surface` background, `--mono-surface-3` border. Hover: border shifts to cyan, text turns cyan.
+- **State:** Hover intensifies border color to cyan.
 
 ### Section Heading
-A signature element combining a horizontal cyan gradient line, uppercase tracking label, bold title, and a soft divider.
-- **Horizontal line:** 2.5–4rem width, `bg-gradient-to-r from-cyan-400/50 via-blue-400/30 to-transparent`
-- **Label:** Uppercase, 0.75rem, tracking 0.22–0.34em, `text-cyan-300/80`
-- **Title:** Extrabold, `clamp(1.875rem, 3vw, 2.75rem)`, white
-- **Divider:** `.section-divider` — horizontal gradient line fading from cyan to blue to transparent
+A signature element combining a bold title with a solid cyan divider line.
+- **Title:** Extrabold, clamp(1.875rem, 3vw, 2.75rem), white
+- **Divider:** `.section-divider` — 2px height, max-width 6rem, solid cyan (#66d9ef) at 50% opacity
 
 ### Navbar
 Fixed top bar with animated active indicator and responsive mobile drawer.
-- **Style:** `bg-slate-950/20` at rest with `backdrop-blur-xl`. On scroll: `bg-slate-950/86` with `border-white/10` and structural shadow.
-- **Nav items:** Rounded-full pills inside a bordered container. Active state: animated sliding indicator (`bg-cyan-300/10`, `border-cyan-300/20`, `shadow-[0_0_28px_rgba(34,211,238,0.12)]`).
-- **Mobile:** Full-screen modal drawer with portal, `bg-slate-950/88 backdrop-blur-2xl` backdrop, grid of nav buttons with hover states.
-- **Logo:** "AR" monogram in a rounded container with cyan border and glow.
+- **Style:** Transparent at rest with `backdrop-blur-xl`. On scroll: 90% opacity background with border.
+- **Nav items:** Flat buttons inside a bordered container. Active state: animated sliding indicator (cyan border + 5% cyan background).
+- **Scroll progress:** 2px bottom bar using `scaleX()` — GPU-accelerated, no layout thrash.
+- **Mobile:** Full-screen modal drawer with portal, surface background, grid of nav buttons with active/hover states.
+- **Logo:** "AR" monogram in a bordered container with cyan text.
 
 ### Terminal Intro
 Signature hero element — a dark panel with typewriter animation.
-- **Style:** `rounded-3xl`, `border-slate-700/70`, `bg-slate-950/80`, `backdrop-blur-xl`
-- **Content:** Uppercase label "System startup" with blinking cyan dot, then monospace lines with `>` prefix and blinking cursor
-- **Typography:** `font-mono text-sm text-slate-300`
+- **Style:** Sharp corners (no radius override), surface background, surface-border border
+- **Content:** Green status dot, monospace lines with `>` prefix and blinking cyan cursor
+- **Typography:** Mono, text-dim color
 
 ### Profile Image
-Circular avatar with layered borders and gradient overlays.
-- **Shape:** Full circle, `max-w-[22rem]` at largest
-- **Borders:** Double — cyan-400/12 outer ring + white/10 inner ring
-- **Overlays:** Gradient from cyan-400/10 (top-left) to slate-950/10 (bottom-right), plus a `from-slate-950/30` to `cyan-400/10` bottom gradient
-- **Shadow:** `0 20px 60px rgba(8,15,31,0.35)` ambient
+Square frame with geometric corner accents.
+- **Shape:** Square (aspect-ratio 1/1), max-w 14-16rem
+- **Borders:** 2px solid `--mono-surface-3`
+- **Accents:** 3px cyan square top-left, 3px orange square bottom-right
+- **No rounded corners, no glass blur, no gradient overlays**
 
 ### Project Card
-The most complex component — 3D tilt, layered gradients, and interactive tool tags.
-- **Corner Style:** 2rem radius (`rounded-[2rem]`)
-- **Background:** Radial gradients (cyan top-left, violet bottom-right) as ambient overlay, with a `glass-card` inner container at `bg-slate-950/85`
-- **Border:** `border-white/10` at rest, `border-cyan-300/25` on hover
-- **3D Tilt:** `perspective(900px)` mouse-following tilt via `onMouseMove` (±4deg X, ±6deg Y)
-- **Internal Padding:** 1–1.25rem outer, 1.5rem inner card
-
-### Resume Modal
-Full-screen overlay with PDF viewer.
-- **Backdrop:** `bg-slate-950/80 backdrop-blur-2xl` with radial cyan/violet ambient light
-- **Container:** `rounded-2xl`, `border-cyan-300/15`, `bg-slate-950/95`, `max-w-5xl`
-- **Header bar:** `bg-slate-900/80`, `border-b-white/10`, contains title + download/close buttons
-- **Focus:** Auto-focuses iframe on open for keyboard navigation
-
-### Stat Card
-Compact metric display within the glass-card system.
-- **Style:** Inherits glass-card. Hover: `y: -6, scale: 1.02` spring animation
-- **Content:** Uppercase cyan label + large white value + optional muted hint
-- **Interactive:** Clickable variant with `hover:border-cyan-300/35` and focus ring
+Sharp geometric card with interactive tool tags.
+- **Corner Style:** 8px radius (4px on mobile)
+- **Background:** `--mono-surface`
+- **Border:** `--mono-surface-3`, shifts to cyan on hover
+- **Hover:** Left-edge cyan accent stripe appears. Tags get cyan border.
+- **No 3D tilt, no radial gradients, no glass blur**
 
 ### Navigation (Mobile Drawer)
 Portal-rendered full-screen modal with grid layout.
-- **Backdrop:** Fixed, `bg-slate-950/88 backdrop-blur-2xl`, click-to-close
-- **Container:** `rounded-3xl`, `border-cyan-300/18`, `bg-slate-950`
-- **Nav buttons:** Grid of cards, `min-h-[4.5rem]`, with active/hover/contact states
+- **Backdrop:** Fixed, deep-black at 95% opacity, click-to-close
+- **Container:** Surface background, surface-border border
+- **Nav buttons:** Grid of cards, min-h 4rem, with active/hover/contact states
 - **Scroll lock:** Body scroll locked when open via `useBodyScrollLock` hook
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** use Cathode Cyan (#22d3ee) as the primary signal — on CTAs, focus rings, active states, and hover glows. Its rarity is the point.
-- **Do** maintain the deep navy-black foundation (#03070f) across all surfaces. Depth comes from layered gradients, not from lighter backgrounds.
-- **Do** use glass-card panels with translucent navy backgrounds, thin white borders, and backdrop blur for content containers.
+- **Do** use Signal Cyan (#66d9ef) as the primary accent — on CTAs, focus rings, active states, and hover edges. Its rarity against the warm dark surface is the point.
+- **Do** maintain the warm dark foundation (#1a1b16) across all surfaces. Depth comes from tonal layering, not from lighter backgrounds or shadows.
+- **Do** use sharp-cornered card surfaces with flat tonal backgrounds and surface-border edges. No blur, no glass.
 - **Do** add 0.05–0.1 to line-height for light text on dark backgrounds. Light type reads as lighter weight.
 - **Do** use `text-wrap: balance` on h1–h3 for even line lengths.
-- **Do** use the hybrid elevation model: atmospheric shadows at rest, structural shadows on interaction.
-- **Do** respect `prefers-reduced-motion` — all animations must have a reduced-motion alternative. The current implementation disables all animation duration and transition duration to 0.001ms.
-- **Do** test heading copy at every breakpoint; reduce the clamp max or rewrite copy if it overflows.
-- **Do** keep the section heading system: horizontal cyan gradient line → uppercase tracking label → bold title → soft divider. This is the established voice.
+- **Do** use the flat elevation model: tonal surfaces at rest, border contrast for structure, cyan accent for interaction.
+- **Do** respect `prefers-reduced-motion` — all animations disabled, scroll behavior set to auto.
+- **Do** use geometric accents (diamond, hexagon, triangle) sparingly — structural decoration, not ornament.
+- **Do** keep the section heading system: bold title → solid cyan divider line. This is the established voice.
 
 ### Don't:
-- **Don't** use gradient text (`background-clip: text` combined with a gradient background). Decorative, never meaningful. Use a single solid color.
-- **Don't** use glassmorphism decoratively on every surface. Glass cards are the established pattern — don't add glass blur to buttons, badges, or other elements that don't need it.
-- **Don't** add tiny uppercase tracked eyebrows above every section. The section heading system already has one label per section — repeating it as section grammar is AI scaffolding.
-- **Don't** use numbered section markers (01 / 02 / 03) as default scaffolding. The section heading system uses descriptive labels, not numbers.
-- **Don't** use `border-left` or `border-right` greater than 1px as a colored accent stripe. Rewrite with full borders, background tints, or nothing.
-- **Don't** use side-stripe borders on cards, list items, callouts, or alerts. Never intentional.
-- **Don't** default to the cream / sand / beige body bg pattern. This is a deep-field instrument — the foundation is near-black navy.
+- **Don't** use gradient text (`background-clip: text` combined with a gradient background). Decorative, never meaningful.
+- **Don't** use glassmorphism, backdrop blur on cards, or decorative glass effects. The system is flat and tonal.
+- **Don't** add tiny uppercase tracked eyebrows above every section. The section heading system uses a single title per section.
+- **Don't** use numbered section markers (01 / 02 / 03) as default scaffolding.
+- **Don't** use `border-left` or `border-right` greater than 1px as a colored accent stripe. The left-edge hover accent is 3px via a `::before` pseudo-element — not a border.
+- **Don't** use shadows anywhere. The system is flat-by-default. `.shadow-glow` explicitly sets `box-shadow: none`.
+- **Don't** default to cream / sand / beige body backgrounds. This is a warm-dark workshop — the foundation is Monokai black.
 - **Don't** add neon gradients, excessive parallax, or blockchain/crypto vibes. The anti-reference is "overdesigned tech bro portfolio."
-- **Don't** use bounce or elastic easing curves. Ease out with exponential curves (cubic-bezier(0.22, 1, 0.36, 1) is the established standard).
-- **Don't** animate CSS layout properties unless truly needed. Prefer transform and opacity.
+- **Don't** use bounce or elastic easing curves. Ease out with exponential curves (cubic-bezier(0.22, 1, 0.36, 1)).
+- **Don't** animate CSS layout properties (width, height, padding, margin). Use transform and opacity only.
 - **Don't** gate content visibility on a class-triggered transition. Reveals must enhance an already-visible default.

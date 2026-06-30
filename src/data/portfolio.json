@@ -9,7 +9,7 @@
     "github": "https://github.com/aditya8281",
     "linkedin": "https://linkedin.com/in/adityarathod2912",
     "website": "https://aditya8281.github.io/",
-    "title": "Systems • Backend • AI Tooling • Computer Vision",
+    "title": "Backend Engineer • AI/ML Enthusiast • Systems Thinker",
     "college": "IIT Jodhpur",
     "course": "B.Tech in Electrical Engineering",
     "education": "B.Tech in Electrical Engineering, IIT Jodhpur (2024–2028), CGPA: 7.38/10",
@@ -19,10 +19,10 @@
 
   "hero": {
     "name": "Aditya Rathod",
-    "title": "Systems • Backend • AI Tooling • Computer Vision",
+    "title": "Backend Engineer • AI/ML Enthusiast • Systems Thinker",
     "college": "IIT Jodhpur",
-    "roles": ["Backend Engineering", "Systems Programming", "AI Tooling", "Computer Vision", "Static Analysis"],
-    "description": "Building infrastructure platforms, static analysis engines, and real-time vision systems with production-grade engineering, comprehensive testing, and clean architecture.",
+    "roles": ["Backend Engineering", "Machine Learning", "Systems Programming", "Computer Vision", "AI Tooling"],
+    "description": "Building reliable backend systems, intelligent tools, and ML-powered applications. I care about clean architecture, real-world impact, and shipping things that work.",
     "cta": "Explore projects"
   },
 
