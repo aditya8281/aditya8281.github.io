@@ -41,13 +41,11 @@
   <text x="120" y="252" font-family="system-ui,sans-serif" font-size="20" fill="#7a6558" letter-spacing="0.04em" font-weight="400">Backend Engineer · AI/ML Enthusiast · Systems Thinker</text>
   <rect x="120" y="275" width="180" height="2" fill="url(#line)" rx="1"/>
   <g transform="translate(120, 305)">
-    <rect width="110" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-    <text x="55" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">FastAPI</text>
-    <g transform="translate(124, 0)"><rect width="68" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="34" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Rust</text></g>
-    <g transform="translate(206, 0)"><rect width="118" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="59" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PostgreSQL</text></g>
-    <g transform="translate(338, 0)"><rect width="92" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="46" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PyTorch</text></g>
-    <g transform="translate(444, 0)"><rect width="118" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="59" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Tree-sitter</text></g>
-    <g transform="translate(576, 0)"><rect width="68" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="34" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">YOLO</text></g>
+    <rect width="85" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
+    <text x="42" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Python</text>
+    <g transform="translate(99, 0)"><rect width="55" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="27" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Rust</text></g>
+    <g transform="translate(168, 0)"><rect width="85" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="42" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PyTorch</text></g>
+    <g transform="translate(267, 0)"><rect width="130" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="65" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Computer Vision</text></g>
   </g>
   <g transform="translate(120, 360)">
     <rect width="145" height="30" rx="15" fill="rgba(212,148,58,0.08)" stroke="rgba(212,148,58,0.18)" stroke-width="1"/>
