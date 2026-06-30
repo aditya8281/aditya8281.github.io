@@ -47,7 +47,7 @@ export default function ResumeModal({ open, onClose }: Props) {
           aria-modal="true"
           aria-label="Resume viewer"
         >
-          <div className="absolute inset-0 bg-[#1a1b16]/95" onClick={onClose} />
+          <div className="absolute inset-0 bg-[var(--mono-bg)]/95" onClick={onClose} />
 
           <motion.div
             initial={{ scale: 0.97, y: 16 }}

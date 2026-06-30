@@ -105,7 +105,7 @@ export default function Navbar() {
           <motion.button
             type="button"
             aria-label="Close navigation menu backdrop"
-            className="fixed inset-0 z-[990] bg-[#1a1b16]/95 lg:hidden"
+            className="fixed inset-0 z-[990] bg-[var(--mono-bg)]/95 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

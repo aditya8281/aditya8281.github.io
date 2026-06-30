@@ -17,7 +17,7 @@ export default function ProjectModal({ project, onClose }: Props) {
   return (
     <Fragment>
       <motion.div
-        className="fixed inset-0 z-[880] bg-[#1a1b16]/95"
+        className="fixed inset-0 z-[880] bg-[var(--mono-bg)]/95"
         initial="hidden"
         animate="visible"
         exit="hidden"
