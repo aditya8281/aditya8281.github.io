@@ -25,13 +25,9 @@
       <stop offset="100%" stop-color="rgba(200,64,46,0.03)"/>
     </linearGradient>
   </defs>
-
-  <!-- Background -->
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow-tl)"/>
   <rect width="1200" height="630" fill="url(#glow-br)"/>
-
-  <!-- Subtle dots -->
   <g opacity="0.025" fill="#c8402e">
     <circle cx="120" cy="90" r="1.2"/><circle cx="280" cy="140" r="0.8"/>
     <circle cx="460" cy="70" r="1"/><circle cx="620" cy="150" r="0.7"/>
@@ -40,84 +36,43 @@
     <circle cx="400" cy="560" r="1.1"/><circle cx="640" cy="530" r="0.8"/>
     <circle cx="860" cy="570" r="1"/><circle cx="1060" cy="540" r="0.9"/>
   </g>
-
-  <!-- Left vertical accent -->
   <rect x="90" y="140" width="2" height="240" fill="url(#line)" opacity="0.45" rx="1"/>
-
-  <!-- Name -->
-  <text x="120" y="210" font-family="'Inter','SF Pro Display',system-ui,sans-serif" font-size="68" font-weight="800" fill="#f2ece6" letter-spacing="-0.03em">Aditya Rathod</text>
-
-  <!-- Title -->
-  <text x="120" y="252" font-family="'Inter','SF Pro Display',system-ui,sans-serif" font-size="20" fill="#7a6558" letter-spacing="0.04em" font-weight="400">Backend Engineer · AI/ML Enthusiast · Systems Thinker</text>
-
-  <!-- Gradient bar -->
+  <text x="120" y="210" font-family="system-ui,sans-serif" font-size="68" font-weight="800" fill="#f2ece6" letter-spacing="-0.03em">Aditya Rathod</text>
+  <text x="120" y="252" font-family="system-ui,sans-serif" font-size="20" fill="#7a6558" letter-spacing="0.04em" font-weight="400">Backend Engineer · AI/ML Enthusiast · Systems Thinker</text>
   <rect x="120" y="275" width="180" height="2" fill="url(#line)" rx="1"/>
-
-  <!-- Tag pills row -->
   <g transform="translate(120, 305)">
     <rect width="110" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-    <text x="55" y="21" font-family="'Inter',system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">FastAPI</text>
-
-    <g transform="translate(124, 0)">
-      <rect width="68" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-      <text x="34" y="21" font-family="'Inter',system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Rust</text>
-    </g>
-
-    <g transform="translate(206, 0)">
-      <rect width="118" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-      <text x="59" y="21" font-family="'Inter',system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PostgreSQL</text>
-    </g>
-
-    <g transform="translate(338, 0)">
-      <rect width="92" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-      <text x="46" y="21" font-family="'Inter',system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PyTorch</text>
-    </g>
-
-    <g transform="translate(444, 0)">
-      <rect width="118" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-      <text x="59" y="21" font-family="'Inter',system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Tree-sitter</text>
-    </g>
-
-    <g transform="translate(576, 0)">
-      <rect width="68" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/>
-      <text x="34" y="21" font-family="'Inter',system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">YOLO</text>
-    </g>
+    <text x="55" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">FastAPI</text>
+    <g transform="translate(124, 0)"><rect width="68" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="34" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Rust</text></g>
+    <g transform="translate(206, 0)"><rect width="118" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="59" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PostgreSQL</text></g>
+    <g transform="translate(338, 0)"><rect width="92" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="46" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">PyTorch</text></g>
+    <g transform="translate(444, 0)"><rect width="118" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="59" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">Tree-sitter</text></g>
+    <g transform="translate(576, 0)"><rect width="68" height="32" rx="16" fill="url(#pill-fill)" stroke="rgba(200,64,46,0.18)" stroke-width="1"/><text x="34" y="21" font-family="system-ui,sans-serif" font-size="13" fill="#c8402e" text-anchor="middle" font-weight="500">YOLO</text></g>
   </g>
-
-  <!-- IIT Jodhpur badge -->
   <g transform="translate(120, 360)">
     <rect width="145" height="30" rx="15" fill="rgba(212,148,58,0.08)" stroke="rgba(212,148,58,0.18)" stroke-width="1"/>
-    <text x="72" y="20" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#d4943a" text-anchor="middle" font-weight="500" letter-spacing="0.04em">IIT JODHPUR</text>
+    <text x="72" y="20" font-family="system-ui,sans-serif" font-size="12" fill="#d4943a" text-anchor="middle" font-weight="500" letter-spacing="0.04em">IIT JODHPUR</text>
   </g>
-
-  <!-- Right side: 3 cards -->
   <g transform="translate(760, 120)">
-    <!-- CORTEX card -->
     <rect x="0" y="0" width="370" height="110" rx="14" fill="rgba(28,22,22,0.7)" stroke="rgba(200,64,46,0.1)" stroke-width="1"/>
-    <text x="22" y="28" font-family="'Inter',system-ui,sans-serif" font-size="10" fill="#c8402e" letter-spacing="0.18em" font-weight="600">CORTEX</text>
-    <text x="22" y="52" font-family="'Inter',system-ui,sans-serif" font-size="14" fill="#c0b0a6" font-weight="500">Local-first AI infrastructure platform</text>
-    <text x="22" y="74" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#4a3e3a">FastAPI · PostgreSQL · Redis · Qdrant · 1,900+ tests</text>
-    <text x="22" y="96" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#4a3e3a">Agent loops · hybrid retrieval · full-stack</text>
-
-    <!-- ASTERA card -->
+    <text x="22" y="28" font-family="system-ui,sans-serif" font-size="10" fill="#c8402e" letter-spacing="0.18em" font-weight="600">CORTEX</text>
+    <text x="22" y="52" font-family="system-ui,sans-serif" font-size="14" fill="#c0b0a6" font-weight="500">Local-first AI infrastructure platform</text>
+    <text x="22" y="74" font-family="system-ui,sans-serif" font-size="12" fill="#4a3e3a">FastAPI · PostgreSQL · Redis · Qdrant · 1,900+ tests</text>
+    <text x="22" y="96" font-family="system-ui,sans-serif" font-size="12" fill="#4a3e3a">Agent loops · hybrid retrieval · full-stack</text>
     <g transform="translate(0, 126)">
       <rect x="0" y="0" width="370" height="110" rx="14" fill="rgba(28,22,22,0.7)" stroke="rgba(232,168,72,0.1)" stroke-width="1"/>
-      <text x="22" y="28" font-family="'Inter',system-ui,sans-serif" font-size="10" fill="#e8a848" letter-spacing="0.18em" font-weight="600">ASTERA</text>
-      <text x="22" y="52" font-family="'Inter',system-ui,sans-serif" font-size="14" fill="#c0b0a6" font-weight="500">Production-grade static analysis engine</text>
-      <text x="22" y="74" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#4a3e3a">Rust · Tree-sitter · 14 languages · Code Property Graph</text>
-      <text x="22" y="96" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#4a3e3a">153 tests · 92 benchmarks · semantic search</text>
+      <text x="22" y="28" font-family="system-ui,sans-serif" font-size="10" fill="#e8a848" letter-spacing="0.18em" font-weight="600">ASTERA</text>
+      <text x="22" y="52" font-family="system-ui,sans-serif" font-size="14" fill="#c0b0a6" font-weight="500">Production-grade static analysis engine</text>
+      <text x="22" y="74" font-family="system-ui,sans-serif" font-size="12" fill="#4a3e3a">Rust · Tree-sitter · 14 languages · Code Property Graph</text>
+      <text x="22" y="96" font-family="system-ui,sans-serif" font-size="12" fill="#4a3e3a">153 tests · 92 benchmarks · semantic search</text>
     </g>
-
-    <!-- Research card -->
     <g transform="translate(0, 252)">
       <rect x="0" y="0" width="370" height="110" rx="14" fill="rgba(28,22,22,0.7)" stroke="rgba(200,64,46,0.08)" stroke-width="1"/>
-      <text x="22" y="28" font-family="'Inter',system-ui,sans-serif" font-size="10" fill="#c8402e" letter-spacing="0.18em" font-weight="600">RESEARCH</text>
-      <text x="22" y="52" font-family="'Inter',system-ui,sans-serif" font-size="14" fill="#c0b0a6" font-weight="500">CNN-Attention for imbalanced classification</text>
-      <text x="22" y="74" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#4a3e3a">Prof. Pratik Mazumder · IIT Jodhpur</text>
-      <text x="22" y="96" font-family="'Inter',system-ui,sans-serif" font-size="12" fill="#4a3e3a">30+ model variants · PLDNet baseline · ablations</text>
+      <text x="22" y="28" font-family="system-ui,sans-serif" font-size="10" fill="#c8402e" letter-spacing="0.18em" font-weight="600">RESEARCH</text>
+      <text x="22" y="52" font-family="system-ui,sans-serif" font-size="14" fill="#c0b0a6" font-weight="500">CNN-Attention for imbalanced classification</text>
+      <text x="22" y="74" font-family="system-ui,sans-serif" font-size="12" fill="#4a3e3a">Prof. Pratik Mazumder · IIT Jodhpur</text>
+      <text x="22" y="96" font-family="system-ui,sans-serif" font-size="12" fill="#4a3e3a">30+ model variants · PLDNet baseline · ablations</text>
     </g>
   </g>
-
-  <!-- Bottom bar -->
   <rect x="0" y="620" width="1200" height="10" fill="url(#line)" opacity="0.1"/>
 </svg>
